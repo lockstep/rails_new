@@ -34,6 +34,11 @@ GEM
       erubi (~> 1.4)
       rails-dom-testing (~> 2.0)
       rails-html-sanitizer (~> 1.0, >= 1.0.3)
+    active_model_serializers (0.10.5)
+      actionpack (>= 4.1, < 6)
+      activemodel (>= 4.1, < 6)
+      case_transform (>= 0.2)
+      jsonapi-renderer (>= 0.1.1.beta1, < 0.2)
     activejob (5.1.0.rc1)
       activesupport (= 5.1.0.rc1)
       globalid (>= 0.3.6)
@@ -65,6 +70,8 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
+    case_transform (0.2)
+      activesupport
     childprocess (0.6.3)
       ffi (~> 1.0, >= 1.0.11)
     coffee-rails (4.2.1)
@@ -82,9 +89,7 @@ GEM
     globalid (0.4.0)
       activesupport (>= 4.2.0)
     i18n (0.8.1)
-    jbuilder (2.6.3)
-      activesupport (>= 3.0.0, < 5.2)
-      multi_json (~> 1.2)
+    jsonapi-renderer (0.1.2)
     listen (3.1.5)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
@@ -99,7 +104,6 @@ GEM
     mime-types-data (3.2016.0521)
     mini_portile2 (2.1.0)
     minitest (5.10.1)
-    multi_json (1.12.1)
     nio4r (2.0.0)
     nokogiri (1.7.1)
       mini_portile2 (~> 2.1.0)
@@ -211,11 +215,11 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  active_model_serializers (~> 0.10.0)
   bundler-audit
   byebug
   capybara (~> 2.13.0)
   coffee-rails (~> 4.2)
-  jbuilder (~> 2.5)
   listen (>= 3.0.5, < 3.2)
   pg (~> 0.18)
   puma (~> 3.7)
