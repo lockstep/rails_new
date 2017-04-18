@@ -54,6 +54,9 @@ GEM
     ast (2.3.0)
     bindex (0.5.0)
     builder (3.2.3)
+    bundler-audit (0.5.0)
+      bundler (~> 1.2)
+      thor (~> 0.18)
     byebug (9.0.6)
     capybara (2.13.0)
       addressable
@@ -206,6 +209,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bundler-audit
   byebug
   capybara (~> 2.13.0)
   coffee-rails (~> 4.2)
