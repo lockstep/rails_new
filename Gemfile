@@ -61,6 +61,7 @@ group :development do
   # Spring speeds up development by keeping your application running in the background.
   # Read more: https://github.com/rails/spring
   gem 'spring'
+  gem 'spring-commands-rspec'
   gem 'spring-watcher-listen', '~> 2.0.0'
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'web-console', '>= 3.3.0'
@@ -68,10 +69,12 @@ end
 
 group :test do
   gem 'bundler-audit', require: false
-
-  # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13.0'
+  gem 'database_cleaner'
+  gem 'factory_girl_rails'
+  gem 'poltergeist'
   gem 'selenium-webdriver'
-
+  gem 'shoulda-matchers'
   gem 'rspec-rails', '~> 3.5'
+  gem 'webmock'
 end
