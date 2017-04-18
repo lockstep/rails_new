@@ -83,6 +83,7 @@ GEM
     childprocess (0.6.3)
       ffi (~> 1.0, >= 1.0.11)
     cliver (0.3.2)
+    coderay (1.1.1)
     concurrent-ruby (1.0.5)
     crack (0.4.3)
       safe_yaml (~> 1.0.0)
@@ -126,6 +127,18 @@ GEM
       cliver (~> 0.3.1)
       websocket-driver (>= 0.2.0)
     powerpack (0.1.1)
+    pry (0.10.4)
+      coderay (~> 1.1.0)
+      method_source (~> 0.8.1)
+      slop (~> 3.4)
+    pry-byebug (3.4.2)
+      byebug (~> 9.0)
+      pry (~> 0.10)
+    pry-doc (0.10.0)
+      pry (~> 0.9)
+      yard (~> 0.9)
+    pry-rails (0.3.6)
+      pry (>= 0.10.4)
     public_suffix (2.0.5)
     puma (3.8.2)
     pundit (1.1.0)
@@ -201,6 +214,7 @@ GEM
       websocket (~> 1.0)
     shoulda-matchers (3.1.1)
       activesupport (>= 4.0.0)
+    slop (3.6.0)
     spring (2.0.1)
       activesupport (>= 4.2)
     spring-commands-rspec (1.0.4)
@@ -240,6 +254,7 @@ GEM
     websocket-extensions (0.1.2)
     xpath (2.0.0)
       nokogiri (~> 1.3)
+    yard (0.9.8)
 
 PLATFORMS
   ruby
@@ -256,6 +271,9 @@ DEPENDENCIES
   listen (>= 3.0.5, < 3.2)
   pg (~> 0.18)
   poltergeist
+  pry-byebug
+  pry-doc
+  pry-rails
   puma (~> 3.7)
   pundit
   rack-timeout
