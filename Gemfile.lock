@@ -55,6 +55,9 @@ GEM
       tzinfo (~> 1.1)
     addressable (2.5.1)
       public_suffix (~> 2.0, >= 2.0.2)
+    airbrake (6.0.0)
+      airbrake-ruby (~> 2.0)
+    airbrake-ruby (2.0.0)
     arel (8.0.0)
     ast (2.3.0)
     bindex (0.5.0)
@@ -118,6 +121,7 @@ GEM
     rack (2.0.1)
     rack-test (0.6.3)
       rack (>= 1.0)
+    rack-timeout (0.4.2)
     rails (5.1.0.rc1)
       actioncable (= 5.1.0.rc1)
       actionmailer (= 5.1.0.rc1)
@@ -135,6 +139,11 @@ GEM
       nokogiri (~> 1.6)
     rails-html-sanitizer (1.0.3)
       loofah (~> 2.0)
+    rails_12factor (0.0.3)
+      rails_serve_static_assets
+      rails_stdout_logging
+    rails_serve_static_assets (0.0.5)
+    rails_stdout_logging (0.0.5)
     railties (5.1.0.rc1)
       actionpack (= 5.1.0.rc1)
       activesupport (= 5.1.0.rc1)
@@ -216,6 +225,7 @@ PLATFORMS
 
 DEPENDENCIES
   active_model_serializers (~> 0.10.0)
+  airbrake (~> 6.0)
   bundler-audit
   byebug
   capybara (~> 2.13.0)
@@ -224,7 +234,9 @@ DEPENDENCIES
   pg (~> 0.18)
   puma (~> 3.7)
   pundit
+  rack-timeout
   rails (~> 5.1.0.rc1)
+  rails_12factor
   rspec-rails (~> 3.5)
   rubocop
   sass-rails!

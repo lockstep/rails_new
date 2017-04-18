@@ -41,13 +41,18 @@ gem 'pundit'
 # API serialization
 gem 'active_model_serializers', '~> 0.10.0'
 
+# Exception tracking
+gem 'airbrake', '~> 6.0'
+
+gem 'rack-timeout'
+
+group :production do
+  gem 'rails_12factor'
+end
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
-  # Adds support for Capybara system testing and selenium driver
-  gem 'capybara', '~> 2.13.0'
-  gem 'rspec-rails', '~> 3.5'
-  gem 'selenium-webdriver'
 end
 
 group :development do
@@ -63,4 +68,10 @@ end
 
 group :test do
   gem 'bundler-audit', require: false
+
+  # Adds support for Capybara system testing and selenium driver
+  gem 'capybara', '~> 2.13.0'
+  gem 'selenium-webdriver'
+
+  gem 'rspec-rails', '~> 3.5'
 end
