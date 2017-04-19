@@ -42,6 +42,10 @@ gem 'devise'
 # API serialization
 gem 'active_model_serializers', '~> 0.10.0'
 
+# Decorators
+# Needed for Rails 5+
+gem 'draper', '~> 3.0.0.pre1'
+
 # Exception tracking
 gem 'airbrake', '~> 6.0'
 
@@ -51,9 +55,8 @@ gem 'bootstrap-sass'
 # Static pages
 gem 'high_voltage', '~> 3.0.0'
 
-gem 'rack-timeout'
-
 group :production do
+  gem 'rack-timeout'
   gem 'rails_12factor'
 end
 
