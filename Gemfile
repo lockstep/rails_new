@@ -96,8 +96,8 @@ group :test do
   gem 'database_cleaner'
   gem 'factory_girl_rails'
   gem 'poltergeist'
+  gem 'rspec-rails', '~> 3.5'
   gem 'selenium-webdriver'
   gem 'shoulda-matchers'
-  gem 'rspec-rails', '~> 3.5'
   gem 'webmock'
 end
