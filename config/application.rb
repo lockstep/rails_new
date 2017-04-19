@@ -14,5 +14,19 @@ module RailsNew
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
+
+    # See: http://guides.rubyonrails.org/generators.html
+    config.generators do |g|
+      # Create appropriate tests in spec/ not test/
+      g.test_framework :rspec, fixture: true
+      g.fixture_replacement :factory_girl, dir: 'spec/factories'
+
+      # Don't generate helpers, JS, CSS or view specs for controllers
+      # See: http://guides.rubyonrails.org/generators.html
+      g.helper      false
+      g.javascripts false
+      g.stylesheets false
+      g.view_specs  false
+    end
   end
 end

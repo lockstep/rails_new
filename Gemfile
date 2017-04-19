@@ -32,11 +32,12 @@ gem 'turbolinks', '~> 5'
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
-# Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
 
 # Authorization
 gem 'pundit'
+
+# Authentication
+gem 'devise'
 
 # API serialization
 gem 'active_model_serializers', '~> 0.10.0'
@@ -46,6 +47,9 @@ gem 'airbrake', '~> 6.0'
 
 # Frontend
 gem 'bootstrap-sass'
+
+# Static pages
+gem 'high_voltage', '~> 3.0.0'
 
 gem 'rack-timeout'
 
