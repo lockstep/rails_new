@@ -66,6 +66,12 @@ group :development, :test do
 
   gem 'foreman'
 
+  # Warn about n+1 queries and unused includes
+  gem 'bullet'
+  # Debug page speed and memory usage
+  gem 'memory_profiler'
+  gem 'rack-mini-profiler'
+
   # Use Pry instead of IRB
   gem 'pry-byebug'
   gem 'pry-doc'
