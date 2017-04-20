@@ -70,7 +70,7 @@ group :development, :test do
   gem 'bullet'
   # Debug page speed and memory usage
   gem 'memory_profiler'
-  gem 'rack-mini-profiler'
+  gem 'rack-mini-profiler', require: false
 
   # Use Pry instead of IRB
   gem 'pry-byebug'
