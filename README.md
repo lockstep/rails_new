@@ -1,24 +1,80 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Template for new Rails projects. 
 
-Things you may want to cover:
 
-* Ruby version
+## Getting started
 
-* System dependencies
+To get going clone this repository and perform the following steps:
 
-* Configuration
+1. Clone this repository
+1. Change application name in `config/application.rb`.
+1. Update `database.yml` to reflect the new application name.
+1. If you don't plan on tracking the template, you can remove the `.git` directory. 
+   Otherwise you can rename the remote:   
+   ```shell
+   $ git remote rename origin rails_new
+   ```
+1. Add your new remote as appropriate.
+1. If you want to use [AirBrake](https://airbrake.io), run the following:
+   ```shell
+   $ rails g airbrake
+   ```
+   In case your app is not hosted on Heroku, you need to provide the project id and key:
+   ```shell
+   $ rails g airbrake PROJECT_ID PROJECT_KEY
+   ```
 
-* Database creation
+## Contents
 
-* Database initialization
+All of the following have been installed and pre-configured.
 
-* How to run the test suite
+### Base system
 
-* Services (job queues, cache servers, search engines, etc.)
+* Rails 5.1.0.pre1
+* Ruby 2.3.4
+* [pg](https://github.com/ged/ruby-pg) for `ActiveRecord`
 
-* Deployment instructions
+### General
+ 
+* [ActiveModelSerializers](https://github.com/rails-api/active_model_serializers)
+* [bootstrap-sass](https://github.com/twbs/bootstrap-sass)
+* [Draper](https://github.com/drapergem/draper)
+* [Pundit](https://github.com/elabs/pundit)
 
-* ...
+### Development
+
+* [foreman](https://github.com/ddollar/foreman)
+* [pry](https://github.com/rweng/pry-rails)
+* [pry-byebug](https://github.com/deivid-rodriguez/pry-byebug)
+* [pry-doc](https://github.com/pry/pry-doc)
+* [RuboCop](https://github.com/bbatsov/rubocop)
+
+### Test
+
+* [bullet](https://github.com/flyerhzm/bullet)
+* [bundler-audit](https://github.com/rubysec/bundler-audit)
+* [capybara](https://github.com/teamcapybara/capybara)
+* [database_cleaner](https://github.com/DatabaseCleaner/database_cleaner)
+* [devise](https://github.com/plataformatec/devise)
+* [factory_girl_rails](https://github.com/thoughtbot/factory_girl_rails)
+* [high_voltage](https://github.com/thoughtbot/high_voltage)
+* [memory_profiler](https://github.com/SamSaffron/memory_profiler)
+* [poltergeist](https://github.com/teampoltergeist/poltergeist)
+* [rack-mini-profiler](https://github.com/MiniProfiler/rack-mini-profiler)
+* [shoulda-matchers](https://github.com/thoughtbot/shoulda-matchers)
+* [spring-commands-rspec](https://github.com/jonleighton/spring-commands-rspec)
+* [webmock](https://github.com/bblimke/webmock)
+
+### Production
+
+* [rails_12factor](https://github.com/heroku/rails_12factor)
+* [Airbrake](https://github.com/airbrake/airbrake)
+* [rake-timeout](https://github.com/heroku/rack-timeout)
+
+## Removed
+
+The following default Rails gems have been removed:
+
+* [coffee-rails](https://github.com/rails/coffee-rails)
+* [Jbuilder](https://github.com/rails/jbuilder)
