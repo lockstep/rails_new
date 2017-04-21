@@ -20,3 +20,6 @@
 
 # RubyMine settings
 .idea/
+
+# Figaro
+config/application.yml

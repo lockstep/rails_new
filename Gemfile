@@ -45,6 +45,9 @@ gem 'devise'
 # API serialization
 gem 'active_model_serializers', '~> 0.10.0'
 
+# App configuration
+gem 'figaro'
+
 # Decorators
 # Recent version needed for Rails 5+
 gem 'draper', '~> 3.0.0.pre1'

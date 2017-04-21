@@ -2,7 +2,6 @@
 
 Template for new Rails projects. 
 
-
 ## Getting started
 
 To get going clone this repository and perform the following steps:
@@ -10,6 +9,7 @@ To get going clone this repository and perform the following steps:
 1. Clone this repository
 1. Change application name in `config/application.rb`.
 1. Update `database.yml` to reflect the new application name.
+1. If you plan on using Figaro, copy `config/application.yml.example` to `config/application.yml`.
 1. If you don't plan on tracking the template, you can remove the `.git` directory. 
    Otherwise you can rename the remote:   
    ```shell
@@ -43,16 +43,16 @@ All of the following have been installed and pre-configured.
 
 ### General
  
-* [ActiveModelSerializers](https://github.com/rails-api/active_model_serializers)
+* [active_model_serializers](https://github.com/rails-api/active_model_serializers)
 * [bootstrap-sass](https://github.com/twbs/bootstrap-sass)
-* [Draper](https://github.com/drapergem/draper)
-* [Pundit](https://github.com/elabs/pundit)
+* [draper](https://github.com/drapergem/draper)
+* [figaro](https://github.com/laserlemon/figaro)
+* [pundit](https://github.com/elabs/pundit)
 
 ### Development
 
 * [foreman](https://github.com/ddollar/foreman)
 * [newrelic_rpm](https://github.com/newrelic/rpm) 
-  (available at `/newrelic` in development mode)
 * [pry](https://github.com/rweng/pry-rails)
 * [pry-byebug](https://github.com/deivid-rodriguez/pry-byebug)
 * [pry-doc](https://github.com/pry/pry-doc)
@@ -77,7 +77,7 @@ All of the following have been installed and pre-configured.
 ### Production
 
 * [rails_12factor](https://github.com/heroku/rails_12factor)
-* [Airbrake](https://github.com/airbrake/airbrake)
+* [airbrake](https://github.com/airbrake/airbrake)
 * [rake-timeout](https://github.com/heroku/rack-timeout)
 
 ## Removed
@@ -85,4 +85,4 @@ All of the following have been installed and pre-configured.
 The following default Rails gems have been removed:
 
 * [coffee-rails](https://github.com/rails/coffee-rails)
-* [Jbuilder](https://github.com/rails/jbuilder)
+* [jbuilder](https://github.com/rails/jbuilder)
