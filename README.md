@@ -16,7 +16,10 @@ To get going clone this repository and perform the following steps:
    $ git remote rename origin rails_new
    ```
 1. Add your new remote as appropriate.
-1. If you want to use [AirBrake](https://airbrake.io), run the following:
+
+## Optional configurations
+
+* If you want to use [AirBrake](https://airbrake.io), run the following:
    ```shell
    $ rails g airbrake
    ```
@@ -24,6 +27,9 @@ To get going clone this repository and perform the following steps:
    ```shell
    $ rails g airbrake PROJECT_ID PROJECT_KEY
    ```
+* [New Relic](https://newrelic.com) is pre configured in `config/newrelic.yml`, 
+  but you need to comment in the environment variables for it work on Heroku 
+  (lines 10 and 17).
 
 ## Contents
 
@@ -45,6 +51,8 @@ All of the following have been installed and pre-configured.
 ### Development
 
 * [foreman](https://github.com/ddollar/foreman)
+* [newrelic_rpm](https://github.com/newrelic/rpm) 
+  (available at `/newrelic` in development mode)
 * [pry](https://github.com/rweng/pry-rails)
 * [pry-byebug](https://github.com/deivid-rodriguez/pry-byebug)
 * [pry-doc](https://github.com/pry/pry-doc)

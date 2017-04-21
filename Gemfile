@@ -33,6 +33,9 @@ gem 'turbolinks', '~> 5'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 
+# Application monitoring
+gem 'newrelic_rpm'
+
 # Authorization
 gem 'pundit'
 
@@ -43,7 +46,7 @@ gem 'devise'
 gem 'active_model_serializers', '~> 0.10.0'
 
 # Decorators
-# Needed for Rails 5+
+# Recent version needed for Rails 5+
 gem 'draper', '~> 3.0.0.pre1'
 
 # Exception tracking
@@ -71,6 +74,8 @@ group :development, :test do
   # Debug page speed and memory usage
   gem 'memory_profiler'
   gem 'rack-mini-profiler', require: false
+  # Performance profiling, works with NewRelic in develop mode
+  gem 'ruby-prof'
 
   # Use Pry instead of IRB
   gem 'pry-byebug'
