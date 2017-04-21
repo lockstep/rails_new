@@ -30,9 +30,6 @@ gem 'uglifier', '>= 1.3.0'
 # Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
 
-# Use Redis adapter to run Action Cable in production
-# gem 'redis', '~> 3.0'
-
 # Application monitoring
 gem 'newrelic_rpm'
 
@@ -57,6 +54,9 @@ gem 'airbrake', '~> 6.0'
 
 # Frontend
 gem 'bootstrap-sass'
+
+# Job queue
+gem 'sidekiq'
 
 # Static pages
 gem 'high_voltage', '~> 3.0.0'

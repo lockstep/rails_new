@@ -48,6 +48,7 @@ All of the following have been installed and pre-configured.
 * [draper](https://github.com/drapergem/draper)
 * [figaro](https://github.com/laserlemon/figaro)
 * [pundit](https://github.com/elabs/pundit)
+* [sidekiq](https://github.com/mperham/sidekiq)
 
 ### Development
 
