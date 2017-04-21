@@ -7,6 +7,7 @@
 # Here are the settings that are common to all environments
 common: &default_settings
 
+  # TODO: Uncomment this
   # app_name: ENV['NEW_RELIC_APP_NAME']
 
   # ============================== LICENSE KEY ===============================
@@ -14,6 +15,7 @@ common: &default_settings
   # You must specify the license key associated with your New Relic
   # account.  This key binds your Agent's data to your account in the
   # New Relic service.
+  # TODO: Uncomment this
   # license_key: ENV['NEW_RELIC_LICENSE_KEY']
 
   # Agent Enabled (Ruby/Rails Only)
