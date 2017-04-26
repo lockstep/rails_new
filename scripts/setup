@@ -1,0 +1,46 @@
+#!/bin/bash
+
+function printSeparator() {
+    printf "\n\n*************\n\n";
+}
+
+read -p "Do you want to keep tracking the template via git? y/n: " -n 1 -r
+echo
+if [[ $REPLY =~ ^[Yy]$ ]] ; then
+    printf "Renaming remote from 'origin' to 'template'"
+    git remote rename origin template
+else
+    echo "Removing remote 'origin'"
+    git remote remove origin
+fi
+
+printSeparator
+
+read -p "Will you be using figaro for this project? y/n: " -n 1 -r
+echo
+if [[ $REPLY =~ ^[Yy]$ ]] ; then
+    echo "Copying 'config/application.yml.example' to 'config/application.yml'"
+    cp config/application.yml.example config/application.yml
+fi
+
+printSeparator
+
+read -p "Will you be using Airbreak for this project? y/n: " -n 1 -r
+echo
+if [[ $REPLY =~ ^[Yy]$ ]] ; then
+    bin/rails generate airbrake
+fi
+
+printSeparator
+
+printf "Please update the following locations:\n\n"
+
+fgrep -rn "TODO:" app config spec | while read -r line ; do 
+    echo "  * $line"
+done 
+
+
+
+
+
+

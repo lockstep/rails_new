@@ -1,4 +1,4 @@
 development:
-  RAILS_WEB_CONCURRENCY: 1
-  RAILS_MAX_THREADS: 1
+  RAILS_WEB_CONCURRENCY: '1'
+  RAILS_MAX_THREADS: '1'
   REDIS_URL: "http://localhost:6379"
