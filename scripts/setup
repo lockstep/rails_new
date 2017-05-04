@@ -25,14 +25,6 @@ fi
 
 printSeparator
 
-read -p "Will you be using Airbreak for this project? y/n: " -n 1 -r
-echo
-if [[ $REPLY =~ ^[Yy]$ ]] ; then
-    bin/rails generate airbrake
-fi
-
-printSeparator
-
 printf "Please update the following locations:\n\n"
 
 fgrep -rn "TODO:" app config spec | while read -r line ; do 

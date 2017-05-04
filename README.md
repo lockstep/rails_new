@@ -21,14 +21,9 @@ To get going clone this repository and perform the following steps:
 
 ## Optional configurations
 
-* If you want to use [AirBrake](https://airbrake.io), run the following:
-   ```shell
-   $ rails g airbrake
-   ```
-   In case your app is not hosted on Heroku, you need to provide the project id and key:
-   ```shell
-   $ rails g airbrake PROJECT_ID PROJECT_KEY
-   ```
+* If you want to use [AirBrake](https://airbrake.io), make sure the following 2 environment variables are set:
+    * `AIRBRAKE_PROJECT_ID`
+    * `AIRBRAKE_API_KEY`
 * [New Relic](https://newrelic.com) is pre configured in `config/newrelic.yml`, 
   but you need to comment in the environment variables for it work on Heroku 
   (lines 10 and 17).

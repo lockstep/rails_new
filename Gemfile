@@ -50,7 +50,7 @@ gem 'figaro'
 gem 'draper', '~> 3.0.0.pre1'
 
 # Exception tracking
-gem 'airbrake', '~> 6.0'
+gem 'airbrake', '~> 6.0', require: false
 
 # Frontend
 gem 'bootstrap-sass'
