@@ -12,7 +12,7 @@ version_file = File.join(File.dirname(__FILE__), '.ruby-version')
 ruby File.read(version_file).strip
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.1.0.rc1'
+gem 'rails', '~> 5.1.0'
 
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 0.18'
@@ -21,7 +21,7 @@ gem 'pg', '~> 0.18'
 gem 'puma', '~> 3.7'
 
 # Use SCSS for stylesheets
-gem 'sass-rails', github: 'rails/sass-rails'
+gem 'sass-rails', '~> 5.0.4'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
@@ -37,7 +37,8 @@ gem 'newrelic_rpm'
 gem 'pundit'
 
 # Authentication
-gem 'devise'
+# Recent version needed for Rails 5.1
+gem 'devise', github: 'plataformatec/devise', branch: :master
 
 # API serialization
 gem 'active_model_serializers', '~> 0.10.0'
@@ -47,7 +48,7 @@ gem 'figaro'
 
 # Decorators
 # Recent version needed for Rails 5+
-gem 'draper', '~> 3.0.0.pre1'
+gem 'draper', github: 'drapergem/draper', branch: :master
 
 # Exception tracking
 gem 'airbrake', '~> 6.0', require: false
