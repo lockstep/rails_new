@@ -37,6 +37,7 @@ All of the following have been installed and pre-configured.
 * Rails 5.1.0.pre1
 * Ruby 2.3.4
 * [pg](https://github.com/ged/ruby-pg) for `ActiveRecord`
+* The app is preconfigured for Google Analytics, just add `GOOGLE_ANALYTICS_ID` to the environment.
 
 ### General
  
