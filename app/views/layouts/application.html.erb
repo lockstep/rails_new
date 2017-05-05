@@ -7,12 +7,15 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
+    <%= render partial: 'layouts/favicon' %>
+    <link rel='manifest' href='manifest.json'>
+
     <title><%= yield(:page_title) %></title>
   </head>
 
   <body>
-    <%= render partial: 'shared/google_analytics' %>
-    <%= render partial: 'shared/flash' %>
+    <%= render partial: 'layouts/google_analytics' %>
+    <%= render partial: 'layouts/flash' %>
     <%= yield %>
   </body>
 </html>

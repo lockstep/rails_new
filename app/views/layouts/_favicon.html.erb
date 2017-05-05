@@ -1,0 +1,17 @@
+<link rel="shortcut icon" href="favicon.ico">
+
+<% %w(36 48 72 96 144 192).each do |size| %>
+    <link href="<%= "android-chrome-#{size}x#{size}.png" %>"
+          rel="icon"
+          type="image/png"
+          sizes="<%= "#{size}x#{size}" %>" />
+<% end %>
+
+<% %w(57 60 72 76 114 120 144 152 180).each do |size| %>
+    <link href="<%= "apple-touch-icon-#{size}x#{size}.png" %>"
+          rel="apple-touch-icon"
+          type="image/png"
+          sizes="<%= "#{size}x#{size}" %>" />
+<% end %>
+<link content="apple-touch-icon-precomposed.png"
+      rel="apple-touch-icon-precomposed" />
