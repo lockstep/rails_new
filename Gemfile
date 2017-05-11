@@ -63,6 +63,7 @@ gem 'sidekiq'
 gem 'high_voltage', '~> 3.0.0'
 
 group :production do
+  gem 'lograge'
   gem 'rack-timeout'
   gem 'rails_12factor'
 end

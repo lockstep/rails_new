@@ -78,6 +78,7 @@ All of the following have been installed and pre-configured.
 * [rails_12factor](https://github.com/heroku/rails_12factor)
 * [airbrake](https://github.com/airbrake/airbrake)
 * [rake-timeout](https://github.com/heroku/rack-timeout)
+* [lograge](https://github.com/roidrage/lograge)
 
 ## Removed
 
