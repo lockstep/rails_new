@@ -27,6 +27,12 @@ To get going clone this repository and perform the following steps:
 * [New Relic](https://newrelic.com) is pre configured in `config/newrelic.yml`, 
   but you need to comment in the environment variables for it work on Heroku 
   (lines 10 and 17).
+  
+## Configuration options
+
+| Option                    | Comment                                  |
+| ---                       | ---                                      |
+| Disable HTTP TRACE method | Set BLOCK_HTTP_TRACE env var to true/t/1 |
 
 ## Contents
 
