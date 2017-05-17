@@ -28,11 +28,17 @@ To get going clone this repository and perform the following steps:
   but you need to comment in the environment variables for it work on Heroku 
   (lines 10 and 17).
   
-## Configuration options
+## Environment variables
 
-| Option                    | Comment                                  |
-| ---                       | ---                                      |
-| Disable HTTP TRACE method | Set BLOCK_HTTP_TRACE env var to true/t/1 |
+| Variable              | Comment                                                                 |
+| ---                   | ---                                                                     |
+| GOOGLE_ANALYTICS_ID   | Will be added to the main application layout if set                     |
+| BLOCK_HTTP_TRACE      | Disable HTTP TRACE method if set to true/t/1                            |
+| DATABASE_URL          | Used for `production` env, automatically set by Heroku                  |
+| HTTP_METHOD_BLACKLIST | If you want to block more than just TRACE, e.g. `"TRACE,OPTIONS"`       |
+| PORT                  | Port Puma will listen on, defaults to 3000                              |
+| RAILS_LOG_TO_STDOUT   | Set by Heroku Ruby buildpack, set manually on other platforms if needed |
+| RAILS_MAX_THREADS     | Number of Puma threads, defaults to 5                                   |
 
 ## Contents
 

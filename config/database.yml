@@ -82,8 +82,4 @@ test:
 #
 production:
   <<: *default
-  # TODO: Change database name
-  database: rails_new_production
-  # TODO: Change user name
-  username: rails_new
-  password: <%= ENV['RAILS_NEW_DATABASE_PASSWORD'] %>
+  url:  <%= ENV["DATABASE_URL"] %>
