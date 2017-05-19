@@ -66,6 +66,8 @@ gem 'high_voltage', '~> 3.0.0'
 gem 'secure_headers'
 
 group :production do
+  # Remove this if the app is not hosted on Heroku
+  gem 'heroku-deflater'
   gem 'lograge'
   gem 'rack-timeout'
   gem 'rails_12factor'

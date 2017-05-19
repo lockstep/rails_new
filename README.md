@@ -90,10 +90,11 @@ All of the following have been installed and pre-configured.
 
 ### Production
 
-* [rails_12factor](https://github.com/heroku/rails_12factor)
 * [airbrake](https://github.com/airbrake/airbrake)
-* [rake-timeout](https://github.com/heroku/rack-timeout)
+* [heroku-deflater](https://github.com/romanbsd/heroku-deflater)
 * [lograge](https://github.com/roidrage/lograge)
+* [rails_12factor](https://github.com/heroku/rails_12factor)
+* [rake-timeout](https://github.com/heroku/rack-timeout)
 
 ## Removed
 
