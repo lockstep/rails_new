@@ -62,6 +62,9 @@ gem 'sidekiq'
 # Static pages
 gem 'high_voltage', '~> 3.0.0'
 
+# Security
+gem 'secure_headers'
+
 group :production do
   gem 'lograge'
   gem 'rack-timeout'

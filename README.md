@@ -60,6 +60,7 @@ All of the following have been installed and pre-configured.
 * [draper](https://github.com/drapergem/draper)
 * [figaro](https://github.com/laserlemon/figaro)
 * [pundit](https://github.com/elabs/pundit)
+* [secureheaders](https://github.com/twitter/secureheaders)
 * [sidekiq](https://github.com/mperham/sidekiq)
 
 ### Development
