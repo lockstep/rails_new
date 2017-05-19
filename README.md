@@ -12,6 +12,8 @@ To get going clone this repository and perform the following steps:
 1. Change application name in `config/application.rb`.
 1. Update `database.yml` to reflect the new application name.
 1. If you plan on using Figaro, copy `config/application.yml.example` to `config/application.yml`.
+1. ESLint is preconfigured for modern JS with React support (AirBnB styleguide). If you want to use
+   it install packages with `npm install`, otherwise remove `.eslintrc` and `package.json`. 
 1. If you don't plan on tracking the template, you can remove the `.git` directory. 
    Otherwise you can rename the remote:   
    ```shell
