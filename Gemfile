@@ -56,6 +56,9 @@ gem 'airbrake', '~> 6.0', require: false
 # Frontend
 gem 'bootstrap-sass'
 
+# Rails 5.1 doesn't include jQuery by default
+gem 'jquery-rails'
+
 # Job queue
 gem 'sidekiq'
 
