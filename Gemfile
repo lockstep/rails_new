@@ -63,7 +63,7 @@ gem 'sidekiq'
 gem 'high_voltage', '~> 3.0.0'
 
 # Security
-gem 'secure_headers'
+gem 'secure_headers', require: false
 
 group :production do
   # Remove this if the app is not hosted on Heroku
