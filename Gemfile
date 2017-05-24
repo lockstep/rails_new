@@ -111,7 +111,6 @@ end
 group :test do
   gem 'bundler-audit', require: false
   gem 'capybara', '~> 2.13.0'
-  gem 'database_cleaner'
   gem 'factory_girl_rails'
   gem 'poltergeist'
   gem 'rspec-rails', '~> 3.5'
