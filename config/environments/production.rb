@@ -93,4 +93,11 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  # TODO: Prevent host header injection
+  # Uncomment and configure the following configuration option(s).
+  # If your environment is more difficult (subdomains or different TLDs), try
+  # https://github.com/synack/rack-allowed_hosts instead.
+  # config.action_controller.default_url_options = { host: "www.yoursite.com" }
+  # config.action_controller.asset_host = "www.yoursite.com"
 end

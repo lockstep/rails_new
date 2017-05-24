@@ -11,6 +11,7 @@ To get going clone this repository and perform the following steps:
    Alternatively perform all of the following steps manually.
 1. Change application name in `config/application.rb`.
 1. Update `database.yml` to reflect the new application name.
+1. Update `TODO` items in `config/environments/production.rb`.
 1. If you plan on using Figaro, copy `config/application.yml.example` to `config/application.yml`.
 1. ESLint is preconfigured for modern JS with React support (AirBnB styleguide). If you want to use
    it install packages with `npm install`, otherwise remove `.eslintrc` and `package.json`. 
