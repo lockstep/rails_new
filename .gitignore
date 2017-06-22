@@ -21,5 +21,6 @@
 # RubyMine settings
 .idea/
 
-# Figaro
+# ENV variables
 config/application.yml
+.rbenv-vars
