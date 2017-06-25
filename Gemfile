@@ -52,7 +52,7 @@ gem 'draper', '~> 3.0.0'
 gem 'airbrake', '~> 6.0', require: false
 
 # Frontend
-gem 'bootstrap-sass'
+gem 'bootstrap', git: 'https://github.com/twbs/bootstrap-rubygem'
 
 # Rails 5.1 doesn't include jQuery by default
 gem 'jquery-rails'
