@@ -7,7 +7,7 @@ Template for new Rails projects.
 To get going clone this repository and perform the following steps:
 
 1. Clone this repository
-1. You can now run `scripts/setup`, which will help you in configuring the template.
+1. You can now run `bin/configure`, which will help you in configuring the template.
    Alternatively perform all of the following steps manually.
 1. Change application name in `config/application.rb`.
 1. Update `database.yml` to reflect the new application name.
