@@ -32,8 +32,3 @@ fgrep -rn "TODO:" app config spec | while read -r line ; do
 done 
 echo "  * Update project name in package.json"
 
-
-
-
-
-
