@@ -21,3 +21,5 @@ checkout:
 #          timeout: 300
 #      - heroku run rake db:migrate --app <APPNAME>:
 #          timeout: 300
+#      - heroku restart --app <APPNAME>:
+#          timeout: 300
