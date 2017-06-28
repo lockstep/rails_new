@@ -109,11 +109,10 @@ All of these are managed by `yarn`.
 
 ### Test
 
+* Preconfigured for Rails 5.1+ system tests with Rspec. Install the necessary driver with `brew install chromedriver` and see `spec/system/landing_page_spec.rb` for an example.
 * [bundler-audit](https://github.com/rubysec/bundler-audit)
 * [capybara](https://github.com/teamcapybara/capybara)
-* [database_cleaner](https://github.com/DatabaseCleaner/database_cleaner)
 * [factory_girl_rails](https://github.com/thoughtbot/factory_girl_rails)
-* [poltergeist](https://github.com/teampoltergeist/poltergeist)
 * [shoulda-matchers](https://github.com/thoughtbot/shoulda-matchers)
 * [spring-commands-rspec](https://github.com/jonleighton/spring-commands-rspec)
 * [webmock](https://github.com/bblimke/webmock)

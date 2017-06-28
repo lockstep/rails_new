@@ -111,7 +111,7 @@ group :test do
   gem 'factory_girl_rails'
   gem 'poltergeist'
   gem 'rspec_junit_formatter'
-  gem 'rspec-rails', '~> 3.5'
+  gem 'rspec-rails', '~> 3.7'
   gem 'selenium-webdriver'
   gem 'shoulda-matchers'
   gem 'webmock'
