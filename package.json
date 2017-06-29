@@ -1,7 +1,11 @@
 {
   "name": "rails_new",
   "private": true,
-  "dependencies": {},
+  "dependencies": {
+    "bootstrap": "4.0.0-alpha.6",
+    "jquery": "^3.2.1",
+    "tether": "^1.4.0"
+  },
   "devDependencies": {
     "eslint": "^3.19.0",
     "eslint-config-airbnb": "^15.0.1",

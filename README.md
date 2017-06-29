@@ -1,6 +1,6 @@
 # README
 
-Template for new Rails projects. 
+Template for new Rails projects.
 
 ## Getting started
 
@@ -14,9 +14,9 @@ To get going clone this repository and perform the following steps:
 1. Update `TODO` items in `config/environments/production.rb`.
 1. If you plan on using Figaro, copy `config/application.yml.example` to `config/application.yml`.
 1. ESLint is preconfigured for modern JS with React support (AirBnB styleguide). If you want to use
-   it install packages with `npm install`, otherwise remove `.eslintrc` and `package.json`. 
-1. If you don't plan on tracking the template, you can remove the `.git` directory. 
-   Otherwise you can rename the remote:   
+   it install packages with `npm install`, otherwise remove `.eslintrc` and `package.json`.
+1. If you don't plan on tracking the template, you can remove the `.git` directory.
+   Otherwise you can rename the remote:
    ```shell
    $ git remote rename origin rails_new
    ```
@@ -27,10 +27,10 @@ To get going clone this repository and perform the following steps:
 * If you want to use [AirBrake](https://airbrake.io), make sure the following 2 environment variables are set:
     * `AIRBRAKE_PROJECT_ID`
     * `AIRBRAKE_API_KEY`
-* [New Relic](https://newrelic.com) is pre configured in `config/newrelic.yml`, 
-  but you need to comment in the environment variables for it work on Heroku 
+* [New Relic](https://newrelic.com) is pre configured in `config/newrelic.yml`,
+  but you need to comment in the environment variables for it work on Heroku
   (lines 10 and 17).
-  
+
 ## Environment variables
 
 | Variable              | Comment                                                                 |
@@ -55,19 +55,25 @@ All of the following have been installed and pre-configured.
 * The app is preconfigured for Google Analytics, just add `GOOGLE_ANALYTICS_ID` to the environment.
 
 ### General
- 
+
 * [active_model_serializers](https://github.com/rails-api/active_model_serializers)
-* [bootstrap-sass](https://github.com/twbs/bootstrap-sass)
 * [draper](https://github.com/drapergem/draper)
 * [figaro](https://github.com/laserlemon/figaro)
 * [pundit](https://github.com/elabs/pundit)
 * [secureheaders](https://github.com/twitter/secureheaders)
 * [sidekiq](https://github.com/mperham/sidekiq)
 
+### Frontend
+
+All of these are managed by `yarn`.
+
+* [bootstrap4](https://www.npmjs.com/package/bootstrap-v4-dev)
+* [jquery](https://www.npmjs.com/package/jquery)
+
 ### Development
 
 * [foreman](https://github.com/ddollar/foreman)
-* [newrelic_rpm](https://github.com/newrelic/rpm) 
+* [newrelic_rpm](https://github.com/newrelic/rpm)
 * [pry](https://github.com/rweng/pry-rails)
 * [pry-byebug](https://github.com/deivid-rodriguez/pry-byebug)
 * [pry-doc](https://github.com/pry/pry-doc)
