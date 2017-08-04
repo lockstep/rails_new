@@ -12,7 +12,7 @@ version_file = File.join(File.dirname(__FILE__), '.ruby-version')
 ruby File.read(version_file).strip
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.1.1'
+gem 'rails', '~> 5.1.3'
 
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 0.18'
