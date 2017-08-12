@@ -2,7 +2,7 @@
   "name": "rails_new",
   "private": true,
   "dependencies": {
-    "bootstrap": "4.0.0-alpha.6",
+    "bootstrap": "4.0.0-beta",
     "jquery": "^3.2.1",
     "jquery-ujs": "^1.2.2",
     "tether": "^1.4.0"
