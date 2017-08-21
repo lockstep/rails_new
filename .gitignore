@@ -28,3 +28,7 @@ config/application.yml
 /public/packs
 /public/packs-test
 /node_modules
+
+# Generated yard documentation
+.yardoc/
+doc/
