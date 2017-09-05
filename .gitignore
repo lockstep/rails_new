@@ -13,7 +13,6 @@
 !/log/.keep
 !/tmp/.keep
 
-/node_modules
 /yarn-error.log
 
 .byebug_history
@@ -23,3 +22,8 @@
 
 # Figaro
 config/application.yml
+
+# Webpacker
+/public/packs
+/public/packs-test
+/node_modules

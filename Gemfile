@@ -14,6 +14,9 @@ ruby File.read(version_file).strip
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.3'
 
+# Use newest version of webpacker explicitly until Rails updates
+gem 'webpacker', '~> 3.0'
+
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 0.18'
 
