@@ -1,6 +1,10 @@
 {
   "name": "rails_new",
   "private": true,
+  "engines": {
+    "node": ">=6.0.0",
+    "yarn": ">=0.25.2"
+  },
   "dependencies": {
     "@rails/webpacker": "^3.0.1",
     "bootstrap": "4.0.0-beta",
