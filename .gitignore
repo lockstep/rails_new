@@ -16,6 +16,7 @@
 /yarn-error.log
 
 .byebug_history
+Procfile.dev
 
 # RubyMine settings
 .idea/

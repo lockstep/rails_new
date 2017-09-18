@@ -22,6 +22,27 @@ To get going clone this repository and perform the following steps:
    ```
 1. Add your new remote as appropriate.
 
+## Note on Webpacker, the asset pipeline, and ES6
+
+Note that ES6 will not work by default for files in `app/assets/javascript` because Uglifier will fail to process them.
+
+If you want to use ES6 there, you can modify `config/production.rb`:
+
+```diff
+-  config.assets.js_compressor = :uglifier
++  config.assets.js_compressor = Uglifier.new(harmony: true)
+```
+
+Also note that for everything to work properly on Heroku, you need to set up your buildpacks like this:
+
+```
+heroku buildpacks:clear
+heroku buildpacks:set heroku/nodejs
+heroku buildpacks:add heroku/ruby
+```
+
+We did not enable this by default yet, since this feature still seems to be in flux and Uglifier may get replaced by alternative tools in the short to mid term.
+
 ## Optional configurations
 
 * If you want to use [AirBrake](https://airbrake.io), make sure the following 2 environment variables are set:
@@ -34,7 +55,7 @@ To get going clone this repository and perform the following steps:
 ## Environment variables
 
 | Variable              | Comment                                                                 |
-| ---                   | ---                                                                     |
+| --------------------- | ----------------------------------------------------------------------- |
 | GOOGLE_ANALYTICS_ID   | Will be added to the main application layout if set                     |
 | BLOCK_HTTP_TRACE      | Disable HTTP TRACE method if set to true/t/1                            |
 | DATABASE_URL          | Used for `production` env, automatically set by Heroku                  |
