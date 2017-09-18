@@ -33,6 +33,14 @@ If you want to use ES6 there, you can modify `config/production.rb`:
 +  config.assets.js_compressor = Uglifier.new(harmony: true)
 ```
 
+Also note that for everything to work properly on Heroku, you need to set up your buildpacks like this:
+
+```
+heroku buildpacks:clear
+heroku buildpacks:set heroku/nodejs
+heroku buildpacks:add heroku/ruby
+```
+
 We did not enable this by default yet, since this feature still seems to be in flux and Uglifier may get replaced by alternative tools in the short to mid term.
 
 ## Optional configurations
