@@ -1,25 +1,69 @@
-dependencies:
-  post:
-    - bundle exec bundle-audit check --update
+version: 2
+jobs:
+  build:
+    parallelism: 4
+    working_directory: ~/src
+    docker:
+      - image: circleci/ruby:2.4.2-node-browsers
+        environment:
+          PGHOST: 127.0.0.1
+          RAILS_ENV: test
+      - image: circleci/postgres:9.6.5-alpine
+    steps:
+      - checkout
 
-checkout:
-  post:
-    - cp config/application.yml.example config/application.yml
+      - type: cache-restore
+        name: Restore bundle cache
+        key: bundle-{{ checksum "Gemfile.lock" }}
 
-#deployment:
-#  production:
-#    branch: master
-#    commands:
-#      # Use this if you want to backup the DB before deployments
-#      - heroku pg:backups capture --app <APPNAME>
-#      # Required to fix this error on CircleCI:
-#      #
-#      # "Push rejected, source repository is a shallow clone.
-#      # Unshallow it with `git fetch --all --unshallow` and try pushing again."
-#      - '[[ ! -s "$(git rev-parse --git-dir)/shallow" ]] || git fetch --unshallow'
-#      - git push git@heroku.com:<APPNAME>.git HEAD:master:
-#          timeout: 300
-#      - heroku run rake db:migrate --app <APPNAME>:
-#          timeout: 300
-#      - heroku restart --app <APPNAME>:
-#          timeout: 300
+      - type: cache-restore
+        name: Restore yarn cache
+        key: yarn-{{ checksum "yarn.lock" }}
+
+      - run:
+          name: Bundle Install
+          command: bin/bundle install --path vendor/bundle
+
+      - run:
+          name: Yarn Install
+          command: yarn install
+
+      - type: cache-save
+        name: Store bundle cache
+        key: bundle-{{ checksum "Gemfile.lock" }}
+        paths:
+          - vendor/bundle
+
+      - type: cache-save
+        name: Store yarn cache
+        key: yarn-{{ checksum "yarn.lock" }}
+        paths:
+          - ~/.yarn-cache
+
+      - run:
+          name: bundler-audit
+          command: bundle exec bundle-audit check --update
+
+      - run:
+          name: Wait for DB
+          command: dockerize -wait tcp://localhost:5432 -timeout 1m
+
+      # Database setup
+      - run: bundle exec rake db:create
+      - run: bundle exec rake db:schema:load
+
+      # Environment setup
+      - run: cp config/application.yml.example config/application.yml
+
+      # Run rspec in parallel
+      - type: shell
+        command: |
+          bundle exec rspec --profile 10 \
+                            --format RspecJunitFormatter \
+                            --out test_results/rspec.xml \
+                            --format progress \
+                            $(circleci tests glob "spec/**/*_spec.rb" | circleci tests split --split-by=timings)
+
+      # Save test results for timing analysis
+      - store_test_results:
+          path: test_results
