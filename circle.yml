@@ -7,8 +7,11 @@ jobs:
       - image: circleci/ruby:2.4.2-node-browsers
         environment:
           PGHOST: 127.0.0.1
+          PGUSER: lockstep
           RAILS_ENV: test
       - image: circleci/postgres:9.6.5-alpine
+        environment:
+          POSTGRES_USER: lockstep
     steps:
       - checkout
 

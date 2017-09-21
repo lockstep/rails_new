@@ -112,4 +112,6 @@ group :test do
   gem 'selenium-webdriver'
   gem 'shoulda-matchers'
   gem 'webmock'
+  # CircleCI test metadata collection
+  gem 'rspec_junit_formatter'
 end
