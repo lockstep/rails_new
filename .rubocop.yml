@@ -205,6 +205,35 @@ Metrics/ParameterLists:
   StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#too-many-params'
   Enabled: true
 
+#################### Naming ###############################
+
+Naming/AccessorMethodName:
+  Description: Check the naming of accessor methods for get_/set_.
+  Enabled: false
+
+Naming/AsciiIdentifiers:
+  Description: 'Use only ascii symbols in identifiers.'
+  StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#english-identifiers'
+  Enabled: false
+
+Naming/BinaryOperatorParameterName:
+  Description: 'When defining binary operators, name the argument other.'
+  StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#other-arg'
+  Enabled: true
+
+Naming/FileName:
+  Description: 'Use snake_case for source file names.'
+  StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#snake-case-files'
+  Enabled: true
+
+Naming/PredicateName:
+  Description: 'Check the names of predicate methods.'
+  StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#bool-methods-qmark'
+  NamePrefixBlacklist:
+    - is_
+  Exclude:
+    - spec/**/*
+
 #################### Performance ###########################
 
 Performance/CaseWhenSplat:
@@ -316,10 +345,6 @@ Rails/Validation:
 
 #################### Style ###########################
 
-Style/AccessorMethodName:
-  Description: Check the naming of accessor methods for get_/set_.
-  Enabled: false
-
 Style/Alias:
   Description: 'Use alias_method instead of alias.'
   StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#alias-method'
@@ -333,11 +358,6 @@ Style/ArrayJoin:
 Style/AsciiComments:
   Description: 'Use only ascii symbols in comments.'
   StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#english-comments'
-  Enabled: false
-
-Style/AsciiIdentifiers:
-  Description: 'Use only ascii symbols in identifiers.'
-  StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#english-identifiers'
   Enabled: false
 
 Style/Attr:
@@ -417,11 +437,6 @@ Style/Encoding:
 Style/EvenOdd:
   Description: 'Favor the use of Fixnum#even? && Fixnum#odd?'
   StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#predicate-methods'
-  Enabled: true
-
-Style/FileName:
-  Description: 'Use snake_case for source file names.'
-  StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#snake-case-files'
   Enabled: true
 
 Style/FrozenStringLiteralComment:
@@ -530,12 +545,6 @@ Style/OneLineConditional:
   StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#ternary-operator'
   Enabled: true
 
-Style/OpMethod:
-  Description: 'When defining binary operators, name the argument other.'
-  StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#other-arg'
-  Enabled: true
-
-
 Style/PercentLiteralDelimiters:
   Description: 'Use `%`-literal delimiters consistently'
   StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#percent-literal-braces'
@@ -546,14 +555,6 @@ Style/PerlBackrefs:
   Description: 'Avoid Perl-style regex back references.'
   StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#no-perl-regexp-last-matchers'
   Enabled: false
-
-Style/PredicateName:
-  Description: 'Check the names of predicate methods.'
-  StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#bool-methods-qmark'
-  NamePrefixBlacklist:
-    - is_
-  Exclude:
-    - spec/**/*
 
 Style/Proc:
   Description: 'Use proc instead of Proc.new.'
