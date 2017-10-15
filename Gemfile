@@ -67,6 +67,7 @@ group :production do
   # Remove this if the app is not hosted on Heroku
   gem 'heroku-deflater'
   gem 'lograge'
+  gem 'nakayoshi_fork'
   gem 'rack-timeout'
   gem 'rails_12factor'
 end
