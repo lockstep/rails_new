@@ -78,10 +78,12 @@ All of the following have been installed and pre-configured.
 ### General
 
 * [active_model_serializers](https://github.com/rails-api/active_model_serializers)
+* [devise](https://github.com/plataformatec/devise)
 * [draper](https://github.com/drapergem/draper)
 * [figaro](https://github.com/laserlemon/figaro)
+* [foreman](https://github.com/ddollar/foreman)
+* [high_voltage](https://github.com/thoughtbot/high_voltage)
 * [pundit](https://github.com/elabs/pundit)
-* [secureheaders](https://github.com/twitter/secureheaders)
 * [sidekiq](https://github.com/mperham/sidekiq)
 
 ### Frontend
@@ -90,28 +92,28 @@ All of these are managed by `yarn`.
 
 * [bootstrap4](https://www.npmjs.com/package/bootstrap-v4-dev)
 * [jquery](https://www.npmjs.com/package/jquery)
+* [jquery-ujs](https://www.npmjs.com/package/jquery-ujs/)
+* [popper.js](https://www.npmjs.com/package/popper.js)
 
 ### Development
 
-* [foreman](https://github.com/ddollar/foreman)
+* [bullet](https://github.com/flyerhzm/bullet)
+* [memory_profiler](https://github.com/SamSaffron/memory_profiler)
 * [newrelic_rpm](https://github.com/newrelic/rpm)
+* [nullalign](https://github.com/tcopeland/nullalign)
 * [pry](https://github.com/rweng/pry-rails)
 * [pry-byebug](https://github.com/deivid-rodriguez/pry-byebug)
 * [pry-doc](https://github.com/pry/pry-doc)
+* [rack-mini-profiler](https://github.com/MiniProfiler/rack-mini-profiler)
 * [RuboCop](https://github.com/bbatsov/rubocop)
 
 ### Test
 
-* [bullet](https://github.com/flyerhzm/bullet)
 * [bundler-audit](https://github.com/rubysec/bundler-audit)
 * [capybara](https://github.com/teamcapybara/capybara)
 * [database_cleaner](https://github.com/DatabaseCleaner/database_cleaner)
-* [devise](https://github.com/plataformatec/devise)
 * [factory_girl_rails](https://github.com/thoughtbot/factory_girl_rails)
-* [high_voltage](https://github.com/thoughtbot/high_voltage)
-* [memory_profiler](https://github.com/SamSaffron/memory_profiler)
 * [poltergeist](https://github.com/teampoltergeist/poltergeist)
-* [rack-mini-profiler](https://github.com/MiniProfiler/rack-mini-profiler)
 * [shoulda-matchers](https://github.com/thoughtbot/shoulda-matchers)
 * [spring-commands-rspec](https://github.com/jonleighton/spring-commands-rspec)
 * [webmock](https://github.com/bblimke/webmock)
@@ -123,6 +125,7 @@ All of these are managed by `yarn`.
 * [lograge](https://github.com/roidrage/lograge)
 * [rails_12factor](https://github.com/heroku/rails_12factor)
 * [rake-timeout](https://github.com/heroku/rack-timeout)
+* [secureheaders](https://github.com/twitter/secureheaders)
 
 ## Removed
 
