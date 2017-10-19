@@ -75,7 +75,6 @@ GEM
       activesupport
     childprocess (0.8.0)
       ffi (~> 1.0, >= 1.0.11)
-    cliver (0.3.2)
     coderay (1.1.2)
     concurrent-ruby (1.0.5)
     connection_pool (2.2.1)
@@ -148,10 +147,6 @@ GEM
     parser (2.4.0.0)
       ast (~> 2.2)
     pg (0.21.0)
-    poltergeist (1.16.0)
-      capybara (~> 2.1)
-      cliver (~> 0.3.1)
-      websocket-driver (>= 0.2.0)
     powerpack (0.1.1)
     pry (0.11.2)
       coderay (~> 1.1.0)
@@ -344,7 +339,6 @@ DEPENDENCIES
   newrelic_rpm
   nullalign
   pg (~> 0.18)
-  poltergeist
   pry-byebug
   pry-doc
   pry-rails
@@ -354,7 +348,7 @@ DEPENDENCIES
   rack-timeout
   rails (~> 5.1.4)
   rails_12factor
-  rspec-rails (~> 3.7)
+  rspec-rails (~> 3.7.0)
   rspec_junit_formatter
   rubocop
   ruby-prof
