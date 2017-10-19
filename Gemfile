@@ -48,9 +48,6 @@ gem 'active_model_serializers', '~> 0.10.0'
 # App configuration
 gem 'figaro'
 
-# Decorators
-gem 'draper', '~> 3.0.0'
-
 # Exception tracking
 gem 'airbrake', '~> 6.0', require: false
 
@@ -90,6 +87,9 @@ group :development, :test do
   gem 'pry-byebug'
   gem 'pry-doc'
   gem 'pry-rails'
+
+  # Documentation
+  gem 'yard'
 end
 
 group :development do

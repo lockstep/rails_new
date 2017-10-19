@@ -75,11 +75,17 @@ All of the following have been installed and pre-configured.
 * [pg](https://github.com/ged/ruby-pg) for `ActiveRecord`
 * The app is preconfigured for Google Analytics, just add `GOOGLE_ANALYTICS_ID` to the environment.
 
+### Notes
+
+* `ApplicationDecorator`: lightweight alternative to Draper or similar gems.
+* [yard](https://yardoc.org) is available in development mode.
+  Use `yard doc` to generate documentation and `yard server --reload` or `yard server --gems`
+  to start a local documentation server.
+
 ### General
 
 * [active_model_serializers](https://github.com/rails-api/active_model_serializers)
 * [devise](https://github.com/plataformatec/devise)
-* [draper](https://github.com/drapergem/draper)
 * [figaro](https://github.com/laserlemon/figaro)
 * [foreman](https://github.com/ddollar/foreman)
 * [high_voltage](https://github.com/thoughtbot/high_voltage)
