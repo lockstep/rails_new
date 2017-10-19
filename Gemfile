@@ -110,6 +110,7 @@ group :test do
   gem 'capybara', '~> 2.13.0'
   gem 'factory_girl_rails'
   gem 'poltergeist'
+  gem 'rspec_junit_formatter'
   gem 'rspec-rails', '~> 3.5'
   gem 'selenium-webdriver'
   gem 'shoulda-matchers'

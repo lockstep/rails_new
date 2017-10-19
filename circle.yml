@@ -6,6 +6,13 @@ checkout:
   post:
     - cp config/application.yml.example config/application.yml
 
+test:
+  override:
+    - |
+      bundle exec rspec --format progress \
+        --format RspecJunitFormatter \
+        -o $CIRCLE_TEST_REPORTS/rspec.xml
+
 #deployment:
 #  production:
 #    branch: master
