@@ -86,6 +86,9 @@ Rails.application.configure do
   # See: https://github.com/roidrage/lograge
   config.lograge.enabled = true
   config.lograge.custom_options = ->(event) { { time: event.time } }
+  config.lograge.custom_payload do |controller|
+    { user_id: controller.current_user.id } if controller.current_user
+  end
 
   if ENV['RAILS_LOG_TO_STDOUT'].present?
     logger           = ActiveSupport::Logger.new(STDOUT)
