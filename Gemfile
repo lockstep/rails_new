@@ -108,7 +108,7 @@ end
 group :test do
   gem 'bundler-audit', require: false
   gem 'capybara', '~> 2.13.0'
-  gem 'factory_girl_rails'
+  gem 'factory_bot_rails'
   gem 'rspec-rails', '~> 3.7'
   gem 'rspec_junit_formatter'
   gem 'selenium-webdriver'

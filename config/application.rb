@@ -25,7 +25,7 @@ module RailsNew
     config.generators do |g|
       # Create appropriate tests in spec/ not test/
       g.test_framework :rspec, fixture: true
-      g.fixture_replacement :factory_girl, dir: 'spec/factories'
+      g.fixture_replacement :factory_bot, dir: 'spec/factories'
 
       # Don't generate helpers, JS, CSS or view specs for controllers
       # See: http://guides.rubyonrails.org/generators.html
