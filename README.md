@@ -103,6 +103,7 @@ All of these are managed by `yarn`.
 
 ### Development
 
+* [Brakeman](https://github.com/presidentbeef/brakeman)
 * [bullet](https://github.com/flyerhzm/bullet)
 * [memory_profiler](https://github.com/SamSaffron/memory_profiler)
 * [newrelic_rpm](https://github.com/newrelic/rpm)

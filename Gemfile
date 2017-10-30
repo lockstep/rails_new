@@ -93,6 +93,7 @@ group :development, :test do
 end
 
 group :development do
+  gem 'brakeman'
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'nullalign'
   gem 'rubocop', require: false
