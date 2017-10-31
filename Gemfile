@@ -113,6 +113,7 @@ group :test do
   gem 'rspec-rails', '~> 3.7'
   gem 'rspec_junit_formatter'
   gem 'selenium-webdriver'
+  gem 'simplecov', require: false
   gem 'shoulda-matchers'
   gem 'webmock'
 end

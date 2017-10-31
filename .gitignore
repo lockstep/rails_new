@@ -32,3 +32,6 @@ config/application.yml
 # Generated yard documentation
 .yardoc/
 doc/
+
+# Code coverage
+coverage/
