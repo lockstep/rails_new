@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module Support
+module SpecHelpers
   module ResponseHelpers
     def response_json
       JSON.parse(response.body)

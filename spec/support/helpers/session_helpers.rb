@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module Features
+module SpecHelpers
   module SessionHelpers
     def sign_up_with(email, password, confirmation)
       visit(new_user_registration_path)

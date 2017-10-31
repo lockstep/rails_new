@@ -4,6 +4,6 @@ require_relative 'helpers/response_helpers'
 require_relative 'helpers/session_helpers'
 
 RSpec.configure do |config|
-  config.include Features::SessionHelpers, type: :feature
-  config.include Support::ResponseHelpers, type: :request
+  config.include SpecHelpers::SessionHelpers, type: :system
+  config.include SpecHelpers::ResponseHelpers, type: :request
 end
