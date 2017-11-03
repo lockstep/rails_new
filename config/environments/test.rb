@@ -35,7 +35,10 @@ Rails.application.configure do
   config.action_mailer.delivery_method = :test
 
   # Emails generated in the test suite that include urls need a host value.
-  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  config.action_mailer.default_url_options = {
+    host: 'localhost',
+    port: ENV.fetch("PORT") { 3000 }
+  }
 
   # Print deprecation notices to the stderr.
   config.active_support.deprecation = :stderr
