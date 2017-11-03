@@ -1,5 +1,7 @@
 # rails_new &nbsp; [![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=Save%20hours%20of%20your%E2%8F%B1%EF%B8%8F%20with%20this%20template%20for%20building%20modern%20%23Rails%20apps%20%F0%9F%92%AF%F0%9F%94%A5%20&url=https://github.com/lockstep/rails_new&via=locksteplabs&hashtags=rubyonrails)
 
+![Build Status](https://circleci.com/gh/lockstep/rails_new.svg?style=shield&circle-token=:circle-token)
+
 A thoughtfully designed template for building modern Rails apps 🔥
 
 Get started on your new app within minutes instead of hours 🚗💨
