@@ -103,7 +103,6 @@ GEM
     hashdiff (0.3.7)
     heroku-deflater (0.6.3)
       rack (>= 1.4.5)
-    high_voltage (3.0.0)
     i18n (0.9.0)
       concurrent-ruby (~> 1.0)
     json (2.1.0)
@@ -334,7 +333,6 @@ DEPENDENCIES
   figaro
   foreman
   heroku-deflater
-  high_voltage (~> 3.0.0)
   letter_opener
   listen (>= 3.0.5, < 3.2)
   lograge
@@ -376,4 +374,4 @@ RUBY VERSION
    ruby 2.4.2p198
 
 BUNDLED WITH
-   1.16.0.pre.3
+   1.16.0
