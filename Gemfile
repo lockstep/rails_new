@@ -54,9 +54,6 @@ gem 'airbrake', '~> 6.0', require: false
 # Job queue
 gem 'sidekiq'
 
-# Static pages
-gem 'high_voltage', '~> 3.0.0'
-
 # Security
 gem 'secure_headers', require: false
 

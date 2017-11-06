@@ -92,7 +92,6 @@ All of the following have been installed and pre-configured.
 * [devise](https://github.com/plataformatec/devise)
 * [figaro](https://github.com/laserlemon/figaro)
 * [foreman](https://github.com/ddollar/foreman)
-* [high_voltage](https://github.com/thoughtbot/high_voltage)
 * [pundit](https://github.com/elabs/pundit)
 * [sidekiq](https://github.com/mperham/sidekiq)
 
