@@ -25,8 +25,8 @@ Rails.application.configure do
 
   # Compress JavaScripts and CSS.
   # NOTE: If you want to use ES6 in your JS assets, switch to the following:
-  # config.assets.js_compressor = Uglifier.new(harmony: true)
-  config.assets.js_compressor = :uglifier
+  config.assets.js_compressor = Uglifier.new(harmony: true)
+  # config.assets.js_compressor = :uglifier
   # config.assets.css_compressor = :sass
 
   # Do not fallback to assets pipeline if a precompiled asset is missed.
