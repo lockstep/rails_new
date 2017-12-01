@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-require 'rails_helper'
-
 # Decorator classes used in the tests below
 class TestUserDecorator1 < ApplicationDecorator
   include ActionView::Helpers::TagHelper
