@@ -43,7 +43,7 @@ gem 'pundit'
 gem 'devise', '~> 4.3.0'
 
 # API serialization
-gem 'active_model_serializers', '~> 0.10.0'
+gem 'jsonapi-rails'
 
 # App configuration
 gem 'figaro'
