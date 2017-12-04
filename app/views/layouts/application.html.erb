@@ -10,12 +10,12 @@
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
     <%= render partial: 'layouts/favicon' %>
     <link rel='manifest' href='manifest.json'>
+    <%= render partial: 'layouts/google_analytics' %>
 
     <title><%= yield(:page_title) %></title>
   </head>
 
   <body>
-    <%= render partial: 'layouts/google_analytics' %>
     <%= render partial: 'layouts/flash' %>
     <%= yield %>
   </body>
