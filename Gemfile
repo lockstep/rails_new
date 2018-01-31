@@ -40,7 +40,7 @@ gem 'newrelic_rpm'
 gem 'pundit'
 
 # Authentication
-gem 'devise', '~> 4.3.0'
+gem 'devise', '~> 4.4.0'
 
 # API serialization
 gem 'jsonapi-rails'

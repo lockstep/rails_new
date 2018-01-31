@@ -71,7 +71,7 @@ GEM
     crack (0.4.3)
       safe_yaml (~> 1.0.0)
     crass (1.0.3)
-    devise (4.3.0)
+    devise (4.4.1)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
       railties (>= 4.1.0, < 5.2)
@@ -96,7 +96,7 @@ GEM
     hashdiff (0.3.7)
     heroku-deflater (0.6.3)
       rack (>= 1.4.5)
-    i18n (0.9.1)
+    i18n (0.9.3)
       concurrent-ruby (~> 1.0)
     json (2.1.0)
     jsonapi-deserializable (0.2.0)
@@ -132,11 +132,11 @@ GEM
     method_source (0.9.0)
     mini_mime (1.0.0)
     mini_portile2 (2.3.0)
-    minitest (5.11.1)
+    minitest (5.11.3)
     nakayoshi_fork (0.0.3)
     newrelic_rpm (4.7.1.340)
     nio4r (2.2.0)
-    nokogiri (1.8.1)
+    nokogiri (1.8.2)
       mini_portile2 (~> 2.3.0)
     nullalign (0.0.2)
     orm_adapter (0.5.0)
@@ -327,7 +327,7 @@ DEPENDENCIES
   bundler-audit
   byebug
   capybara
-  devise (~> 4.3.0)
+  devise (~> 4.4.0)
   factory_bot_rails
   figaro
   foreman
