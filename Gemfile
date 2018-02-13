@@ -12,7 +12,7 @@ version_file = File.join(File.dirname(__FILE__), '.ruby-version')
 ruby File.read(version_file).strip
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.1.4'
+gem 'rails', '~> 5.2.0'
 
 # Use newest version of webpacker explicitly until Rails updates
 gem 'webpacker', '~> 3.0'
@@ -21,7 +21,7 @@ gem 'webpacker', '~> 3.0'
 gem 'pg', '~> 0.18'
 
 # Use Puma as the app server
-gem 'puma', '~> 3.7'
+gem 'puma', '~> 3.11'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0.4'
@@ -59,6 +59,12 @@ gem 'sidekiq'
 
 # Security
 gem 'secure_headers', require: false
+
+# Use ActiveStorage variant
+# gem 'mini_magick', '~> 4.8'
+
+# Reduces boot times through caching; required in config/boot.rb
+gem 'bootsnap', '>= 1.1.0', require: false
 
 group :production do
   # Remove this if the app is not hosted on Heroku
@@ -110,7 +116,10 @@ end
 
 group :test do
   gem 'bundler-audit', require: false
-  gem 'capybara'
+  # Adds support for Capybara system testing and selenium driver
+  gem 'capybara', '~> 2.15'
+  # Easy installation and use of chromedriver to run system tests with Chrome
+  gem 'chromedriver-helper'
   gem 'factory_bot_rails'
   gem 'rspec-rails', '~> 3.7'
   gem 'rspec_junit_formatter'
