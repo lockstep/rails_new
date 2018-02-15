@@ -28,9 +28,7 @@ To get going clone this repository and perform the following steps:
 
 ## Note on Webpacker, the asset pipeline, and ES6
 
-Note that ES6 will not work by default for files in `app/assets/javascript` because Uglifier will fail to process them.
-
-If you want to use ES6 there, you can modify `config/production.rb`:
+By default ES6 will not work for files in `app/assets/javascript` since Uglifier will fail to process them. This is why we applied the following change to `config/production.rb`, which allows you to use ES6 project wide:
 
 ```diff
 -  config.assets.js_compressor = :uglifier
@@ -44,8 +42,6 @@ heroku buildpacks:clear
 heroku buildpacks:set heroku/nodejs
 heroku buildpacks:add heroku/ruby
 ```
-
-We did not enable this by default yet, since this feature still seems to be in flux and Uglifier may get replaced by alternative tools in the short to mid term.
 
 ## Optional configurations
 
