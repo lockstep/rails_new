@@ -88,7 +88,7 @@ All of the following have been installed and pre-configured.
 * [devise](https://github.com/plataformatec/devise)
 * [figaro](https://github.com/laserlemon/figaro)
 * [foreman](https://github.com/ddollar/foreman)
-* [jsonapi-rails](https://github.com/jsonapi-rb/jsonapi-rails): Configured to follow AMS naming, e.g. `UserSerializer` in `app/serializers/user_serializer.rb`.
+* [fast_jsonapi](https://github.com/Netflix/fast_jsonapi)
 * [pundit](https://github.com/elabs/pundit)
 * [sidekiq](https://github.com/mperham/sidekiq)
 
