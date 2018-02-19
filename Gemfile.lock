@@ -40,8 +40,8 @@ GEM
       tzinfo (~> 1.1)
     addressable (2.5.2)
       public_suffix (>= 2.0.2, < 4.0)
-    airbrake (6.3.0)
-      airbrake-ruby (~> 2.4)
+    airbrake (7.2.1)
+      airbrake-ruby (~> 2.5)
     airbrake-ruby (2.8.1)
     arel (8.0.0)
     ast (2.4.0)
@@ -317,7 +317,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  airbrake (~> 6.0)
+  airbrake
   brakeman
   bullet
   bundler-audit
