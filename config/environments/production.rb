@@ -87,7 +87,11 @@ Rails.application.configure do
   config.lograge.enabled = true
   config.lograge.custom_options = ->(event) { { time: event.time } }
   config.lograge.custom_payload do |controller|
-    { user_id: controller.current_user.id } if controller.current_user
+    payload = {}
+    payload[:user_id] = controller.current_user.id if controller.current_user
+    blacklisted_params = %w(controller action format id)
+    payload[:params] = event.payload[:params].except(*blacklisted_params)
+    payload
   end
 
   if ENV['RAILS_LOG_TO_STDOUT'].present?
