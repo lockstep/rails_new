@@ -2,7 +2,7 @@ require_relative 'boot'
 
 require 'rails/all'
 
-require_relative '../lib/rack/reject_methods'
+require_relative '../lib/rack/reject_trace'
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
@@ -35,7 +35,7 @@ module RailsNew
       g.view_specs  false
 
       if ENV['BLOCK_HTTP_TRACE'].in?(%w(true t 1))
-        config.middleware.use Rack::RejectMethods
+        config.middleware.use Rack::RejectTrace
       end
     end
   end
