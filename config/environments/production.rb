@@ -85,13 +85,19 @@ Rails.application.configure do
   # More compact logging output
   # See: https://github.com/roidrage/lograge
   config.lograge.enabled = true
-  config.lograge.custom_options = ->(event) { { time: event.time } }
+  config.lograge.custom_options = lambda do |event|
+    exceptions = %w(controller action format id)
+    {
+      time: event.time,
+      params: event.payload[:params].except(*exceptions)
+    }
+  end
   config.lograge.custom_payload do |controller|
-    payload = {}
-    payload[:user_id] = controller.current_user.id if controller.current_user
-    blacklisted_params = %w(controller action format id)
-    payload[:params] = event.payload[:params].except(*blacklisted_params)
-    payload
+    if controller.current_user
+      {
+        user_id: controller.current_user.id
+      }
+    end
   end
 
   if ENV['RAILS_LOG_TO_STDOUT'].present?
