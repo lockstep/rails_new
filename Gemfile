@@ -49,7 +49,7 @@ gem 'fast_jsonapi'
 gem 'figaro'
 
 # Exception tracking
-gem 'airbrake', require: false
+gem 'airbrake'
 
 # Job queue
 gem 'sidekiq'
