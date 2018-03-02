@@ -56,6 +56,7 @@ heroku buildpacks:add heroku/ruby
 
 | Variable              | Comment                                                                 |
 | --------------------- | ----------------------------------------------------------------------- |
+| HOST                  | Used for `default_url_options`, `asset_host` and similar settings       |
 | GOOGLE_ANALYTICS_ID   | Will be added to the main application layout if set                     |
 | BLOCK_HTTP_TRACE      | Disable HTTP TRACE method if set to true/t/1                            |
 | DATABASE_URL          | Used for `production` env, automatically set by Heroku                  |
