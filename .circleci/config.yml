@@ -1,0 +1,169 @@
+version: 2
+jobs:
+  checkout-code:
+    working_directory: ~/src
+    docker:
+      - image: circleci/ruby:2.5.1-node-browsers
+    steps:
+      - checkout
+
+  yarn-install:
+    working_directory: ~/src
+    docker:
+      - image: circleci/ruby:2.5.1-node-browsers
+    steps:
+      - checkout
+
+      - type: cache-restore
+        name: Restore yarn cache
+        key: yarn-{{ checksum "yarn.lock" }}
+
+      - run:
+          name: Install yarn dependencies
+          command: yarn install
+
+      - type: cache-save
+        name: Store yarn cache
+        key: yarn-{{ checksum "yarn.lock" }}
+        paths:
+          - ~/.yarn-cache
+
+  bundle-install:
+    working_directory: ~/src
+    docker:
+      - image: circleci/ruby:2.5.1-node-browsers
+        environment:
+          BUNDLE_JOBS: 3
+          BUNDLE_RETRY: 3
+          BUNDLE_PATH: vendor/bundle
+    steps:
+      - checkout
+
+      - type: cache-restore
+        name: Restore bundle cache
+        key: bundle-{{ checksum "Gemfile.lock" }}
+
+      - run:
+          name: Install bundle
+          command: bin/bundle install --path vendor/bundle
+
+      - type: cache-save
+        name: Store bundle cache
+        key: bundle-{{ checksum "Gemfile.lock" }}
+        paths:
+          - vendor/bundle
+
+      - run:
+          name: Verify bundle security
+          command: bundle exec bundle-audit check --update
+
+  test:
+    parallelism: 3
+    working_directory: ~/src
+    docker:
+      - image: circleci/ruby:2.5.1-node-browsers
+        environment:
+          HOST: http://example.com
+          PGHOST: 127.0.0.1
+          PGUSER: lockstep
+          RAILS_ENV: test
+      - image: circleci/postgres:10-alpine
+        environment:
+          POSTGRES_USER: lockstep
+    steps:
+      - checkout
+
+      - type: cache-restore
+        name: Restore yarn cache
+        key: yarn-{{ checksum "yarn.lock" }}
+
+      - type: cache-restore
+        name: Restore bundle cache
+        key: bundle-{{ checksum "Gemfile.lock" }}
+
+      - run:
+          name: Install bundle
+          command: bin/bundle install --path vendor/bundle
+
+      - run:
+          name: Wait for DB
+          command: dockerize -wait tcp://localhost:5432 -timeout 1m
+
+      # Database setup
+      - run:
+          name: Set up database
+          command: |
+            bundle exec rake db:create && bundle exec rake db:schema:load
+
+      # Environment setup
+      - run:
+          name: Set up app environment
+          command: cp config/application.yml.example config/application.yml
+
+      # Run rspec in parallel
+      - run:
+          name: Run tests
+          type: shell
+          command: |
+            bundle exec rspec \
+              --profile 10 \
+              --format RspecJunitFormatter \
+              --out test_results/rspec.xml \
+              --format progress \
+              $(circleci tests glob "spec/**/*_spec.rb" | circleci tests split --split-by=timings)
+
+      # Save test results for timing analysis
+      - store_test_results:
+          path: test_results
+
+  deploy-master:
+    machine:
+      enabled: true
+    working_directory: ~/src
+    steps:
+      - checkout
+      - run:
+          name: Deploy Master to Heroku
+          command: |
+            git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME.git master
+            heroku run rake db:migrate --app $HEROKU_APP_NAME
+
+  # deploy-staging:
+  #   machine:
+  #     enabled: true
+  #   working_directory: ~/src
+  #   steps:
+  #     - checkout
+  #     - run:
+  #         name: Deploy Development to Heroku
+  #         command: |
+  #           git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME-staging.git master
+  #           heroku run rake db:migrate --app $HEROKU_APP_NAME
+
+workflows:
+  version: 2
+  build-deploy:
+    jobs:
+      - checkout-code
+      - yarn-install:
+          requires:
+            - checkout-code
+      - bundle-install:
+          requires:
+            - checkout-code
+      - test:
+          requires:
+            - yarn-install
+            - bundle-install
+      - deploy-master:
+          requires:
+            - test
+          filters:
+            branches:
+              only: master
+      # - deploy-staging:
+      #     requires:
+      #       - test
+      #     filters:
+      #       branches:
+      #         only: development
