@@ -40,6 +40,7 @@ class ApplicationDecorator
     end
   end
 
+  # Returns the wrapped object.
   attr_reader :wrapped
 
   # @param wrapped [Type<Object>] the object to be wrapped by the decorator
