@@ -81,7 +81,7 @@ All of the following have been installed and pre-configured.
 * [yard](https://yardoc.org) is available in development mode.
   Use `yard doc` to generate documentation and `yard server --reload` or `yard server --gems`
   to start a local documentation server.
-* Favicons where generated with [Real Favicon Generator](https://realfavicongenerator.net/).
+* Favicons were generated with [Real Favicon Generator](https://realfavicongenerator.net/).
 * There's a custom middleware (`Rack::RejectTrace`) for completely disabling the HTTP TRACE method as required by certain security audits. It can be enabled via the `BLOCK_HTTP_TRACE` environment variable.
 
 ### General
