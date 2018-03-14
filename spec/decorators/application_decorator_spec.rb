@@ -2,16 +2,11 @@
 
 # Decorator classes used in the tests below
 class TestUserDecorator1 < ApplicationDecorator
-  include ActionView::Helpers::TagHelper
 
   forward :first_name, :last_name, age: :user_age
 
   def full_name
     "#{first_name} #{last_name}"
-  end
-
-  def formatted_first_name
-    content_tag :strong, first_name
   end
 end
 
@@ -38,10 +33,6 @@ describe ApplicationDecorator do
       expect(subject.full_name).to eq "#{user.first_name} #{user.last_name}"
     end
 
-    it 'uses imported view helpers' do
-      formatted_first_name = "<strong>#{user.first_name}</strong>"
-      expect(subject.formatted_first_name).to eq formatted_first_name
-    end
   end
 
   describe '.forward_all' do
