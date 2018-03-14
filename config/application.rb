@@ -34,7 +34,7 @@ module RailsNew
       g.stylesheets false
       g.view_specs  false
 
-      if ENV['BLOCK_HTTP_TRACE'].in?(%w(true t 1))
+      if ENV['BLOCK_HTTP_TRACE'].in?(%w[true t 1])
         config.middleware.use Rack::RejectTrace
       end
     end
