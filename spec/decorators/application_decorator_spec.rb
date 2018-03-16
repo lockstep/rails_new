@@ -50,4 +50,12 @@ describe ApplicationDecorator do
       expect(subject.respond_to?(:age)).to be true
     end
   end
+
+  describe '.decorate_collection' do
+    it 'wraps all elements of the collection in a decorator' do
+      decorated = TestUserDecorator1.decorate_collection([user, user])
+      expect(decorated.size).to eq 2
+      expect(decorated).to all(be_a TestUserDecorator1)
+    end
+  end
 end

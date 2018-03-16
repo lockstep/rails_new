@@ -2,6 +2,8 @@
 
 require 'forwardable'
 
+# Generic decorator base class. For view-specific decorators please use the
+# <tt>ApplicationPresenter</tt> base class instead.
 class ApplicationDecorator
   extend Forwardable
 
@@ -38,6 +40,13 @@ class ApplicationDecorator
     define_method :respond_to_missing? do |m, include_private = false|
       wrapped.respond_to?(m) || super(m, include_private)
     end
+  end
+
+  # Wraps each object in the provided collection in a decorator instance.
+  #
+  # @returns [Array<Ojbect>]
+  def self.decorate_collection(collection)
+    collection.map { |element| new(element) }
   end
 
   # Returns the wrapped object.
