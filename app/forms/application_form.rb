@@ -15,10 +15,10 @@ class ApplicationForm
     #   class UserForm < ApplicationForm
     #     form_attributes :first_name, :last_name
     #   end
-    # @param attributes [Array<Symbol>] - the attributes to be defined on the form
+    # @param attributes [Array<Symbol>] - the attributes available on the form
     # @return [void]
     def form_attributes(*attributes)
-      @attributes ||= attributes.map do |attribute|
+      @form_attributes ||= attributes.map do |attribute|
         attr_accessor attribute
         attribute.to_s
       end

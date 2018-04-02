@@ -5,6 +5,7 @@ AllCops:
     - 'db/**/*'
     - 'bin/*'
     - 'config/puma.rb'
+    - 'node_modules/**/*'
 
 #################### Layout ###########################
 
@@ -16,7 +17,7 @@ Layout/AlignParameters:
 Layout/DotPosition:
   Description: 'Checks the position of the dot in multi-line method calls.'
   StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#consistent-multi-line-chains'
-  EnforcedStyle: trailing
+  EnforcedStyle: leading
 
 Layout/ExtraSpacing:
   Description: 'Do not use unnecessary spacing.'
@@ -63,13 +64,6 @@ Lint/AssignmentInCondition:
 Lint/CircularArgumentReference:
   Description: "Don't refer to the keyword argument in the default value."
   Enabled: true
-
-Lint/ConditionPosition:
-  Description: >-
-                 Checks for condition placed in a confusing position relative to
-                 the keyword.
-  StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#same-line-condition'
-  Enabled: false
 
 Lint/DeprecatedClassMethods:
   Description: 'Check for deprecated class method calls.'
@@ -131,13 +125,6 @@ Lint/RequireParentheses:
 
 Lint/UnderscorePrefixedVariableName:
   Description: 'Do not use prefix `_` for a variable that is used.'
-  Enabled: true
-
-Lint/UnneededDisable:
-  Description: >-
-                 Checks for rubocop:disable comments that can be removed.
-                 Note: this cop is not disabled when disabling all cops.
-                 It must be explicitly disabled.
   Enabled: true
 
 Lint/Void:
@@ -334,11 +321,6 @@ Rails/Validation:
   Enabled: true
 
 #################### Style ###########################
-
-Style/Alias:
-  Description: 'Use alias_method instead of alias.'
-  StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#alias-method'
-  Enabled: true
 
 Style/ArrayJoin:
   Description: 'Use Array#join instead of Array#*.'
