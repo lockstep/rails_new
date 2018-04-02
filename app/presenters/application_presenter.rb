@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Base class for presenters. Presenters should be limited to view-only concerns
 # (e.g. which text to display based on object state), and may include actual
 # markup tags, so <tt>ActionView::Helpers::TagHelper</tt> is included.

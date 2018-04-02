@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 # Test form classes used below
-class UserForm < ApplicationForm ; end
+class UserForm < ApplicationForm; end
 
 class SignupForm < ApplicationForm
   resource_class User

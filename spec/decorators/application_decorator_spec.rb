@@ -2,7 +2,6 @@
 
 # Decorator classes used in the tests below
 class TestUserDecorator1 < ApplicationDecorator
-
   forward :first_name, :last_name, age: :user_age
 
   def full_name
@@ -32,7 +31,6 @@ describe ApplicationDecorator do
     it 'adds custom methods' do
       expect(subject.full_name).to eq "#{user.first_name} #{user.last_name}"
     end
-
   end
 
   describe '.forward_all' do
