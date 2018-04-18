@@ -113,6 +113,8 @@ Rails.application.configure do
   # Uncomment and configure the following configuration option(s).
   # If your environment is more difficult (subdomains or different TLDs), try
   # https://github.com/synack/rack-allowed_hosts instead.
-  # config.action_controller.default_url_options = { host: "www.yoursite.com" }
-  # config.action_controller.asset_host = "www.yoursite.com"
+  # config.action_controller.default_url_options = {
+  #   host: Constants::HOST_URI.host
+  # }
+  # config.action_controller.asset_host = Constants::HOST_URI.host
 end

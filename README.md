@@ -56,9 +56,10 @@ heroku buildpacks:add heroku/ruby
 
 | Variable              | Comment                                                                 |
 | --------------------- | ----------------------------------------------------------------------- |
-| GOOGLE_ANALYTICS_ID   | Will be added to the main application layout if set                     |
 | BLOCK_HTTP_TRACE      | Disable HTTP TRACE method if set to true/t/1                            |
 | DATABASE_URL          | Used for `production` env, automatically set by Heroku                  |
+| GOOGLE_ANALYTICS_ID   | Will be added to the main application layout if set                     |
+| HOST                  | Your base URI, e.g. https://myapp.herokuapp.com                         |
 | HTTP_METHOD_BLACKLIST | If you want to block more than just TRACE, e.g. `"TRACE,OPTIONS"`       |
 | PORT                  | Port Puma will listen on, defaults to 3000                              |
 | RAILS_LOG_TO_STDOUT   | Set by Heroku Ruby buildpack, set manually on other platforms if needed |
