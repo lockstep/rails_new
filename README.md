@@ -11,6 +11,8 @@ Get started on your new app within minutes instead of hours 🚗💨
 To get going clone this repository and perform the following steps:
 
 1. Clone this repository
+1. Run `rails credentials:edit` to re-generate `config/master.key` and create
+   `config/credentials.yml.enc`.
 1. You can now run `bin/configure`, which will help you in configuring the template.
    Alternatively perform all of the following steps manually.
 1. Change application name in `config/application.rb`.

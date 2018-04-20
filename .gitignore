@@ -13,7 +13,17 @@
 !/log/.keep
 !/tmp/.keep
 
+# Ignore uploaded files in development
+/storage/*
+
+/node_modules
 /yarn-error.log
+
+/public/assets
+.byebug_history
+
+# Ignore master key for decrypting credentials and more.
+/config/master.key
 
 .byebug_history
 Procfile.dev
@@ -27,7 +37,6 @@ config/application.yml
 # Webpacker
 /public/packs
 /public/packs-test
-/node_modules
 
 # Generated yard documentation
 .yardoc/
