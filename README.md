@@ -86,6 +86,7 @@ All of the following have been installed and pre-configured.
   to start a local documentation server.
 * Favicons were generated with [Real Favicon Generator](https://realfavicongenerator.net/).
 * There's a custom middleware (`Rack::RejectTrace`) for completely disabling the HTTP TRACE method as required by certain security audits. It can be enabled via the `BLOCK_HTTP_TRACE` environment variable.
+* If you want to add specific gems for development that may not be interesting for other developers, you can add a `Gemfile.dev` (ignored by our `.gitignore`). Gems listed there can be installed with `bundle install --gemfile Gemfile.dev` and the resulting lock file is gitignored too.
 
 ### General
 
