@@ -1,0 +1,11 @@
+# frozen_string_literal: true
+
+<% module_namespacing do -%>
+class <%= class_name %>Form < ApplicationForm
+<% if resource_class_name -%>
+  resource_class <%= resource_class_name %>
+
+<% end -%>
+  form_attributes <%= form_attribute_names.join(', ') %>
+end
+<% end -%>

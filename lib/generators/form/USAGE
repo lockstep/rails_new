@@ -1,0 +1,27 @@
+Description:
+    Generates a form for the given model.
+
+Examples:
+    `rails generate form user`
+
+        # app/forms/user_form.rb
+        class UserForm < ApplicationForm
+          form_attributes
+        end
+
+    `rails generate form user name email`
+
+        # app/forms/user_form.rb
+        class UserForm < ApplicationForm
+          form_attributes :name, :email
+        end
+
+    `rails generate form signup name email --resource User`
+    `rails generate form signup name email -r User`
+
+        # app/forms/signup_form.rb
+        class SignupForm < ApplicationForm
+          resource_class User
+
+          form_attributes :name, :email
+        end
