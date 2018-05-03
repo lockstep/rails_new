@@ -6,7 +6,6 @@ Examples:
 
         # app/forms/user_form.rb
         class UserForm < ApplicationForm
-          form_attributes
         end
 
     `rails generate form user name email`

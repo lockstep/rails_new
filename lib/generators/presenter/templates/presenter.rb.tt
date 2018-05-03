@@ -1,0 +1,9 @@
+# frozen_string_literal: true
+
+<% module_namespacing do -%>
+class <%= class_name %>Presenter < ApplicationPresenter
+<% unless (forwards = forward_method_names.join(', ')).empty? -%>
+   forward <%= forwards %>
+<% end -%>
+end
+<% end -%>

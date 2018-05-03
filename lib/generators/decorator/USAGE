@@ -1,0 +1,16 @@
+Description:
+    Generates a decorator for the given model.
+
+Examples:
+    `rails generate decorator user`
+
+        # app/decorator/user_decorator.rb
+        class UserDecorator < ApplicationDecorator
+        end
+
+    `rails generate decorator user name email`
+
+        # app/forms/user_decorator.rb
+        class UserDecorator < ApplicationDecorator
+          forward :name, :email
+        end

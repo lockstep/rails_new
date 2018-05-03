@@ -1,0 +1,16 @@
+Description:
+    Generates a presenter for the given model.
+
+Examples:
+    `rails generate presenter user`
+
+        # app/presenter/user_presenter.rb
+        class UserPresenter < ApplicationPresenter
+        end
+
+    `rails generate presenter user name email`
+
+        # app/forms/user_form.rb
+        class UserPresenter < ApplicationPresenter
+          forward :name, :email
+        end
