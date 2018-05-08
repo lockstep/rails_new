@@ -7,7 +7,7 @@ class ApplicationForm
     # Form attributes defined via {.form_attributes}
     #
     # @return [Array<String>]
-    attr_reader :attributes
+    attr_reader :form_attributes
 
     # Defines the attributes of the form object by using <tt>attr_accessor</tt>.
     #
@@ -60,7 +60,7 @@ class ApplicationForm
   def initialize(resource = self.class.resource_class.new, params = {})
     @resource = resource
     @params = params.except('id', 'created_at', 'updated_at')
-    resource.assign_attributes(resource_attributes)
+    @resource.assign_attributes(resource_attributes)
     super(form_attributes)
   end
 
@@ -69,7 +69,10 @@ class ApplicationForm
   #
   # @return [Boolean]
   def save
-    return false unless valid?
+    unless valid? && resource.valid?
+      errors.merge!(resource.errors)
+      return false
+    end
     resource.save!
   end
 
@@ -80,6 +83,6 @@ class ApplicationForm
   end
 
   def form_attributes
-    @params.slice(*self.class.attributes)
+    @params.slice(*self.class.form_attributes)
   end
 end
