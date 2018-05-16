@@ -2,7 +2,12 @@
 
 class ApplicationController < ActionController::Base
   include Pundit
+
   protect_from_forgery with: :exception
+  rescue_from ActionController::InvalidAuthenticityToken do
+    flash[:notice] = I18n.t('app.session_expired')
+    redirect_back fallback_location: root_path, allow_other_host: false
+  end
 
   before_action :authenticate_user!
 
