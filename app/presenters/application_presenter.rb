@@ -9,6 +9,12 @@
 class ApplicationPresenter < ApplicationDecorator
   include ActionView::Helpers::TagHelper
 
+  # Allows presenters to be passed directly into url helpers and dom_id
+  forward :id,
+          :model_name,
+          :to_key,
+          :to_param
+
   # Wraps the provided object in a presenter and yields it to an optional block.
   # If no block is provided, this essentially behaves like <tt>.new</tt>.
   #
