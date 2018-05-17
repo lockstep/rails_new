@@ -4,7 +4,7 @@ class ApplicationForm
   include ActiveModel::Model
 
   class << self
-    # Form attributes defined via {.form_attributes}
+    # Form attributes defined via {.attributes}
     #
     # @return [Array<String>]
     attr_reader :form_attributes
@@ -13,12 +13,12 @@ class ApplicationForm
     #
     # @example
     #   class UserForm < ApplicationForm
-    #     form_attributes :first_name, :last_name
+    #     attributes :first_name, :last_name
     #   end
     # @param attributes [Array<Symbol>] - the attributes available on the form
     # @return [void]
-    def form_attributes(*attributes)
-      @form_attributes ||= attributes.map do |attribute|
+    def attributes(*attributes)
+      @form_attributes = attributes.map do |attribute|
         attr_accessor attribute
         attribute.to_s
       end

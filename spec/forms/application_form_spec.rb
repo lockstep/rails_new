@@ -8,7 +8,7 @@ class TestUserForm < ApplicationForm; end
 class SignupForm < ApplicationForm
   resource_class TestUser
 
-  form_attributes :name
+  attributes :name
 
   validates :name, presence: true
 end
