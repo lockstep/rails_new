@@ -13,7 +13,8 @@ class ApplicationPresenter < ApplicationDecorator
   forward :id,
           :model_name,
           :to_key,
-          :to_param
+          :to_param,
+          :to_partial_path
 
   # Wraps the provided object in a presenter and yields it to an optional block.
   # If no block is provided, this essentially behaves like <tt>.new</tt>.
