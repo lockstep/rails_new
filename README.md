@@ -31,6 +31,8 @@ To get going clone this repository and perform the following steps:
 
 1. Run `rails credentials:edit` to re-generate `config/master.key` and create
    `config/credentials.yml.enc`.
+1. Run `rails active_storage:install` to generate a migration that creates
+   active storage tables. Use `rails db:migrate` to run the migration.
 1. You can now run `bin/configure`, which will help you in configuring the template.
 
 As an alternative to running the script you can perform all of the following steps manually.
