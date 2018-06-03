@@ -6,7 +6,7 @@
     "yarn": ">=1.6.0"
   },
   "dependencies": {
-    "@rails/webpacker": "^3.0.1",
+    "@rails/webpacker": "^3.5.3",
     "bootstrap": "4.0.0",
     "jquery": "^3.2.1",
     "jquery-ujs": "^1.2.2",
