@@ -1,4 +1,3 @@
-
 # rails_new &nbsp; [![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=Save%20hours%20of%20your%E2%8F%B1%EF%B8%8F%20with%20this%20template%20for%20building%20modern%20%23Rails%20apps%20%F0%9F%92%AF%F0%9F%94%A5%20&url=https://github.com/lockstep/rails_new&via=locksteplabs&hashtags=rubyonrails)
 
 ![Build Status](https://circleci.com/gh/lockstep/rails_new.svg?style=shield)
@@ -31,8 +30,9 @@ To get going clone this repository and perform the following steps:
 
 1. Run `rails credentials:edit` to re-generate `config/master.key` and create
    `config/credentials.yml.enc`.
-1. Run `rails active_storage:install` to generate a migration that creates
-   active storage tables. Use `rails db:migrate` to run the migration.
+1. If your application requires `ActiveStorage`, run `rails active_storage:install` to
+   generate a migration that creates the necessary tables. Use `rails db:migrate` to
+   run the migration.
 1. You can now run `bin/configure`, which will help you in configuring the template.
 
 As an alternative to running the script you can perform all of the following steps manually.
@@ -64,7 +64,7 @@ As an alternative to running the script you can perform all of the following ste
 ## Environment variables
 
 | Variable              | Comment                                                                 |
-|-----------------------|-------------------------------------------------------------------------|
+| --------------------- | ----------------------------------------------------------------------- |
 | AIRBRAKE_PROJECT_ID   | Used in `config/initializers/airbrake.rb`                               |
 | AIRBRAKE_API_KEY      | Used in `config/initializers/airbrake.rb`                               |
 | BLOCK_HTTP_TRACE      | Disables HTTP `TRACE` method if set to true/t/1                         |
