@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
 
   protect_from_forgery with: :exception
   rescue_from ActionController::InvalidAuthenticityToken do
-    flash[:notice] = I18n.t('app.session_expired')
+    flash[:notice] = I18n.t('app.authenticity_token_expired')
     redirect_back fallback_location: root_path, allow_other_host: false
   end
 
