@@ -31,4 +31,6 @@
 
 en:
   app:
-    session_expired: Your session expired, please try again.
+    authenticity_token_expired: |
+      Your browser window has been idle for too long. As a security measure you
+      will need to resubmit your request.
