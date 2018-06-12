@@ -5,7 +5,7 @@
 #
 # Client Size = Puma Workers * (Puma Threads / 2) * Heroku Web Dynos
 #
-# Server Size = (Redis Connection Limit - Client Size - 2) / Heroku Job Dynos
+# Server Size = (Redis Connection Limit - Client Size - 2) / Heroku Worker Dynos
 # Server Size is set in sidekiq.yml in concurrency setting.
 # Server size is concurrency + 2.
 
