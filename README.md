@@ -60,6 +60,9 @@ As an alternative to running the script you can perform all of the following ste
 * [New Relic](https://newrelic.com) is pre configured in `config/newrelic.yml`, but you need to
   comment in the environment variables for it work on Heroku (lines 10 and 17).
 * The app is preconfigured for Google Analytics, just add `GOOGLE_ANALYTICS_ID` to the environment.
+* We prefer to use vanilla Sidekiq for worker/queue management. If you prefer
+  to use ActiveJob please see the configuration/options that were removed in
+  59cf38d.
 
 ## Environment variables
 
