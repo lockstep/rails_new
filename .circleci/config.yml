@@ -14,19 +14,17 @@ jobs:
     steps:
       - checkout
 
-      - type: cache-restore
-        name: Restore yarn cache
-        key: yarn-{{ checksum "yarn.lock" }}
+      - restore_cache:
+          key: yarn-{{ checksum "yarn.lock" }}
 
       - run:
           name: Install yarn dependencies
           command: yarn install
 
-      - type: cache-save
-        name: Store yarn cache
-        key: yarn-{{ checksum "yarn.lock" }}
-        paths:
-          - ~/.yarn-cache
+      - save_cache:
+          key: yarn-{{ checksum "yarn.lock" }}
+          paths:
+            - ~/.yarn-cache
 
   bundle-install:
     working_directory: ~/src
@@ -39,19 +37,17 @@ jobs:
     steps:
       - checkout
 
-      - type: cache-restore
-        name: Restore bundle cache
-        key: bundle-{{ checksum "Gemfile.lock" }}
+      - restore_cache:
+          key: bundle-{{ checksum "Gemfile.lock" }}
 
       - run:
           name: Install bundle
           command: bin/bundle install --path vendor/bundle
 
-      - type: cache-save
-        name: Store bundle cache
-        key: bundle-{{ checksum "Gemfile.lock" }}
-        paths:
-          - vendor/bundle
+      - save_cache:
+          key: bundle-{{ checksum "Gemfile.lock" }}
+          paths:
+            - vendor/bundle
 
       - run:
           name: Verify bundle security
@@ -67,19 +63,17 @@ jobs:
           PGHOST: 127.0.0.1
           PGUSER: lockstep
           RAILS_ENV: test
-      - image: circleci/postgres:10-alpine
+      - image: circleci/postgres:10-alpine-ram
         environment:
           POSTGRES_USER: lockstep
     steps:
       - checkout
 
-      - type: cache-restore
-        name: Restore yarn cache
-        key: yarn-{{ checksum "yarn.lock" }}
+      - restore_cache:
+          key: yarn-{{ checksum "yarn.lock" }}
 
-      - type: cache-restore
-        name: Restore bundle cache
-        key: bundle-{{ checksum "Gemfile.lock" }}
+      - restore_cache:
+          key: bundle-{{ checksum "Gemfile.lock" }}
 
       - run:
           name: Install bundle
