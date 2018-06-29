@@ -62,7 +62,7 @@ As an alternative to running the script you can perform all of the following ste
 * The app is preconfigured for Google Analytics, just add `GOOGLE_ANALYTICS_ID` to the environment.
 * We prefer to use vanilla Sidekiq for worker/queue management. If you prefer
   to use ActiveJob please see the configuration/options that were removed in
-  59cf38d.
+  [59cf38d](https://github.com/lockstep/rails_new/commit/59cf38d5872eb8bd9267a5c0ae95aa39396c7130).
 
 ## Environment variables
 
