@@ -1,3 +1,16 @@
+DATABASE_URL: 'postgres://localhost:5432/rails_new_development'
 HOST: 'http://localhost:3000'
-RAILS_WEB_CONCURRENCY: '1'
 RAILS_MAX_THREADS: '1'
+RAILS_WEB_CONCURRENCY: '1'
+REDIS_URL: 'redis://localhost:6379'
+
+# When using Docker use this instead:
+# DATABASE_URL: 'postgres://postgres@postgres:5432/rails_new_development'
+# RAILS_LOG_TO_STDOUT: 'true'
+# REDIS_URL: 'redis://redis:6379'
+
+test:
+  DATABASE_URL: 'postgres://localhost:5432/rails_new_test'
+  # When using Docker use this instead:
+  # DATABASE_URL: 'postgres://postgres@postgres:5432/rails_new_test'
+  # RAILS_LOG_TO_STDOUT: 'false'

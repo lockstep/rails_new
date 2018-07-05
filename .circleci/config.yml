@@ -65,6 +65,7 @@ jobs:
           RAILS_ENV: test
       - image: circleci/postgres:10-alpine-ram
         environment:
+          POSTGRES_DB: rails_new_test
           POSTGRES_USER: lockstep
     steps:
       - checkout

@@ -11,6 +11,8 @@ Bundler.require(*Rails.groups)
 # TODO: Change module name to the actual project name
 module RailsNew
   class Application < Rails::Application
+    ENV_TRUTHY = %w[enabled true t 1].freeze
+
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.2
 
@@ -32,8 +34,14 @@ module RailsNew
       g.stylesheets false
       g.view_specs  false
 
-      if ENV['BLOCK_HTTP_TRACE'].in?(%w[true t 1])
+      if ENV['BLOCK_HTTP_TRACE'].in?(ENV_TRUTHY)
         config.middleware.use Rack::RejectTrace
+      end
+
+      if ENV['RAILS_LOG_TO_STDOUT'].in?(ENV_TRUTHY)
+        logger           = ActiveSupport::Logger.new(STDOUT)
+        logger.formatter = config.log_formatter
+        config.logger    = ActiveSupport::TaggedLogging.new(logger)
       end
     end
   end

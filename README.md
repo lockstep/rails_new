@@ -18,11 +18,13 @@ Get started on your new app within minutes instead of hours 🚗💨
   - [Production](#production)
 - [Removed](#removed)
 - [Notes](#notes)
-  - [Webpacker, the asset pipeline, and ES6](#webpacker--the-asset-pipeline--and-es6)
+  - [Webpacker, the asset pipeline, and ES6](#webpacker-the-asset-pipeline-and-es6)
   - [Custom classes](#custom-classes)
-  - [Gemfile.dev / Gemfile.dev.lock](#gemfiledev---gemfiledevlock)
-  - [`Rack::RejectTrace` middleware](#rack--rejecttrace-middleware)
+  - [Gemfile.dev / Gemfile.dev.lock](#gemfiledev--gemfiledevlock)
+  - [`Rack::RejectTrace` middleware](#rackrejecttrace-middleware)
   - [Favicons](#favicons)
+- [Docker](#docker)
+  - [Usage examples:](#usage-examples)
 
 ## Getting started
 
@@ -219,3 +221,111 @@ variable.
 
 Favicons were generated with [Real Favicon Generator](https://realfavicongenerator.net/), consider
 using the same tool when replacing them for your project.
+
+## Docker
+
+For those wishing to use Docker for development the whole app has been dockerized and the setup is
+fairly well-documented. Features:
+
+* Images use [Alpine Linux](https://alpinelinux.org) to keep their size small.
+* `docker-compose.yml` sets up and starts Postgres, Redis, Sidekiq, Rails and the Webpack dev server.
+* Uses a persistent bundle cache, so there's no need to rebuild the image to add gems.
+* Persistent volumes for Postgres and Redis.
+* No exposed ports except for Rails (mapped to port `3000` by default)
+
+The following files relate to our Docker setup:
+
+* `Dockerfile`: main setup for the `app` container
+* `docker-compose.yml`: Ties Postgres, Redis and `app` together
+* `docker-entrypoint.sh`: Custom entry point to facilitate bundle caching
+* `Procfile.docker`: Used by the entrypoint script to bring up services
+* `.dockerignore`: similar to `.gitignore`, specifies files we don't want copied into the container
+
+### Usage examples:
+
+Start the environment and build the images if necessary:
+
+```sh
+$ docker-compose up --build
+Building app
+[Step 1/12 : FROM ruby:2-alpine
+ ---> 8302cc790fbf
+Step 2/12 : RUN apk update && apk add --update --no-cache   build-base   chromium   chromium-chromedriver   git   imagemagick   libxml2-dev   libxslt-dev   nodejs   tzdata   postgresql-dev
+ ---> Using cache
+ ---> 9d1d0b398c26
+Step 3/12 : RUN bundle config build.nokogiri --use-system-libraries
+ ---> Using cache
+ ---> 0a5ca06d7700
+Step 4/12 : WORKDIR /app
+ ---> Using cache
+ ---> c61498ba7e64
+[...]
+```
+
+Start the environment without (re-)building images (add `-d` to daemonize):
+
+```sh
+$ docker-compose up
+Starting rails_new_postgres_1 ... done
+Starting rails_new_redis_1    ... done
+Starting rails_new_app_1      ... done
+Attaching to rails_new_postgres_1, rails_new_redis_1, rails_new_app_1
+[...]
+```
+
+Stop the environment but keep the containers:
+
+```sh
+$ docker-compose stop
+Stopping rails_new_app_1      ... done
+Stopping rails_new_postgres_1 ... done
+Stopping rails_new_redis_1    ... done
+```
+
+Stop the environment and remove the containers:
+
+```sh
+$ docker-compose down
+Stopping rails_new_app_1      ... done
+Stopping rails_new_postgres_1 ... done
+Stopping rails_new_redis_1    ... done
+Removing rails_new_app_1      ... done
+Removing rails_new_postgres_1 ... done
+Removing rails_new_redis_1    ... done
+Removing network rails_new_default
+```
+
+Execute a command inside the `app` container:
+
+```sh
+$ docker-compose exec app ruby -v
+ruby 2.5.1p57 (2018-03-29 revision 63029) [x86_64-linux-musl]
+```
+
+Execute a command inside the `app` container that needs env variables:
+
+```sh
+$ docker-compose exec --env RAILS_ENV=test app rails db:setup
+Created database 'rails_new_test'
+-- enable_extension("plpgsql")
+   -> 0.0251s
+-- create_table("users", {:force=>:cascade})
+   -> 0.0366s
+```
+
+Adding a new gem (does not require image rebuild):
+
+```sh
+# update Gemfile
+$ docker-compose exec app bundle
+```
+
+Running specs:
+
+```sh
+$ docker-compose exec app rspec
+....................
+
+Finished in 0.47352 seconds (files took 16.36 seconds to load)
+20 examples, 0 failures
+```
