@@ -75,7 +75,6 @@ group :production do
   gem 'lograge'
   gem 'nakayoshi_fork'
   gem 'rack-timeout'
-  gem 'rails_12factor'
 end
 
 group :development, :test do
