@@ -43,10 +43,10 @@ As an alternative to running the script you can perform all of the following ste
 1. Update `database.yml` to reflect the new application name.
 1. Update `TODO` items in `config/environments/production.rb`.
 1. If you plan on using Figaro, copy `config/application.yml.example` to `config/application.yml`.
-1. ESLint is preconfigured for modern JS with React support ([AirBnB styleguide](https://github.com/airbnb/javascript)).
+2. ESLint is preconfigured for modern JS with React support (using [Prettier](https://prettier.io)).
    If you want to use it install packages with `npm install` / `yarn [install]`, otherwise remove
    `.eslintrc` and `package.json`.
-1. If you don't plan on tracking the template, you can remove the remote, otherwise rename it and
+3. If you don't plan on tracking the template, you can remove the remote, otherwise rename it and
    add your new remote as appropriate.:
    ```shell
    $ git remote rename origin rails_new

@@ -14,10 +14,13 @@
   },
   "devDependencies": {
     "eslint": "^4.19.0",
-    "eslint-config-airbnb": "^16.0.0",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-config-standard": "^11.0.0",
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-prettier": "^2.6.2",
     "eslint-plugin-react": "^7.0.1",
+    "prettier": "^1.13.7",
     "webpack-dev-server": "^2.7.1"
   }
 }
