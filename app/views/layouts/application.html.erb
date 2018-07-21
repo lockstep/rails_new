@@ -13,7 +13,7 @@
     <link rel='manifest' href='manifest.json'>
     <%= render partial: 'layouts/google_analytics' %>
 
-    <title><%= yield(:page_title) %></title>
+    <title><%= yield(:page_title).presence || t('app.default_title') %></title>
   </head>
 
   <body>
