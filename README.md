@@ -68,22 +68,23 @@ As an alternative to running the script you can perform all of the following ste
 
 ## Environment variables
 
-| Variable              | Comment                                                                 |
-| --------------------- | ----------------------------------------------------------------------- |
-| AIRBRAKE_PROJECT_ID   | Used in `config/initializers/airbrake.rb`                               |
-| AIRBRAKE_API_KEY      | Used in `config/initializers/airbrake.rb`                               |
-| BLOCK_HTTP_TRACE      | Disables HTTP `TRACE` method if set to true/t/1                         |
-| BUNDLE_GEMFILE        | Useful when using a [Gemfile.dev](#gemfiledev---gemfiledevlock)         |
-| DATABASE_URL          | Used for `production` env, automatically set by Heroku                  |
-| GOOGLE_ANALYTICS_ID   | Will be added to the main application layout if set                     |
-| HOST                  | Your base URI, e.g. https://myapp.herokuapp.com                         |
-| NEW_RELIC_APP_NAME    | Used in `config/newrelic.yml`                                           |
-| NEW_RELIC_LICENSE_KEY | Used in `config/newrelic.yml`                                           |
-| PORT                  | Port Puma will listen on, defaults to 3000                              |
-| RAILS_LOG_TO_STDOUT   | Set by Heroku Ruby buildpack, set manually on other platforms if needed |
-| RAILS_MAX_THREADS     | Number of Puma threads, defaults to 5                                   |
-| REDIS_URL             | Used in `config/cable.yml`                                              |
-| WEB_CONCURRENCY       | Number of Puma workers. We default to threads only, no workers          |
+| Variable                     | Comment                                                                 |
+| ---------------------------- | ----------------------------------------------------------------------- |
+| AIRBRAKE_PROJECT_ID          | Used in `config/initializers/airbrake.rb`                               |
+| AIRBRAKE_API_KEY             | Used in `config/initializers/airbrake.rb`                               |
+| BLOCK_HTTP_TRACE             | Disables HTTP `TRACE` method if set to true/t/1                         |
+| BUNDLE_GEMFILE               | Useful when using a [Gemfile.dev](#gemfiledev---gemfiledevlock)         |
+| DATABASE_URL                 | Used for `production` env, automatically set by Heroku                  |
+| GOOGLE_ANALYTICS_ID          | Will be added to the main application layout if set                     |
+| HOST                         | Your base URI, e.g. https://myapp.herokuapp.com                         |
+| NEW_RELIC_APP_NAME           | Used in `config/newrelic.yml`                                           |
+| NEW_RELIC_LICENSE_KEY        | Used in `config/newrelic.yml`                                           |
+| PORT                         | Port Puma will listen on, defaults to 3000                              |
+| RACK_TIMEOUT_SERVICE_TIMEOUT | Limit for `Rack::Timeout`, defaults to 15 seconds                       |
+| RAILS_LOG_TO_STDOUT          | Set by Heroku Ruby buildpack, set manually on other platforms if needed |
+| RAILS_MAX_THREADS            | Number of Puma threads, defaults to 5                                   |
+| REDIS_URL                    | Used in `config/cable.yml`                                              |
+| WEB_CONCURRENCY              | Number of Puma workers. We default to threads only, no workers          |
 
 ## Contents
 
@@ -145,7 +146,7 @@ Rspec has been preconfigured for Rails 5.1+ system tests.
 * [heroku-deflater](https://github.com/romanbsd/heroku-deflater)
 * [lograge](https://github.com/roidrage/lograge)
 * [rails_12factor](https://github.com/heroku/rails_12factor)
-* [rake-timeout](https://github.com/heroku/rack-timeout)
+* [rack-timeout](https://github.com/heroku/rack-timeout): Configured via env variables, see [documentation](https://github.com/heroku/rack-timeout#configuring)
 * [secureheaders](https://github.com/twitter/secureheaders)
 
 ## Removed
