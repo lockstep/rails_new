@@ -7,4 +7,4 @@
 
 # Rack::Timeout logs a LOT when the logger is at the DEBUG level (i.e. in
 # development).
-Rack::Timeout.unregister_state_change_observer(:logger) if Rails.env.development?
+Rack::Timeout.unregister_state_change_observer(:logger) unless Rails.env.development?
