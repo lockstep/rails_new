@@ -1,13 +1,13 @@
 version: 2
 jobs:
   test:
-    parallelism: 3
+    parallelism: 1
     working_directory: ~/src
     docker:
       - image: circleci/ruby:2.5.1-node-browsers
         environment:
-          BUNDLE_JOBS: 3
-          BUNDLE_RETRY: 3
+          BUNDLE_JOBS: 1
+          BUNDLE_RETRY: 1
           BUNDLE_PATH: vendor/bundle
           HOST: http://example.com
           PGHOST: 127.0.0.1
@@ -69,6 +69,7 @@ jobs:
           type: shell
           command: |
             bundle exec rspec \
+              --no-fail-fast \
               --profile 10 \
               --format RspecJunitFormatter \
               --out test_results/rspec.xml \
@@ -88,8 +89,8 @@ jobs:
       - run:
           name: Deploy Master to Heroku
           command: |
-            git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME-production.git master
-            heroku run rake db:migrate --app $HEROKU_APP_NAME-production
+            git push https://heroku:${HEROKU_API_KEY}@git.heroku.com/${HEROKU_APP_NAME}-production.git master
+            heroku run rake db:migrate --app ${HEROKU_APP_NAME}-production
 
   # deploy-staging:
   #   machine:
@@ -100,8 +101,8 @@ jobs:
   #     - run:
   #         name: Deploy Development to Heroku
   #         command: |
-  #           git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME-staging.git development:master
-  #           heroku run rake db:migrate --app $HEROKU_APP_NAME-staging
+  #           git push https://heroku:${HEROKU_API_KEY}@git.heroku.com/${HEROKU_APP_NAME}-staging.git development:master
+  #           heroku run rake db:migrate --app ${HEROKU_APP_NAME}-staging
 
 workflows:
   version: 2
