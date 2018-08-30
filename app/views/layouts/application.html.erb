@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <%= csrf_meta_tags %>
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= render partial: 'layouts/js_setup' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-
     <meta charset='UTF-8'>
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-    <%= render partial: 'layouts/favicon' %>
-    <link rel='manifest' href='manifest.json'>
-    <%= render partial: 'layouts/google_analytics' %>
 
     <title><%= yield(:page_title).presence || t('app.default_title') %></title>
+
+    <%= render partial: 'layouts/js_setup' %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= render partial: 'layouts/google_analytics' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <%= csrf_meta_tags %>
+    <%= render partial: 'layouts/favicon' %>
+    <link rel='manifest' href='manifest.json'>
   </head>
 
   <body>
