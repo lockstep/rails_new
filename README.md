@@ -25,6 +25,7 @@ Get started on your new app within minutes instead of hours 🚗💨
   - [Favicons](#favicons)
 - [Docker](#docker)
   - [Usage examples:](#usage-examples)
+- [TODO](#todo)
 
 ## Getting started
 
@@ -330,3 +331,7 @@ $ docker-compose exec app rspec
 Finished in 0.47352 seconds (files took 16.36 seconds to load)
 20 examples, 0 failures
 ```
+
+## TODO
+
+- Remove exception for CVE-2018-1000544 from `.circleci/config.yml` as soon as there is a fix
