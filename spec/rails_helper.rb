@@ -38,6 +38,9 @@ Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
 ActiveRecord::Migration.maintain_test_schema!
 
 RSpec.configure do |config|
+  # Allow the use of t() and l() in specs instead of using hard-coded strings
+  # or needing the full I18n.t() syntax.
+  config.include AbstractController::Translation
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   # config.fixture_path = "#{::Rails.root}/spec/fixtures"
 
