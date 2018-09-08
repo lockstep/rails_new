@@ -93,8 +93,9 @@ All of the following have been installed and pre-configured:
 
 ### Base system
 
-* Rails 5.2.0
+* Rails 5.2.1
 * Ruby 2.5.1
+* PostgreSQL >= 9.2
 * [pg](https://github.com/ged/ruby-pg) for `ActiveRecord`
 
 ### General
