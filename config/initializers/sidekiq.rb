@@ -10,7 +10,7 @@
 # Server size is concurrency + 2.
 
 puma_workers = ENV.fetch('RAILS_WEB_CONCURRENCY', 1).to_i
-puma_threads = ENV.fetch('RAILS_MAX_THREADS', 1).to_i
+puma_threads = ENV.fetch('RAILS_MAX_THREADS', 5).to_i
 
 # If we only have one puma thread, the division could end up being 0
 effective_threads = [(puma_threads / 2), 1].max
