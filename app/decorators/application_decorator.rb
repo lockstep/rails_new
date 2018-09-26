@@ -44,7 +44,7 @@ class ApplicationDecorator
 
   # Wraps each object in the provided collection in a decorator instance.
   #
-  # @returns [Array<Ojbect>]
+  # @returns [Array<Object>]
   def self.decorate_collection(collection)
     collection.map { |element| new(element) }
   end

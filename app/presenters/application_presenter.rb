@@ -8,6 +8,7 @@
 # invoking them in the view is fine.
 class ApplicationPresenter < ApplicationDecorator
   include ActionView::Helpers::TagHelper
+  include AbstractController::Translation
 
   # Allows presenters to be passed directly into url helpers and dom_id
   forward :id,
