@@ -3,6 +3,12 @@
 # Decorator classes used in the tests below
 class TestUserDecorator1 < ApplicationDecorator
   forward :first_name, :last_name, age: :user_age
+  forward :email, to: :@contact
+
+  def initialize(user)
+    @contact = user.contact
+    super
+  end
 
   def full_name
     "#{first_name} #{last_name}"
@@ -14,7 +20,14 @@ class TestUserDecorator2 < ApplicationDecorator
 end
 
 describe ApplicationDecorator do
-  let(:user) { OpenStruct.new(first_name: 'Test', last_name: 'User', age: 42) }
+  let(:user) do
+    OpenStruct.new(
+      first_name: 'Test',
+      last_name: 'User',
+      age: 42,
+      contact: OpenStruct.new(email: 'test@example.com')
+    )
+  end
 
   describe '.forward' do
     subject { TestUserDecorator1.new(user) }
@@ -30,6 +43,10 @@ describe ApplicationDecorator do
 
     it 'adds custom methods' do
       expect(subject.full_name).to eq "#{user.first_name} #{user.last_name}"
+    end
+
+    it 'can also delegate to other objects' do
+      expect(subject.email).to eq user.contact.email
     end
   end
 

@@ -18,11 +18,11 @@ class ApplicationDecorator
   #   forward age: :user_age
   # @example Forward and rename at the same time
   #   forward :first_name, :last_name, age: :user_age
-  def self.forward(*methods, **aliases)
-    def_delegators :wrapped, *methods
+  def self.forward(*methods, to: :wrapped, **aliases)
+    def_delegators to, *methods
 
     aliases.each do |old_name, new_name|
-      def_delegator :wrapped, old_name, new_name
+      def_delegator to, old_name, new_name
     end
   end
 
