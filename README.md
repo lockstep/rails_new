@@ -18,9 +18,10 @@ Get started on your new app within minutes instead of hours 🚗💨
   - [Production](#production)
 - [Removed](#removed)
 - [Notes](#notes)
+  - [`Account` vs `User`](#account-vs-user)
   - [Webpacker, the asset pipeline, and ES6](#webpacker-the-asset-pipeline-and-es6)
   - [Custom classes](#custom-classes)
-  - [Gemfile.dev / Gemfile.dev.lock](#gemfiledev--gemfiledevlock)
+  - [`Gemfile.dev` / `Gemfile.dev.lock`](#gemfiledev--gemfiledevlock)
   - [`Rack::RejectTrace` middleware](#rackrejecttrace-middleware)
   - [Favicons](#favicons)
 - [Docker](#docker)
@@ -160,6 +161,10 @@ The following default Rails gems have been removed:
 
 ## Notes
 
+### `Account` vs `User`
+
+Authentication concerns (your typical `Devise` configuration) are handled by the `Account` model. To connect this to one of several potential user roles the polymorphic `authenticatable` relationship is used.
+
 ### Webpacker, the asset pipeline, and ES6
 
 By default ES6 will not work for files in `app/assets/javascript` since Uglifier will fail to
@@ -191,7 +196,7 @@ All custom classes are fully documented with [yard](https://yardoc.org) and come
 Use `yard doc` to generate documentation and `yard server --reload` or `yard server --gems` to start
 a local documentation server.
 
-### Gemfile.dev / Gemfile.dev.lock
+### `Gemfile.dev` / `Gemfile.dev.lock`
 
 If you want to add specific gems for development that may not be interesting for other developers,
 you can add a `Gemfile.dev` (ignored by our `.gitignore`). Gems listed there can be installed with

@@ -5,10 +5,10 @@ include Warden::Test::Helpers
 RSpec.shared_context 'signed in user' do
   before do
     Warden.test_mode!
-    login_as(@user, scope: :user)
+    login_as(Account.find_by(authenticatable: @user), scope: :account)
   end
 
-  after(:each) do
+  after do
     Warden.test_reset!
   end
 end
