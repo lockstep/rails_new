@@ -98,9 +98,9 @@ Rails.application.configure do
     }
   end
   config.lograge.custom_payload do |controller|
-    if controller.current_user
+    if controller.current_account
       {
-        user_id: controller.current_user.id
+        account_id: controller.current_account.id
       }
     end
   end
