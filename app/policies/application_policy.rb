@@ -5,7 +5,8 @@ class ApplicationPolicy
 
   def initialize(user, record)
     @user = user
-    @record = record
+    # Transparently unwrap presenters and decorators
+    @record = record.respond_to?(:wrapped) ? record.wrapped : record
   end
 
   def index?
