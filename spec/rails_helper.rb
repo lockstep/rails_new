@@ -50,6 +50,8 @@ RSpec.configure do |config|
   config.use_transactional_fixtures = true
 
   config.before do
+    # Avoid inadvertent leftover jobs.
+    Sidekiq::Worker.clear_all
     # Reset this to the default so you don't need to clean up specs that want
     # inline jobs.
     Sidekiq::Testing.fake!
