@@ -10,23 +10,24 @@ Get started on your new app within minutes instead of hours 🚗💨
 - [Optional configuration options](#optional-configuration-options)
 - [Environment variables](#environment-variables)
 - [Contents](#contents)
-  - [Base system](#base-system)
-  - [General](#general)
-  - [Frontend](#frontend)
-  - [Development](#development)
-  - [Test](#test)
-  - [Production](#production)
+    - [Base system](#base-system)
+    - [General](#general)
+    - [Frontend](#frontend)
+    - [Development](#development)
+    - [Test](#test)
+    - [Production](#production)
 - [Removed](#removed)
 - [Notes](#notes)
-  - [`Account` vs `User`](#account-vs-user)
-  - [Webpacker, the asset pipeline, and ES6](#webpacker-the-asset-pipeline-and-es6)
-  - [Custom classes](#custom-classes)
-  - [`Gemfile.dev` / `Gemfile.dev.lock`](#gemfiledev--gemfiledevlock)
-  - [`Rack::RejectTrace` middleware](#rackrejecttrace-middleware)
-  - [Favicons](#favicons)
+    - [`Account` vs `User`](#account-vs-user)
+    - [Webpacker, the asset pipeline, and ES6](#webpacker-the-asset-pipeline-and-es6)
+    - [Custom classes](#custom-classes)
+    - [`Gemfile.dev` / `Gemfile.dev.lock`](#gemfiledev--gemfiledevlock)
+    - [`Rack::RejectTrace` middleware](#rackrejecttrace-middleware)
+    - [Favicons](#favicons)
 - [Docker](#docker)
-  - [Usage examples:](#usage-examples)
+    - [Usage examples:](#usage-examples)
 - [TODO](#todo)
+- [License](#license)
 
 ## Getting started
 
@@ -341,3 +342,7 @@ Finished in 0.47352 seconds (files took 16.36 seconds to load)
 ## TODO
 
 Nothing right now.
+
+## License
+
+This project is MIT licensed, see [LICENSE](./LICENSE).
