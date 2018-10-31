@@ -3,6 +3,7 @@ HOST: 'http://localhost:3000'
 RAILS_MAX_THREADS: '1'
 RAILS_WEB_CONCURRENCY: '1'
 REDIS_URL: 'redis://localhost:6379'
+RAILS_SYSTEM_TESTING_SCREENSHOT: 'inline'
 
 # When using Docker use this instead:
 # DATABASE_URL: 'postgres://postgres@postgres:5432/rails_new_development'
