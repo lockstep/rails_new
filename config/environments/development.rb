@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
@@ -33,7 +35,7 @@ Rails.application.configure do
   # In production, :host should be set to the actual host of your application.
   config.action_mailer.default_url_options = {
     host: 'localhost',
-    port: ENV.fetch("PORT") { 3000 }
+    port: ENV.fetch('PORT') { 3000 }
   }
 
   # Review emails in the browser instead of the logs

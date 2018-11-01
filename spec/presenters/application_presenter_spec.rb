@@ -48,9 +48,10 @@ describe ApplicationPresenter do
 
     it 'yields each element to a provided block' do
       output = StringIO.new
-      user_presenters = TestUserPresenter.present_collection([user, user]) do |u|
-        output.puts(u.first_name)
-      end
+      user_presenters =
+        TestUserPresenter.present_collection([user, user]) do |u|
+          output.puts(u.first_name)
+        end
       output.rewind
       expect(output.string).to eq "Test\nTest\n"
       expect(user_presenters.size).to eq 2

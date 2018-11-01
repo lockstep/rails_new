@@ -128,7 +128,7 @@ group :test do
   # CircleCI test metadata collection
   gem 'rspec_junit_formatter'
   gem 'selenium-webdriver'
-  gem 'simplecov', require: false
   gem 'shoulda-matchers'
+  gem 'simplecov', require: false
   gem 'webmock'
 end

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
@@ -41,7 +43,7 @@ Rails.application.configure do
   # Emails generated in the test suite that include urls need a host value.
   config.action_mailer.default_url_options = {
     host: 'localhost',
-    port: ENV.fetch("PORT") { 3000 }
+    port: ENV.fetch('PORT') { 3000 }
   }
 
   # Print deprecation notices to the stderr.

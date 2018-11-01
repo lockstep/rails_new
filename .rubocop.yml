@@ -8,6 +8,7 @@ AllCops:
     - 'bin/*'
     - 'config/puma.rb'
     - 'node_modules/**/*'
+    - 'vendor/bundle/**/*'
   RSpec:
     Patterns:
       - _spec.rb
@@ -17,6 +18,8 @@ AllCops:
         - spec/factories.rb
         - spec/factories/**/*.rb
         - features/support/factories/**/*.rb
+Rails:
+  Enabled: true
 
 #################### Layout ###########################
 
@@ -180,6 +183,8 @@ Metrics/LineLength:
     - 'app/**/*'
     - 'lib/**/*'
     - 'spec/**/*'
+  Exclude:
+    - spec/spec_helper.rb
 
 Metrics/MethodLength:
   Description: 'Avoid methods longer than 10 lines of code.'
@@ -733,7 +738,7 @@ RSpec/EmptyLineAfterSubject:
 RSpec/ExampleLength:
   Description: Checks for long examples.
   Enabled: true
-  Max: 10
+  Max: 15
   StyleGuide: http://www.rubydoc.info/gems/rubocop-rspec/RuboCop/Cop/RSpec/ExampleLength
 
 RSpec/ExampleWithoutDescription:

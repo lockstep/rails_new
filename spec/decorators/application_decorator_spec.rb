@@ -30,39 +30,40 @@ describe ApplicationDecorator do
   end
 
   describe '.forward' do
-    subject { TestUserDecorator1.new(user) }
+    let(:decorated_user) { TestUserDecorator1.new(user) }
 
     it 'forwards methods' do
-      expect(subject.first_name).to eq user.first_name
-      expect(subject.last_name).to eq user.last_name
+      expect(decorated_user.first_name).to eq user.first_name
+      expect(decorated_user.last_name).to eq user.last_name
     end
 
     it 'aliases methods' do
-      expect(subject.user_age).to eq user.age
+      expect(decorated_user.user_age).to eq user.age
     end
 
     it 'adds custom methods' do
-      expect(subject.full_name).to eq "#{user.first_name} #{user.last_name}"
+      expect(decorated_user.full_name)
+        .to eq "#{user.first_name} #{user.last_name}"
     end
 
     it 'can also delegate to other objects' do
-      expect(subject.email).to eq user.contact.email
+      expect(decorated_user.email).to eq user.contact.email
     end
   end
 
   describe '.forward_all' do
-    subject { TestUserDecorator2.new(user) }
+    let(:decorated_user) { TestUserDecorator2.new(user) }
 
     it 'forwards methods' do
-      expect(subject.first_name).to eq user.first_name
-      expect(subject.last_name).to eq user.last_name
-      expect(subject.age).to eq user.age
+      expect(decorated_user.first_name).to eq user.first_name
+      expect(decorated_user.last_name).to eq user.last_name
+      expect(decorated_user.age).to eq user.age
     end
 
     it 'responds to forwarded methods' do
-      expect(subject.respond_to?(:first_name)).to be true
-      expect(subject.respond_to?(:last_name)).to be true
-      expect(subject.respond_to?(:age)).to be true
+      expect(decorated_user.respond_to?(:first_name)).to be true
+      expect(decorated_user.respond_to?(:last_name)).to be true
+      expect(decorated_user.respond_to?(:age)).to be true
     end
   end
 
