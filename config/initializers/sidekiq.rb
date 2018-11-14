@@ -9,7 +9,7 @@
 # Server Size is set in sidekiq.yml in concurrency setting.
 # Server size is concurrency + 2.
 
-puma_workers = ENV.fetch('RAILS_WEB_CONCURRENCY', 1).to_i
+puma_workers = ENV.fetch('WEB_CONCURRENCY', 1).to_i
 puma_threads = ENV.fetch('RAILS_MAX_THREADS', 5).to_i
 
 # If we only have one puma thread, the division could end up being 0

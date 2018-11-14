@@ -1,7 +1,7 @@
 DATABASE_URL: 'postgres://localhost:5432/rails_new_development'
 HOST: 'http://localhost:3000'
 RAILS_MAX_THREADS: '1'
-RAILS_WEB_CONCURRENCY: '1'
+WEB_CONCURRENCY: '1'
 REDIS_URL: 'redis://localhost:6379'
 RAILS_SYSTEM_TESTING_SCREENSHOT: 'inline'
 
