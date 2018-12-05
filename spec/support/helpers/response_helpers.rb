@@ -3,7 +3,7 @@
 module SpecHelpers
   module ResponseHelpers
     def response_json
-      JSON.parse(response.body)
+      response.parsed_body
     end
   end
 end
