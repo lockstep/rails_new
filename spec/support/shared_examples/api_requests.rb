@@ -6,7 +6,7 @@ shared_examples 'a successful resource request' do |root|
   end
 
   it 'returns the resource' do
-    expect(response_json[root]).to be_a Hash
+    expect(response.parsed_body[root]).to be_a Hash
   end
 end
 
@@ -16,7 +16,7 @@ shared_examples 'a successful resource list request' do |root|
   end
 
   it 'returns the resource list' do
-    expect(response_json[root]).to be_a Array
+    expect(response.parsed_body[root]).to be_a Array
   end
 end
 
@@ -26,7 +26,7 @@ shared_examples 'a successful resource create' do |root|
   end
 
   it 'returns the new resource' do
-    expect(response_json[root]).to be_a Hash
+    expect(response.parsed_body[root]).to be_a Hash
   end
 end
 
