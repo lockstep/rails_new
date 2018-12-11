@@ -14,6 +14,7 @@ class ApplicationPresenter < ApplicationDecorator
   forward :id,
           :model_name,
           :to_key,
+          :to_model,
           :to_param,
           :to_partial_path
 
