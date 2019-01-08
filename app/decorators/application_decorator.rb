@@ -7,9 +7,11 @@ require 'forwardable'
 class ApplicationDecorator
   extend Forwardable
 
-  # Forwards (and optionally renames) methods to the wrapped object.
+  # Forwards (and optionally renames or prefixes) methods to the wrapped object.
   #
   # @param methods [Array<Symbol>] the method(s) to forward
+  # @param to      [Hash<Symbol, Symbol>] the target object for the method(s)
+  # @param prefix  [Hash<Symbol, Symbol>] an optional prefix for method calls
   # @param aliases [Hash<Symbol, Symbol>] the methods to alias
   # @return [void]
   # @example Forward some methods
@@ -18,8 +20,16 @@ class ApplicationDecorator
   #   forward age: :user_age
   # @example Forward and rename at the same time
   #   forward :first_name, :last_name, age: :user_age
-  def self.forward(*methods, to: :wrapped, **aliases)
-    def_delegators to, *methods
+  # @example Forward methods with a prefix
+  #   forward :first_name, prefix: :user
+  def self.forward(*methods, to: :wrapped, prefix: nil, **aliases)
+    if prefix
+      methods.each do |old_name|
+        def_delegator to, old_name, "#{prefix}_#{old_name}"
+      end
+    else
+      def_delegators to, *methods
+    end
 
     aliases.each do |old_name, new_name|
       def_delegator to, old_name, new_name

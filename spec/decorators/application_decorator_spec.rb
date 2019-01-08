@@ -4,6 +4,7 @@
 class TestUserDecorator1 < ApplicationDecorator
   forward :first_name, :last_name, age: :user_age
   forward :email, to: :@contact
+  forward :email, to: :@contact, prefix: :contact
 
   def initialize(user)
     @contact = user.contact
@@ -46,8 +47,12 @@ describe ApplicationDecorator do
         .to eq "#{user.first_name} #{user.last_name}"
     end
 
-    it 'can also delegate to other objects' do
+    it 'can delegate to other objects' do
       expect(decorated_user.email).to eq user.contact.email
+    end
+
+    it 'can prefix delegated methods' do
+      expect(decorated_user.contact_email).to eq user.contact.email
     end
   end
 
