@@ -15,7 +15,7 @@ ruby File.read(version_file).strip
 gem 'rails', '~> 5.2.2.1'
 
 # Use newest version of webpacker explicitly until Rails updates
-gem 'webpacker', '~> 3.0'
+gem 'webpacker', '~> 4.0'
 
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 1.1.0'
