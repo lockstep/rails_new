@@ -43,7 +43,7 @@ gem 'newrelic_rpm'
 gem 'pundit'
 
 # Authentication
-gem 'devise', '~> 4.4.0'
+gem 'devise', '~> 4.6.0'
 
 # API serialization
 gem 'fast_jsonapi'
