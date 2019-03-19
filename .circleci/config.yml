@@ -9,7 +9,6 @@ jobs:
           BUNDLE_JOBS: 1
           BUNDLE_RETRY: 1
           BUNDLE_PATH: vendor/bundle
-          HOST: http://example.com
           PGHOST: 127.0.0.1
           PGUSER: lockstep
           RAILS_ENV: test
@@ -52,29 +51,31 @@ jobs:
           name: Wait for DB
           command: dockerize -wait tcp://localhost:5432 -timeout 1m
 
+      # Environment setup
+      - run:
+          name: Set up app environment
+          command: cp config/application.yml.example config/application.yml
+
       # Database setup
       - run:
           name: Set up database
           command: |
             bundle exec rake db:create && bundle exec rake db:schema:load
 
-      # Environment setup
-      - run:
-          name: Set up app environment
-          command: cp config/application.yml.example config/application.yml
-
       # Run rspec in parallel
+      # Set parallelism (above) to 2 or above to split tests by timings
       - run:
           name: Run tests
           type: shell
           command: |
+            TESTFILES=$(circleci tests glob "spec/**/*_spec.rb" | circleci tests split --split-by=timings)
             bundle exec rspec \
               --no-fail-fast \
               --profile 10 \
               --format RspecJunitFormatter \
               --out test_results/rspec.xml \
               --format progress \
-              $(circleci tests glob "spec/**/*_spec.rb" | circleci tests split --split-by=timings)
+              -- ${TESTFILES}
 
       # Save test results for timing analysis
       - store_test_results:
