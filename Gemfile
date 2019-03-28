@@ -12,7 +12,7 @@ version_file = File.join(File.dirname(__FILE__), '.ruby-version')
 ruby File.read(version_file).strip
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.2.2.1'
+gem 'rails', '~> 5.2.3'
 
 # Use newest version of webpacker explicitly until Rails updates
 gem 'webpacker', '~> 4.0'
@@ -121,8 +121,9 @@ group :test do
   gem 'bundler-audit', require: false
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.15'
-  # Easy installation and use of chromedriver to run system tests with Chrome
-  gem 'chromedriver-helper'
+  # Easy installation and use of chromedriver (and others) to run system tests
+  # with Chrome
+  gem 'webdrivers'
   gem 'factory_bot_rails'
   gem 'rspec-rails', '~> 3.7'
   # CircleCI test metadata collection
