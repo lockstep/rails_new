@@ -123,7 +123,6 @@ group :test do
   gem 'capybara', '~> 2.15'
   # Easy installation and use of chromedriver (and others) to run system tests
   # with Chrome
-  gem 'webdrivers'
   gem 'factory_bot_rails'
   gem 'rspec-rails', '~> 3.7'
   # CircleCI test metadata collection
@@ -131,5 +130,6 @@ group :test do
   gem 'selenium-webdriver'
   gem 'shoulda-matchers'
   gem 'simplecov', require: false
+  gem 'webdrivers'
   gem 'webmock'
 end
