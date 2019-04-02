@@ -21,7 +21,12 @@ default: &default
   # http://guides.rubyonrails.org/configuring.html#database-pooling
   # TODO: Configure DATABASE_URL in config/application.yml
   url: <%= ENV["DATABASE_URL"] %>
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  # NOTE: We'll use RAILS_MAX_THREADS as the sidekiq concurrency. This means
+  # we'll want to add a few connections just in case other libraries eagerly
+  # grab connections from the pool before sidekiq spawns the workers, leading to
+  # connection timeouts from sidekiq. See the comment from Andrew Babichev here:
+  # https://gist.github.com/nateberkopec/56936904705da5a1fa8e6f74cb08c012
+  pool: <%= (ENV.fetch("RAILS_MAX_THREADS") { 5 }).to_i + 3 %>
 
 development:
   <<: *default
