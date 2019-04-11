@@ -14,7 +14,7 @@ RUN apk update && apk add --update --no-cache \
   libxml2-dev \
   libxslt-dev \
   # Webpacker and friends
-  nodejs \
+  nodejs nodejs-npm \
   # Timezone data for Ruby's TZInfo library
   tzdata \
   # Used by the pg gem
