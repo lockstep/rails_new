@@ -19,6 +19,8 @@
   - low
   - mailers
 
-# you can override concurrency based on environment
-production:
-  :concurrency: 10
+# You can override concurrency based on environment. However, it is best
+# to let concurrency be dictated by RAILS_MAX_THREADS, see details here:
+# https://gist.github.com/nateberkopec/2d1fcf77dc61e747438252e3895badf0
+# production:
+#   :concurrency: 10
