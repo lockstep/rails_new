@@ -105,6 +105,7 @@ group :development do
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'nullalign'
   gem 'rubocop', require: false
+  gem 'rubocop-performance'
   gem 'rubocop-rspec', require: false
   # Spring speeds up development by keeping your application running in the background.
   # Read more: https://github.com/rails/spring
@@ -120,7 +121,7 @@ end
 group :test do
   gem 'bundler-audit', require: false
   # Adds support for Capybara system testing and selenium driver
-  gem 'capybara', '~> 2.15'
+  gem 'capybara'
   # Easy installation and use of chromedriver (and others) to run system tests
   # with Chrome
   gem 'factory_bot_rails'

@@ -1,4 +1,6 @@
-require: rubocop-rspec
+require:
+  - rubocop-performance
+  - rubocop-rspec
 
 AllCops:
   TargetRubyVersion: 2.4
@@ -56,6 +58,11 @@ Layout/MultilineMethodCallIndentation:
   EnforcedStyle: indented
 
 #################### Lint ##################################
+
+Lint/FlipFlop:
+  Description: 'Checks for flip flops'
+  StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#no-flip-flops'
+  Enabled: true
 
 Lint/AmbiguousOperator:
   Description: >-
@@ -269,13 +276,6 @@ Performance/ReverseEach:
   Reference: 'https://github.com/JuanitoFatas/fast-ruby#enumerablereverseeach-vs-enumerablereverse_each-code'
   Enabled: true
 
-Performance/Sample:
-  Description: >-
-    Use `sample` instead of `shuffle.first`,
-    `shuffle.last`, and `shuffle[Fixnum]`.
-  Reference: 'https://github.com/JuanitoFatas/fast-ruby#arrayshufflefirst-vs-arraysample-code'
-  Enabled: true
-
 Performance/Size:
   Description: >-
     Use `size` instead of `count` for counting
@@ -438,11 +438,6 @@ Style/FrozenStringLiteralComment:
   Description: >-
     Add the frozen_string_literal comment to the top of files
     to help transition from Ruby 2.3.0 to Ruby 3.0.
-  Enabled: true
-
-Style/FlipFlop:
-  Description: 'Checks for flip flops'
-  StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#no-flip-flops'
   Enabled: true
 
 Style/FormatString:
@@ -626,6 +621,13 @@ Style/WordArray:
   Description: 'Use %w or %W for arrays of words.'
   StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#percent-w'
   Enabled: false
+
+Style/Sample:
+  Description: >-
+    Use `sample` instead of `shuffle.first`,
+    `shuffle.last`, and `shuffle[Fixnum]`.
+  Reference: 'https://github.com/JuanitoFatas/fast-ruby#arrayshufflefirst-vs-arraysample-code'
+  Enabled: true
 
 #################### Testing ###########################
 
