@@ -19,18 +19,21 @@ jobs:
     steps:
       - checkout
 
+      # JS bundle
       - restore_cache:
           key: yarn-{{ checksum "yarn.lock" }}
 
       - run:
           name: Install yarn dependencies
-          command: yarn install
+          command: yarn install --frozen-lockfile
 
       - save_cache:
           key: yarn-{{ checksum "yarn.lock" }}
           paths:
-            - ~/.yarn-cache
+            - node_modules
+            - ~/.cache/yarn
 
+      # Ruby gems bundle
       - restore_cache:
           key: bundle-{{ checksum "Gemfile.lock" }}
 
@@ -56,6 +59,11 @@ jobs:
           name: Set up app environment
           command: cp config/application.yml.example config/application.yml
 
+      # Assets precompilation requires ENV variables, so it must come after environment gets set up
+      - run:
+          name: Precompile assets and packs
+          command: bundle exec rake assets:precompile
+
       # Database setup
       - run:
           name: Set up database
@@ -80,7 +88,6 @@ jobs:
       # Save test results for timing analysis
       - store_test_results:
           path: test_results
-
   # deploy-master:
   #   machine:
   #     enabled: true
@@ -92,7 +99,6 @@ jobs:
   #         command: |
   #           git push https://heroku:${HEROKU_API_KEY}@git.heroku.com/${HEROKU_APP_NAME}-production.git master
   #           heroku run rake db:migrate --app ${HEROKU_APP_NAME}-production
-
   # deploy-staging:
   #   machine:
   #     enabled: true
