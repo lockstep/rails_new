@@ -15,6 +15,8 @@
   "dependencies": {
     "@babel/preset-react": "^7.0.0",
     "@rails/webpacker": "^4",
+    "@types/react": "^16.8.17",
+    "@types/react-dom": "^16.8.4",
     "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
     "bootstrap": "^4.3.1",
     "jquery": "^3.2.1",
@@ -22,7 +24,9 @@
     "popper.js": "^1.12.9",
     "prop-types": "^15.7.2",
     "react": "^16.8.4",
-    "react-dom": "^16.8.4"
+    "react-dom": "^16.8.4",
+    "ts-loader": "^6.0.0",
+    "typescript": "^3.4.5"
   },
   "devDependencies": {
     "eslint": "^4.19.0",
