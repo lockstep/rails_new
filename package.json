@@ -5,6 +5,13 @@
     "node": ">=8.9.0",
     "yarn": ">=1.9.0"
   },
+  "config": {
+    "files": "app/javascript/**/*.{js,jsx,ts,tsx} app/assets/javascripts/**/*.{js,jsx,ts,tsx} lib/tasks/**/*.{js,jsx,ts,tsx}"
+  },
+  "scripts": {
+    "lint-check": "eslint --format codeframe $npm_package_config_files && prettier --list-different $npm_package_config_files",
+    "lint-write": "eslint --fix $npm_package_config_files && prettier --write $npm_package_config_files"
+  },
   "dependencies": {
     "@babel/preset-react": "^7.0.0",
     "@rails/webpacker": "^4",
