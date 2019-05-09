@@ -47,6 +47,17 @@ jobs:
             - vendor/bundle
 
       - run:
+          name: Lint Ruby/Rails
+          command: |
+            bundle exec rubocop -L | \
+            circleci tests split --split-by=timings --timings-type=filename | \
+            xargs bundle exec rubocop
+
+      - run:
+          name: Lint Javascript
+          command: yarn lint-check
+
+      - run:
           name: Verify bundle security
           command: bundle exec bundle-audit check --update
 
