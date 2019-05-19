@@ -3,6 +3,8 @@
     "declaration": false,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "noEmit": true,
     "lib": ["es6", "dom"],
     "module": "es6",
     "moduleResolution": "node",
@@ -10,11 +12,6 @@
     "target": "es5",
     "jsx": "react"
   },
-  "exclude": [
-    "**/*.spec.ts",
-    "node_modules",
-    "vendor",
-    "public"
-  ],
+  "exclude": ["**/*.spec.ts", "node_modules", "vendor", "public"],
   "compileOnSave": false
 }

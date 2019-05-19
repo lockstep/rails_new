@@ -58,6 +58,10 @@ jobs:
           command: yarn lint-check
 
       - run:
+          name: Compile TypeScript code
+          command: yarn tsc
+
+      - run:
           name: Verify bundle security
           command: bundle exec bundle-audit check --update
 

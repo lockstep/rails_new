@@ -1,4 +1,6 @@
-# rails_new &nbsp; [![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=Save%20hours%20of%20your%E2%8F%B1%EF%B8%8F%20with%20this%20template%20for%20building%20modern%20%23Rails%20apps%20%F0%9F%92%AF%F0%9F%94%A5%20&url=https://github.com/lockstep/rails_new&via=locksteplabs&hashtags=rubyonrails)
+# rails_new
+
+[![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=Save%20hours%20of%20your%E2%8F%B1%EF%B8%8F%20with%20this%20template%20for%20building%20modern%20%23Rails%20apps%20%F0%9F%92%AF%F0%9F%94%A5%20&url=https://github.com/lockstep/rails_new&via=locksteplabs&hashtags=rubyonrails)
 
 ![Build Status](https://circleci.com/gh/lockstep/rails_new.svg?style=shield)
 
@@ -6,38 +8,39 @@ A thoughtfully designed template for building modern Rails apps 🔥
 
 Get started on your new app within minutes instead of hours 🚗💨
 
-- [Getting started](#getting-started)
-- [Optional configuration options](#optional-configuration-options)
-- [Environment variables](#environment-variables)
-- [Contents](#contents)
+- [rails_new](#railsnew)
+  - [Getting started](#getting-started)
+  - [Optional configuration options](#optional-configuration-options)
+  - [Environment variables](#environment-variables)
+  - [Contents](#contents)
     - [Base system](#base-system)
     - [General](#general)
     - [Frontend](#frontend)
     - [Development](#development)
     - [Test](#test)
     - [Production](#production)
-- [Removed](#removed)
-- [Notes](#notes)
+  - [Removed](#removed)
+  - [Notes](#notes)
     - [`Account` vs `User`](#account-vs-user)
     - [Webpacker, the asset pipeline, and ES6](#webpacker-the-asset-pipeline-and-es6)
+    - [TypeScript](#typescript)
+    - [Hot Module Replacement (HMR)](#hot-module-replacement-hmr)
+    - [Polyfills](#polyfills)
     - [Custom classes](#custom-classes)
     - [`Gemfile.dev` / `Gemfile.dev.lock`](#gemfiledev--gemfiledevlock)
     - [`Rack::RejectTrace` middleware](#rackrejecttrace-middleware)
     - [Favicons](#favicons)
-- [Docker](#docker)
+  - [Docker](#docker)
     - [Usage examples:](#usage-examples)
-- [TODO](#todo)
-- [License](#license)
+  - [TODO](#todo)
+  - [License](#license)
 
 ## Getting started
 
 To get going clone this repository and perform the following steps:
 
-1. Run `rails credentials:edit` to re-generate `config/master.key` and create
-   `config/credentials.yml.enc`.
-1. If your application requires `ActiveStorage`, run `rails active_storage:install` to
-   generate a migration that creates the necessary tables. Use `rails db:migrate` to
-   run the migration.
+1. Run `rails credentials:edit` to re-generate `config/master.key` and create `config/credentials.yml.enc`.
+1. If your application requires `ActiveStorage`, run `rails active_storage:install` to generate a migration that creates the necessary tables. Use `rails db:migrate` to run the migration.
 1. You can now run `bin/configure`, which will help you in configuring the template.
 
 As an alternative to running the script you can perform all of the following steps manually.
@@ -46,11 +49,8 @@ As an alternative to running the script you can perform all of the following ste
 1. Update `database.yml` to reflect the new application name.
 1. Update `TODO` items in `config/environments/production.rb`.
 1. If you plan on using Figaro, copy `config/application.yml.example` to `config/application.yml`.
-2. ESLint is preconfigured for modern JS with React support (using [Prettier](https://prettier.io)).
-   If you want to use it install packages with `npm install` / `yarn [install]`, otherwise remove
-   `.eslintrc` and `package.json`.
-3. If you don't plan on tracking the template, you can remove the remote, otherwise rename it and
-   add your new remote as appropriate.:
+1. ESLint is preconfigured for modern JS with React support (using [Prettier](https://prettier.io)). If you want to use it install packages with `npm install` / `yarn [install]`, otherwise remove `.eslintrc` and `package.json`.
+1. If you don't plan on tracking the template, you can remove the remote, otherwise rename it and add your new remote as appropriate.:
    ```shell
    $ git remote rename origin rails_new
    $ git remote add origin ...
@@ -58,16 +58,12 @@ As an alternative to running the script you can perform all of the following ste
 
 ## Optional configuration options
 
-* If you want to use [AirBrake](https://airbrake.io), make sure the following 2 environment
-  variables are set:
-    * `AIRBRAKE_PROJECT_ID`
-    * `AIRBRAKE_API_KEY`
-* [New Relic](https://newrelic.com) is pre configured in `config/newrelic.yml`, but you need to
-  comment in the environment variables for it work on Heroku (lines 10 and 17).
-* The app is preconfigured for Google Analytics, just add `GOOGLE_ANALYTICS_ID` to the environment.
-* We prefer to use vanilla Sidekiq for worker/queue management. If you prefer
-  to use ActiveJob please see the configuration/options that were removed in
-  [59cf38d](https://github.com/lockstep/rails_new/commit/59cf38d5872eb8bd9267a5c0ae95aa39396c7130).
+- If you want to use [AirBrake](https://airbrake.io), make sure the following 2 environment variables are set:
+  - `AIRBRAKE_PROJECT_ID`
+  - `AIRBRAKE_API_KEY`
+- [New Relic](https://newrelic.com) is pre configured in `config/newrelic.yml`, but you need to comment in the environment variables for it work on Heroku (lines 10 and 17).
+- The app is preconfigured for Google Analytics, just add `GOOGLE_ANALYTICS_ID` to the environment.
+- We prefer to use vanilla Sidekiq for worker/queue management. If you prefer to use ActiveJob please see the configuration/options that were removed in [59cf38d](https://github.com/lockstep/rails_new/commit/59cf38d5872eb8bd9267a5c0ae95aa39396c7130).
 
 ## Environment variables
 
@@ -95,70 +91,70 @@ All of the following have been installed and pre-configured:
 
 ### Base system
 
-* Rails 5.2.1
-* Ruby 2.5.1
-* PostgreSQL >= 9.2
-* [pg](https://github.com/ged/ruby-pg) for `ActiveRecord`
+- Rails 5.2.1
+- Ruby 2.5.1
+- PostgreSQL >= 9.2
+- [pg](https://github.com/ged/ruby-pg) for `ActiveRecord`
 
 ### General
 
-* [devise](https://github.com/plataformatec/devise)
-* [figaro](https://github.com/laserlemon/figaro)
-* [foreman](https://github.com/ddollar/foreman)
-* [fast_jsonapi](https://github.com/Netflix/fast_jsonapi)
-* [pundit](https://github.com/elabs/pundit)
-* [sidekiq](https://github.com/mperham/sidekiq)
+- [devise](https://github.com/plataformatec/devise)
+- [figaro](https://github.com/laserlemon/figaro)
+- [foreman](https://github.com/ddollar/foreman)
+- [fast_jsonapi](https://github.com/Netflix/fast_jsonapi)
+- [pundit](https://github.com/elabs/pundit)
+- [sidekiq](https://github.com/mperham/sidekiq)
 
 ### Frontend
 
 All of these are managed by `yarn`.
 
-* [bootstrap4](https://www.npmjs.com/package/bootstrap-v4-dev)
-* [jquery](https://www.npmjs.com/package/jquery)
-* [jquery-ujs](https://www.npmjs.com/package/jquery-ujs/)
-* [popper.js](https://www.npmjs.com/package/popper.js)
+- [bootstrap4](https://www.npmjs.com/package/bootstrap-v4-dev)
+- [jquery](https://www.npmjs.com/package/jquery)
+- [jquery-ujs](https://www.npmjs.com/package/jquery-ujs/)
+- [popper.js](https://www.npmjs.com/package/popper.js)
 
 ### Development
 
-* [Brakeman](https://github.com/presidentbeef/brakeman)
-* [bullet](https://github.com/flyerhzm/bullet)
-* [letter_opener](https://github.com/ryanb/letter_opener)
-* [memory_profiler](https://github.com/SamSaffron/memory_profiler)
-* [newrelic_rpm](https://github.com/newrelic/rpm)
-* [nullalign](https://github.com/tcopeland/nullalign)
-* [pry](https://github.com/rweng/pry-rails)
-* [pry-byebug](https://github.com/deivid-rodriguez/pry-byebug)
-* [pry-doc](https://github.com/pry/pry-doc)
-* [rack-mini-profiler](https://github.com/MiniProfiler/rack-mini-profiler)
-* [RuboCop](https://github.com/bbatsov/rubocop)
+- [Brakeman](https://github.com/presidentbeef/brakeman)
+- [bullet](https://github.com/flyerhzm/bullet)
+- [letter_opener](https://github.com/ryanb/letter_opener)
+- [memory_profiler](https://github.com/SamSaffron/memory_profiler)
+- [newrelic_rpm](https://github.com/newrelic/rpm)
+- [nullalign](https://github.com/tcopeland/nullalign)
+- [pry](https://github.com/rweng/pry-rails)
+- [pry-byebug](https://github.com/deivid-rodriguez/pry-byebug)
+- [pry-doc](https://github.com/pry/pry-doc)
+- [rack-mini-profiler](https://github.com/MiniProfiler/rack-mini-profiler)
+- [RuboCop](https://github.com/bbatsov/rubocop)
 
 ### Test
 
 Rspec has been preconfigured for Rails 5.1+ system tests.
 
-* No need to `require 'rails_helper`, we do it in `.rspec`
-* [bundler-audit](https://github.com/rubysec/bundler-audit) (runs on CircleCI)
-* [capybara](https://github.com/teamcapybara/capybara)
-* [factory_bot_rails](https://github.com/thoughtbot/factory_bot_rails)
-* [shoulda-matchers](https://github.com/thoughtbot/shoulda-matchers)
-* [spring-commands-rspec](https://github.com/jonleighton/spring-commands-rspec)
-* [webmock](https://github.com/bblimke/webmock)
+- No need to `require 'rails_helper`, we do it in `.rspec`
+- [bundler-audit](https://github.com/rubysec/bundler-audit) (runs on CircleCI)
+- [capybara](https://github.com/teamcapybara/capybara)
+- [factory_bot_rails](https://github.com/thoughtbot/factory_bot_rails)
+- [shoulda-matchers](https://github.com/thoughtbot/shoulda-matchers)
+- [spring-commands-rspec](https://github.com/jonleighton/spring-commands-rspec)
+- [webmock](https://github.com/bblimke/webmock)
 
 ### Production
 
-* [airbrake](https://github.com/airbrake/airbrake)
-* [heroku-deflater](https://github.com/romanbsd/heroku-deflater)
-* [lograge](https://github.com/roidrage/lograge)
-* [rails_12factor](https://github.com/heroku/rails_12factor)
-* [rack-timeout](https://github.com/heroku/rack-timeout): Configured via env variables, see [documentation](https://github.com/heroku/rack-timeout#configuring)
-* [secureheaders](https://github.com/twitter/secureheaders)
+- [airbrake](https://github.com/airbrake/airbrake)
+- [heroku-deflater](https://github.com/romanbsd/heroku-deflater)
+- [lograge](https://github.com/roidrage/lograge)
+- [rails_12factor](https://github.com/heroku/rails_12factor)
+- [rack-timeout](https://github.com/heroku/rack-timeout): Configured via env variables, see [documentation](https://github.com/heroku/rack-timeout#configuring)
+- [secureheaders](https://github.com/twitter/secureheaders)
 
 ## Removed
 
 The following default Rails gems have been removed:
 
-* [coffee-rails](https://github.com/rails/coffee-rails)
-* [jbuilder](https://github.com/rails/jbuilder)
+- [coffee-rails](https://github.com/rails/coffee-rails)
+- [jbuilder](https://github.com/rails/jbuilder)
 
 ## Notes
 
@@ -168,17 +164,14 @@ Authentication concerns (your typical `Devise` configuration) are handled by the
 
 ### Webpacker, the asset pipeline, and ES6
 
-By default ES6 will not work for files in `app/assets/javascript` since Uglifier will fail to
-process them. This is why we applied the following change to `config/production.rb`, which allows
-you to use ES6 project wide:
+By default ES6 will not work for files in `app/assets/javascript` since Uglifier will fail to process them. This is why we applied the following change to `config/production.rb`, which allows you to use ES6 project wide:
 
 ```diff
 -  config.assets.js_compressor = :uglifier
 +  config.assets.js_compressor = Uglifier.new(harmony: true)
 ```
 
-Also note that for everything to work properly on Heroku, you need to set up your buildpacks like
-this:
+Also note that for everything to work properly on Heroku, you need to set up your buildpacks like this:
 
 ```
 heroku buildpacks:clear
@@ -186,22 +179,52 @@ heroku buildpacks:set heroku/nodejs
 heroku buildpacks:add heroku/ruby
 ```
 
+### TypeScript
+
+TypeScript is supported out of the box. See the example in `app/javascript`.
+
+It is important to note that TypeScript code is loaded by `babel-loader`. Because of that, you need to perform type checking in a separate process. This could either be your editor, or running `yarn types-watch` in your terminal to compile your code in watch mode.
+
+This will not interfere with HMR (see below) as TypeScript compiler is instructed only to type-check your code, not to emit compiled modules.
+
+For extra safety, there is a CI build step that runs `tsc` to make sure TypeScript code compiles
+
+### Hot Module Replacement (HMR)
+
+HMR is also supported out of the box. All you need to do is hot-export your module, like so:
+
+```js
+import React from "react";
+import { hot } from "react-hot-loader/root";
+
+class Welcome extends React.Component {
+  render() {
+    return <h1>Hello, {this.props.name}</h1>;
+  }
+}
+
+export default hot(Welcome);
+```
+
+This will allow you to continue working on your JS code without losing application state in the browser.
+
+### Polyfills
+
+Polyfills are included automatically thanks to `@babel/preset-env`. See `babel.config.js` for configuration options.
+
 ### Custom classes
 
-* `ApplicationDecorator`: lightweight alternative to Draper or similar gems.
-* `ApplicationForm`: Minimal form class based on `ActiveModel`.
-* `ApplicationPresenter`: a subclass of `ApplicationDecorator` for presenters, includes tag helpers.
+- `ApplicationDecorator`: lightweight alternative to Draper or similar gems.
+- `ApplicationForm`: Minimal form class based on `ActiveModel`.
+- `ApplicationPresenter`: a subclass of `ApplicationDecorator` for presenters, includes tag helpers.
 
 All custom classes are fully documented with [yard](https://yardoc.org) and come with generators.
 
-Use `yard doc` to generate documentation and `yard server --reload` or `yard server --gems` to start
-a local documentation server.
+Use `yard doc` to generate documentation and `yard server --reload` or `yard server --gems` to start a local documentation server.
 
 ### `Gemfile.dev` / `Gemfile.dev.lock`
 
-If you want to add specific gems for development that may not be interesting for other developers,
-you can add a `Gemfile.dev` (ignored by our `.gitignore`). Gems listed there can be installed with
-`bundle install --gemfile Gemfile.dev` and the resulting lock file is gitignored too.
+If you want to add specific gems for development that may not be interesting for other developers, you can add a `Gemfile.dev` (ignored by our `.gitignore`). Gems listed there can be installed with `bundle install --gemfile Gemfile.dev` and the resulting lock file is gitignored too.
 
 Example `Gemfile.dev`:
 
@@ -213,8 +236,7 @@ eval_gemfile 'Gemfile'
 gem 'awesome_print'
 ```
 
-The `eval_gemfile` line will ensure that all gems from your regular `Gemfile` will be included too.
-The `BUNDLE_GEMFILE` variable can be used to let Bundler now which gemfile to use:
+The `eval_gemfile` line will ensure that all gems from your regular `Gemfile` will be included too. The `BUNDLE_GEMFILE` variable can be used to let Bundler now which gemfile to use:
 
 ```
 BUNDLE_GEMFILE=Gemfile.dev rails c
@@ -222,33 +244,29 @@ BUNDLE_GEMFILE=Gemfile.dev rails c
 
 ### `Rack::RejectTrace` middleware
 
-There's a custom middleware (`Rack::RejectTrace`) for completely disabling the HTTP TRACE method as
-required by certain security audits. It can be enabled via the `BLOCK_HTTP_TRACE` environment
-variable.
+There's a custom middleware (`Rack::RejectTrace`) for completely disabling the HTTP TRACE method as required by certain security audits. It can be enabled via the `BLOCK_HTTP_TRACE` environment variable.
 
 ### Favicons
 
-Favicons were generated with [Real Favicon Generator](https://realfavicongenerator.net/), consider
-using the same tool when replacing them for your project.
+Favicons were generated with [Real Favicon Generator](https://realfavicongenerator.net/), consider using the same tool when replacing them for your project.
 
 ## Docker
 
-For those wishing to use Docker for development the whole app has been dockerized and the setup is
-fairly well-documented. Features:
+For those wishing to use Docker for development the whole app has been dockerized and the setup is fairly well-documented. Features:
 
-* Images use [Alpine Linux](https://alpinelinux.org) to keep their size small.
-* `docker-compose.yml` sets up and starts Postgres, Redis, Sidekiq, Rails and the Webpack dev server.
-* Uses a persistent bundle cache, so there's no need to rebuild the image to add gems.
-* Persistent volumes for Postgres and Redis.
-* No exposed ports except for Rails (mapped to port `3000` by default)
+- Images use [Alpine Linux](https://alpinelinux.org) to keep their size small.
+- `docker-compose.yml` sets up and starts Postgres, Redis, Sidekiq, Rails and the Webpack dev server.
+- Uses a persistent bundle cache, so there's no need to rebuild the image to add gems.
+- Persistent volumes for Postgres and Redis.
+- No exposed ports except for Rails (mapped to port `3000` by default)
 
 The following files relate to our Docker setup:
 
-* `Dockerfile`: main setup for the `app` container
-* `docker-compose.yml`: Ties Postgres, Redis and `app` together
-* `docker-entrypoint.sh`: Custom entry point to facilitate bundle caching
-* `Procfile.docker`: Used by the entrypoint script to bring up services
-* `.dockerignore`: similar to `.gitignore`, specifies files we don't want copied into the container
+- `Dockerfile`: main setup for the `app` container
+- `docker-compose.yml`: Ties Postgres, Redis and `app` together
+- `docker-entrypoint.sh`: Custom entry point to facilitate bundle caching
+- `Procfile.docker`: Used by the entrypoint script to bring up services
+- `.dockerignore`: similar to `.gitignore`, specifies files we don't want copied into the container
 
 ### Usage examples:
 

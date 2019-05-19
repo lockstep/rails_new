@@ -1,3 +1,7 @@
-const environment = require('./environment')
+const environment = require("./environment");
 
-module.exports = environment.toWebpackConfig()
+// This is necessary to fix runtime errors when hot-loading mjs modules
+const nodeModulesLoader = environment.loaders.get("nodeModules");
+nodeModulesLoader.type = "javascript/auto";
+
+module.exports = environment.toWebpackConfig();

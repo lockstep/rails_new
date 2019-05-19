@@ -3,5 +3,11 @@
   "plugins": ["jsx-a11y", "import", "react", "prettier"],
   "rules": {
     "prettier/prettier": "error"
+  },
+  "parser": "babel-eslint",
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
   }
 }
