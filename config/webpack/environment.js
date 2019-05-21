@@ -1,20 +1,5 @@
 const { environment } = require("@rails/webpacker");
+const typescript = require("./loaders/typescript");
 
-environment.splitChunks(config =>
-  Object.assign({}, config, {
-    optimization: {
-      splitChunks: {
-        cacheGroups: {
-          vendor: {
-            test: /node_modules/,
-            chunks: "all",
-            name: "vendor",
-            enforce: true
-          }
-        }
-      }
-    }
-  })
-);
-
+environment.loaders.prepend("typescript", typescript);
 module.exports = environment;
