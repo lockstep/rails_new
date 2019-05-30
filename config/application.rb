@@ -23,6 +23,9 @@ module RailsNew
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
 
+    # React-Rails config
+    config.react.camelize_props = true
+
     # Configure generators, see: http://guides.rubyonrails.org/generators.html
     config.generators do |g|
       # Create appropriate tests in spec/ not test/

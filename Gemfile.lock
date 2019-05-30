@@ -52,6 +52,10 @@ GEM
     ast (2.4.0)
     autoprefixer-rails (9.5.1)
       execjs
+    babel-source (5.8.35)
+    babel-transpiler (0.7.0)
+      babel-source (>= 4.0, < 6)
+      execjs (~> 2.0)
     bcrypt (3.1.12)
     bindex (0.7.0)
     bootsnap (1.4.3)
@@ -206,6 +210,12 @@ GEM
     rb-inotify (0.10.0)
       ffi (~> 1.0)
     rbtree3 (0.5.0)
+    react-rails (2.5.0)
+      babel-transpiler (>= 0.7.0)
+      connection_pool
+      execjs
+      railties (>= 3.2)
+      tilt
     redis (4.1.0)
     regexp_parser (1.4.0)
     request_store (1.4.1)
@@ -362,6 +372,7 @@ DEPENDENCIES
   rack-mini-profiler
   rack-timeout
   rails (~> 5.2.3)
+  react-rails
   rspec-rails (~> 3.7)
   rspec_junit_formatter
   rubocop

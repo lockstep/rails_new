@@ -23,6 +23,7 @@ Get started on your new app within minutes instead of hours 🚗💨
   - [Notes](#notes)
     - [`Account` vs `User`](#account-vs-user)
     - [Webpacker, the asset pipeline, and ES6](#webpacker-the-asset-pipeline-and-es6)
+    - [React](#react)
     - [TypeScript](#typescript)
     - [Hot Module Replacement (HMR)](#hot-module-replacement-hmr)
     - [Polyfills](#polyfills)
@@ -179,9 +180,21 @@ heroku buildpacks:set heroku/nodejs
 heroku buildpacks:add heroku/ruby
 ```
 
+### React
+
+React support has been preconfigured together with `react-rails`.
+
+When creating a new component you want to mount in the view, place it under the `views` folder. `react-rails` will perform module lookup relative to that folder and automatically require it under the hood so it gets included in the `application` pack. For example, calling the following helper in your view file: 
+
+```ruby
+react_component("dashboard/properties_list")
+```
+
+will require `views/dashboard/properties_list` and mount it in place of the helper element. See the [docs](https://github.com/reactjs/react-rails) for details about working with `react-rails`.
+
 ### TypeScript
 
-TypeScript is supported out of the box. See the example in `app/javascript`.
+TypeScript is supported out of the box.
 
 It is important to note that TypeScript code is loaded by `babel-loader`. Because of that, you need to perform type checking in a separate process. This could either be your editor, or running `yarn types-watch` in your terminal to compile your code in watch mode.
 

@@ -57,9 +57,10 @@ jobs:
           name: Lint Javascript
           command: yarn lint-check
 
-      - run:
-          name: Compile TypeScript code
-          command: yarn tsc
+      # TODO: Uncomment if using TypeScript
+      # - run:
+      #     name: Compile TypeScript code
+      #     command: yarn tsc
 
       - run:
           name: Verify bundle security

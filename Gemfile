@@ -14,6 +14,8 @@ ruby File.read(version_file).strip
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.3'
 
+gem 'react-rails'
+
 # Use newest version of webpacker explicitly until Rails updates
 gem 'webpacker', '~> 4.0'
 
