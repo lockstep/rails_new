@@ -49,5 +49,9 @@ module RailsNew
         config.logger    = ActiveSupport::TaggedLogging.new(logger)
       end
     end
+
+    # Warn if we inadvertently attempt to pull more records into memory
+    # than the default `find_each` batch size of 1000:
+    config.active_record.warn_on_records_fetched_greater_than = 1001
   end
 end
