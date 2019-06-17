@@ -2,7 +2,7 @@
   "name": "rails_new",
   "private": true,
   "engines": {
-    "node": "^12.4.0",
+    "node": "^10.16.0",
     "yarn": ">=1.9.0"
   },
   "config": {
