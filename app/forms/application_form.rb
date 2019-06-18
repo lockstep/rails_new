@@ -59,7 +59,8 @@ class ApplicationForm
   # @param params [Hash{String=>Object}] - the changeset
   def initialize(resource = self.class.resource_class.new, params = {})
     @resource = resource
-    @params = params.except('id', 'created_at', 'updated_at')
+    @params = params.to_h.with_indifferent_access
+      .except('id', 'created_at', 'updated_at')
     @resource.assign_attributes(resource_attributes)
     super(form_attributes)
   end
