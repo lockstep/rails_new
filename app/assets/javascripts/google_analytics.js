@@ -1,7 +1,7 @@
-$(document).on("turbolinks:load", function() {
+$(document).on("turbolinks:load", () => {
   if (
     typeof gtag === "function" &&
-    typeof SETTINGS.google_analytics_id != "undefined"
+    typeof SETTINGS.google_analytics_id !== "undefined"
   ) {
     gtag("config", SETTINGS.google_analytics_id, {
       page_path: window.location.pathname,
