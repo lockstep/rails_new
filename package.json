@@ -6,7 +6,7 @@
     "yarn": ">=1.9.0"
   },
   "config": {
-    "files": "app/javascript/**/*.{js,jsx,ts,tsx} app/assets/javascripts/**/*.{js,jsx,ts,tsx} lib/tasks/**/*.{js,jsx,ts,tsx}"
+    "files": "app/javascript/**/*.{js,jsx,ts,tsx} app/assets/javascripts/**/*.{js,jsx,ts,tsx}"
   },
   "scripts": {
     "lint-check": "eslint --format codeframe $npm_package_config_files && prettier --list-different $npm_package_config_files",
@@ -14,11 +14,13 @@
     "types-watch": "tsc --watch"
   },
   "dependencies": {
+    "@babel/core": "^7.4.5",
     "@babel/preset-react": "^7.0.0",
     "@babel/preset-typescript": "^7.3.3",
     "@rails/webpacker": "^4",
     "@types/react": "^16.8.17",
     "@types/react-dom": "^16.8.4",
+    "babel-loader": "^8.0.6",
     "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
     "bootstrap": "^4.3.1",
     "core-js": "^3.0.1",
@@ -30,17 +32,22 @@
     "react-dom": "npm:@hot-loader/react-dom",
     "react-hot-loader": "^4.8.4",
     "react_ujs": "^2.5.0",
-    "typescript": "^3.4.5"
+    "typescript": "^3.4.5",
+    "webpack": "^4.35.0"
   },
   "devDependencies": {
     "babel-eslint": "^10.0.1",
-    "eslint": "^4.19.0",
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb": "^17.1.0",
     "eslint-config-prettier": "^2.9.0",
     "eslint-config-standard": "^11.0.0",
     "eslint-plugin-import": "^2.2.0",
-    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-node": "^9.1.0",
     "eslint-plugin-prettier": "^2.6.2",
+    "eslint-plugin-promise": "^4.1.1",
     "eslint-plugin-react": "^7.0.1",
+    "eslint-plugin-standard": "^4.0.0",
     "prettier": "^1.13.7",
     "webpack-cli": "^3.2.3",
     "webpack-dev-server": ">=3.1.11"
