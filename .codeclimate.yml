@@ -1,0 +1,14 @@
+version: "2"
+plugins:
+  duplication:
+    enabled: true
+    config:
+      languages:
+        javascript:
+          mass_threshold: 46
+        ruby:
+          # Inherit the default (this line is required for some reason 🤨)
+          mass_threshold:
+
+exclude_patterns:
+- "babel.config.js"
