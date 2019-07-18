@@ -11,4 +11,19 @@ plugins:
           mass_threshold:
 
 exclude_patterns:
+# Code Climate defaults:
+- "config/"
+- "db/"
+- "dist/"
+- "features/"
+- "**/node_modules/"
+- "script/"
+- "**/spec/"
+- "**/test/"
+- "**/tests/"
+- "Tests/"
+- "**/vendor/"
+- "**/*_test.go"
+- "**/*.d.ts"
+# Expanded exclusions:
 - "babel.config.js"
