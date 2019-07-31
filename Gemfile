@@ -71,6 +71,9 @@ gem 'bootsnap', '>= 1.1.0', require: false
 # Storage
 # gem "aws-sdk-s3", require: false
 
+# Ruby metrics
+gem 'barnes'
+
 group :production do
   # Remove this if the app is not hosted on Heroku
   gem 'heroku-deflater'

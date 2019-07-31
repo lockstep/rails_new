@@ -176,6 +176,7 @@ Also note that for everything to work properly on Heroku, you need to set up you
 
 ```
 heroku buildpacks:clear
+heroku buildpacks:add heroku/metrics
 heroku buildpacks:set heroku/nodejs
 heroku buildpacks:add heroku/ruby
 ```
