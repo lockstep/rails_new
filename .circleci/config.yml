@@ -90,7 +90,6 @@ jobs:
       # Set parallelism (above) to 2 or above to split tests by timings
       - run:
           name: Run tests
-          type: shell
           command: |
             TESTFILES=$(circleci tests glob "spec/**/*_spec.rb" | circleci tests split --split-by=timings)
             bundle exec rspec \
@@ -106,7 +105,7 @@ jobs:
           path: test_results
   # deploy-master:
   #   machine:
-  #     enabled: true
+  #     image: circleci/classic:latest
   #   working_directory: ~/src
   #   steps:
   #     - checkout
