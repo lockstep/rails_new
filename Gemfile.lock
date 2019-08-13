@@ -150,7 +150,7 @@ GEM
     nakayoshi_fork (0.0.4)
     newrelic_rpm (6.5.0.357)
     nio4r (2.4.0)
-    nokogiri (1.10.3)
+    nokogiri (1.10.4)
       mini_portile2 (~> 2.4.0)
     nullalign (0.0.4)
     orm_adapter (0.5.0)
