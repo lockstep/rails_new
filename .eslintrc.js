@@ -28,7 +28,7 @@ module.exports = {
       modules: true,
     },
   },
-  plugins: ["jsx-a11y", "import", "react", "prettier"],
+  plugins: ["jsx-a11y", "import", "react", "prettier", "react-hooks"],
   rules: {
     "prettier/prettier": "error",
     curly: ["error", "multi-line"],
@@ -63,6 +63,8 @@ module.exports = {
     // "react/require-default-props": ["warn"],
     // "react/sort-comp": ["warn"],
     // eqeqeq: ["warn"],
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
   },
   settings: {
     "import/resolver": {
