@@ -1,3 +1,5 @@
+process.env.NODE_ENV = process.env.NODE_ENV || "production"
+
 const environment = require("./environment");
 
 // Do not bundle-split in development to make HMR possible

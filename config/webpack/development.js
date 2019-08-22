@@ -1,3 +1,5 @@
+process.env.NODE_ENV = process.env.NODE_ENV || "development"
+
 const environment = require("./environment");
 
 // This is necessary to fix runtime errors when hot-loading mjs modules

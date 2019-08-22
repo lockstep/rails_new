@@ -16,7 +16,7 @@ module RailsNew
     ENV_TRUTHY = %w[enabled true t 1].freeze
 
     # Initialize configuration defaults for originally generated Rails version.
-    config.load_defaults 5.2
+    config.load_defaults 6.0
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers
@@ -49,6 +49,8 @@ module RailsNew
         config.logger    = ActiveSupport::TaggedLogging.new(logger)
       end
     end
+
+    config.add_autoload_paths_to_load_path = false
 
     # Warn if we inadvertently attempt to pull more records into memory
     # than the default `find_each` batch size of 1000:

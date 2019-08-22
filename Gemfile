@@ -12,12 +12,11 @@ version_file = File.join(File.dirname(__FILE__), '.ruby-version')
 ruby File.read(version_file).strip
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.2.3'
+gem 'rails', '~> 6.0.0'
 
 gem 'react-rails'
 
-# Use newest version of webpacker explicitly until Rails updates
-gem 'webpacker', '~> 4.0'
+gem 'webpacker'
 
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 1.1.0'
@@ -45,7 +44,7 @@ gem 'newrelic_rpm'
 gem 'pundit'
 
 # Authentication
-gem 'devise', '~> 4.6.0'
+gem 'devise', '~> 4.7.0'
 
 # API serialization
 gem 'fast_jsonapi'
