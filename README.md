@@ -22,7 +22,7 @@ Get started on your new app within minutes instead of hours 🚗💨
   - [Removed](#removed)
   - [Notes](#notes)
     - [`Account` vs `User`](#account-vs-user)
-    - [Webpacker, the asset pipeline, and ES6](#webpacker-the-asset-pipeline-and-es6)
+    - [Heroku Buildpacks](#heroku-buildpacks)
     - [React](#react)
     - [TypeScript](#typescript)
     - [Hot Module Replacement (HMR)](#hot-module-replacement-hmr)
@@ -163,16 +163,9 @@ The following default Rails gems have been removed:
 
 Authentication concerns (your typical `Devise` configuration) are handled by the `Account` model. To connect this to one of several potential user roles the polymorphic `authenticatable` relationship is used.
 
-### Webpacker, the asset pipeline, and ES6
+### Heroku Buildpacks
 
-By default ES6 will not work for files in `app/assets/javascript` since Uglifier will fail to process them. This is why we applied the following change to `config/production.rb`, which allows you to use ES6 project wide:
-
-```diff
--  config.assets.js_compressor = :uglifier
-+  config.assets.js_compressor = Uglifier.new(harmony: true)
-```
-
-Also note that for everything to work properly on Heroku, you need to set up your buildpacks like this:
+Note that for everything to work properly on Heroku you need to set up your buildpacks like this:
 
 ```
 heroku buildpacks:clear
