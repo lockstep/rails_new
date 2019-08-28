@@ -12,7 +12,7 @@ jobs:
           PGHOST: 127.0.0.1
           PGUSER: lockstep
           RAILS_ENV: test
-      - image: circleci/postgres:10-alpine-ram
+      - image: circleci/postgres:11-alpine-ram
         environment:
           POSTGRES_DB: rails_new_test
           POSTGRES_USER: lockstep
