@@ -103,6 +103,11 @@ jobs:
       # Save test results for timing analysis
       - store_test_results:
           path: test_results
+
+      # Make screenshots of failed tests available under Artifacts tab
+      - store_artifacts:
+          path: tmp/screenshots
+
   # deploy-master:
   #   machine:
   #     image: circleci/classic:latest
