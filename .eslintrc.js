@@ -12,6 +12,7 @@ module.exports = {
     "airbnb",
     "prettier",
     "prettier/react",
+    "plugin:@typescript-eslint/recommended",
   ],
   globals: {
     google: true,
@@ -19,7 +20,7 @@ module.exports = {
     Turbolinks: true,
     ActionCable: true,
   },
-  parser: "babel-eslint",
+  parser: "@typescript-eslint/parser",
   parserOptions: {
     ecmaVersion: 6,
     sourceType: "module",
@@ -28,12 +29,25 @@ module.exports = {
       modules: true,
     },
   },
-  plugins: ["jsx-a11y", "import", "react", "prettier", "react-hooks"],
+  plugins: [
+    "jsx-a11y",
+    "import",
+    "react",
+    "prettier",
+    "react-hooks",
+    "@typescript-eslint",
+  ],
   rules: {
     "prettier/prettier": "error",
-    curly: ["error", "multi-line"],
-    quotes: ["error", "double"],
-    // TODO: configure these Airbnb rules as necessary
+
+    // TODO: configure these rules as necessary
+    // TS
+    // "@typescript-eslint/no-use-before-define": ["warn"],
+    "@typescript-eslint/no-var-requires": ["warn"],
+    "@typescript-eslint/camelcase": ["warn"],
+    // "@typescript-eslint/no-this-alias": ["warn"],
+
+    // JS
     // "array-callback-return": ["warn"],
     // "arrow-body-style": ["warn"],
     // "class-methods-use-this": ["warn"],
@@ -42,6 +56,7 @@ module.exports = {
     // "import/no-unresolved": ["warn"],
     // "import/order": ["warn"],
     // "import/prefer-default-export": ["warn"],
+    // "jsx-a11y/anchor-is-valid": ["warn"],
     // "new-cap": ["warn"],
     // "no-new": ["warn"],
     // "no-param-reassign": ["warn"],
@@ -50,6 +65,7 @@ module.exports = {
     // "no-underscore-dangle": ["warn"],
     "no-unused-expressions": ["warn"],
     // "no-use-before-define": ["warn"],
+    // "no-useless-constructor": ["warn"],
     // "prefer-destructuring": ["warn"],
     // "react/default-props-match-prop-types": ["warn"],
     // "react/destructuring-assignment": ["warn"],
@@ -62,7 +78,6 @@ module.exports = {
     // "react/prefer-stateless-function": ["warn"],
     // "react/require-default-props": ["warn"],
     // "react/sort-comp": ["warn"],
-    // eqeqeq: ["warn"],
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn",
   },
@@ -77,4 +92,12 @@ module.exports = {
       version: "detect",
     },
   },
+  overrides: [
+    {
+      files: ["**/*.tsx"],
+      rules: {
+        "react/prop-types": "off",
+      },
+    },
+  ],
 };
