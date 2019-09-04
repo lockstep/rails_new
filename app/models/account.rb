@@ -7,4 +7,11 @@ class Account < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   belongs_to :authenticatable, polymorphic: true
+
+  private
+
+  # Deliver Devise emails asynchronously.
+  def send_devise_notification(notification, *args)
+    devise_mailer.send(notification, self, *args).deliver_later
+  end
 end
