@@ -23,6 +23,9 @@ module RailsNew
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
 
+    # Use Sidekiq as ActiveJob backend
+    config.active_job.queue_adapter = :sidekiq
+
     # React-Rails config
     config.react.camelize_props = true
 
