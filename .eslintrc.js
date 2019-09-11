@@ -42,6 +42,7 @@ module.exports = {
 
     // TODO: configure these rules as necessary
     // TS
+    "@typescript-eslint/no-unused-vars": ["error"],
     // "@typescript-eslint/no-use-before-define": ["warn"],
     "@typescript-eslint/no-var-requires": ["warn"],
     "@typescript-eslint/camelcase": ["warn"],
@@ -94,9 +95,15 @@ module.exports = {
   },
   overrides: [
     {
-      files: ["**/*.tsx"],
+      files: ["**/*.ts", "**/*.tsx"],
       rules: {
         "react/prop-types": "off",
+      },
+    },
+    {
+      files: ["**/*.js", "**/*.jsx"],
+      rules: {
+        "@typescript-eslint/explicit-function-return-type": "off",
       },
     },
   ],
