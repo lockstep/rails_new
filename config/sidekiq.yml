@@ -18,8 +18,11 @@
   - low
   - mailers
 
-# You can override concurrency based on environment. However, it is best
+# You can override concurrency based on environment. It is common practice
 # to let concurrency be dictated by RAILS_MAX_THREADS, see details here:
 # https://gist.github.com/nateberkopec/2d1fcf77dc61e747438252e3895badf0
-# production:
-#   :concurrency: 10
+#
+# That said, you may not want your worker concurrency and web thread
+# count tied together, so you can optionally set a WORKER_CONCURRENCY
+# value:
+:concurrency: <%= ENV['WORKER_CONCURRENCY'] || ENV['RAILS_MAX_THREADS'] || 5 %>
