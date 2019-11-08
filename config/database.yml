@@ -26,7 +26,7 @@ default: &default
   # grab connections from the pool before sidekiq spawns the workers, leading to
   # connection timeouts from sidekiq. See the comment from Andrew Babichev here:
   # https://gist.github.com/nateberkopec/56936904705da5a1fa8e6f74cb08c012
-  pool: <%= (ENV.fetch("RAILS_MAX_THREADS") { 5 }).to_i + 3 %>
+  pool: <%= (ENV.fetch("RAILS_MAX_THREADS") { 5 }).to_i + 4 %>
 
 development:
   <<: *default
