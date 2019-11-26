@@ -34,6 +34,12 @@ jobs:
             - ~/.cache/yarn
 
       # Ruby gems bundle
+      - run:
+          name: Configure Bundler
+          command: |
+            BUNDLER_VERSION=$(cat Gemfile.lock | tail -1 | tr -d " ")
+            gem install bundler -v ${BUNDLER_VERSION}
+
       - restore_cache:
           key: bundle-{{ checksum "Gemfile.lock" }}
 
