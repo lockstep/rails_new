@@ -26,11 +26,6 @@ Rails:
 
 #################### Layout ###########################
 
-Layout/AlignParameters:
-  Description: 'Here we check if the parameters on a multi-line method call or definition are aligned.'
-  StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#no-double-indent'
-  Enabled: true
-
 Layout/DotPosition:
   Description: 'Checks the position of the dot in multi-line method calls.'
   StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#consistent-multi-line-chains'
@@ -57,6 +52,11 @@ Layout/MultilineMethodCallIndentation:
     that span more than one line.
   Enabled: true
   EnforcedStyle: indented
+
+Layout/ParameterAlignment:
+  Description: 'Here we check if the parameters on a multi-line method call or definition are aligned.'
+  StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#no-double-indent'
+  Enabled: true
 
 #################### Lint ##################################
 
@@ -91,7 +91,7 @@ Lint/DeprecatedClassMethods:
   Description: 'Check for deprecated class method calls.'
   Enabled: true
 
-Lint/DuplicatedKey:
+Lint/DuplicateHashKey:
   Description: 'Check for duplicate keys in hash literals.'
   Enabled: true
 
@@ -106,11 +106,6 @@ Lint/ElseLayout:
 Lint/FormatParameterMismatch:
   Description: 'The number of parameters to format/sprint must match the fields.'
   Enabled: true
-
-Lint/HandleExceptions:
-  Description: "Don't suppress exception."
-  StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#dont-hide-exceptions'
-  Enabled: false
 
 Lint/LiteralInInterpolation:
   Description: 'Checks for literals used in interpolation.'
@@ -143,6 +138,11 @@ Lint/RequireParentheses:
   Description: >-
     Use parentheses in the method call to avoid confusion
     about precedence.
+  Enabled: false
+
+Lint/SuppressedException:
+  Description: "Don't suppress exception."
+  StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#dont-hide-exceptions'
   Enabled: false
 
 Lint/UnderscorePrefixedVariableName:
@@ -237,7 +237,7 @@ Naming/FileName:
 Naming/PredicateName:
   Description: 'Check the names of predicate methods.'
   StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#bool-methods-qmark'
-  NamePrefixBlacklist:
+  ForbiddenPrefixes:
     - is_
   Exclude:
     - spec/**/*
@@ -270,6 +270,12 @@ Performance/FlatMap:
     instead of `Enumerable#map...Array#flatten(1)`
     or `Enumberable#collect..Array#flatten(1)`
   Reference: 'https://github.com/JuanitoFatas/fast-ruby#enumerablemaparrayflatten-vs-enumerableflat_map-code'
+  Enabled: true
+
+Performance/RedundantMerge:
+  Description: >-
+    This cop identifies places where `Hash#merge!` can be replaced
+    by `Hash#[]=`.
   Enabled: true
 
 Performance/ReverseEach:
