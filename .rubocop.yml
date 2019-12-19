@@ -40,6 +40,17 @@ Layout/InitialIndentation:
     Checks the indentation of the first non-blank non-comment line in a file.
   Enabled: true
 
+Layout/LineLength:
+  Description: 'Limit lines to 80 characters.'
+  StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#80-character-limits'
+  Max: 80
+  Include:
+    - 'app/**/*'
+    - 'lib/**/*'
+    - 'spec/**/*'
+  Exclude:
+    - spec/spec_helper.rb
+
 Layout/MultilineOperationIndentation:
   Description: >-
     Checks indentation of binary operations that span more than one line.
@@ -182,17 +193,6 @@ Metrics/CyclomaticComplexity:
     A complexity metric that is strongly correlated to the number
     of test cases needed to validate a method.
   Enabled: true
-
-Metrics/LineLength:
-  Description: 'Limit lines to 80 characters.'
-  StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#80-character-limits'
-  Max: 80
-  Include:
-    - 'app/**/*'
-    - 'lib/**/*'
-    - 'spec/**/*'
-  Exclude:
-    - spec/spec_helper.rb
 
 Metrics/MethodLength:
   Description: 'Avoid methods longer than 10 lines of code.'
