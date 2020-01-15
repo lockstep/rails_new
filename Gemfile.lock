@@ -58,10 +58,6 @@ GEM
       zeitwerk (~> 2.2)
     addressable (2.7.0)
       public_suffix (>= 2.0.2, < 5.0)
-    airbrake (9.5.5)
-      airbrake-ruby (~> 4.8)
-    airbrake-ruby (4.10.1)
-      rbtree3 (~> 0.5)
     ast (2.4.0)
     autoprefixer-rails (9.7.3)
       execjs
@@ -115,6 +111,8 @@ GEM
     factory_bot_rails (5.1.1)
       factory_bot (~> 5.1.0)
       railties (>= 4.2.0)
+    faraday (0.17.3)
+      multipart-post (>= 1.2, < 3)
     fast_jsonapi (1.5)
       activesupport (>= 4.2)
     ffi (1.11.3)
@@ -158,6 +156,7 @@ GEM
     minitest (5.13.0)
     msgpack (1.3.1)
     multi_json (1.14.1)
+    multipart-post (2.1.1)
     nakayoshi_fork (0.0.4)
     newrelic_rpm (6.7.0.359)
     nio4r (2.5.2)
@@ -226,7 +225,6 @@ GEM
     rb-fsevent (0.10.3)
     rb-inotify (0.10.0)
       ffi (~> 1.0)
-    rbtree3 (0.5.0)
     react-rails (2.6.0)
       babel-transpiler (>= 0.7.0)
       connection_pool
@@ -293,6 +291,8 @@ GEM
     selenium-webdriver (3.142.6)
       childprocess (>= 0.5, < 4.0)
       rubyzip (>= 1.2.2)
+    sentry-raven (2.13.0)
+      faraday (>= 0.7.6, < 1.0)
     shoulda-matchers (4.1.2)
       activesupport (>= 4.2.0)
     sidekiq (6.0.3)
@@ -360,7 +360,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  airbrake
   autoprefixer-rails
   barnes
   bootsnap (>= 1.1.0)
@@ -402,6 +401,7 @@ DEPENDENCIES
   sass-rails (~> 5.0.4)
   secure_headers
   selenium-webdriver
+  sentry-raven
   shoulda-matchers
   sidekiq
   simplecov
@@ -419,4 +419,4 @@ RUBY VERSION
    ruby 2.6.5p114
 
 BUNDLED WITH
-   2.0.2
+   2.1.4

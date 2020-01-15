@@ -18,6 +18,7 @@
     "@babel/preset-react": "^7.0.0",
     "@babel/preset-typescript": "^7.3.3",
     "@rails/webpacker": "^4.0.7",
+    "@sentry/browser": "^5.11.0",
     "@types/react": "^16.8.17",
     "@types/react-dom": "^16.8.4",
     "babel-loader": "^8.0.6",

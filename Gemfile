@@ -50,7 +50,7 @@ gem 'fast_jsonapi'
 gem 'figaro'
 
 # Exception tracking
-gem 'airbrake'
+gem 'sentry-raven'
 
 # Job queue
 gem 'sidekiq'
