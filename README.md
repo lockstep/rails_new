@@ -59,9 +59,9 @@ As an alternative to running the script you can perform all of the following ste
 
 ## Optional configuration options
 
-- If you want to use [AirBrake](https://airbrake.io), make sure the following 2 environment variables are set:
-  - `AIRBRAKE_PROJECT_ID`
-  - `AIRBRAKE_API_KEY`
+- If you want to use [Sentry](https://sentry.io), you'll need to:
+  1. Create two projects under your organization on Sentry. This way you can keep frontend and backend errors separate.
+  1. Set `SENTRY_DSN_BACKEND` and `SENTRY_DSN_FRONTEND` environment variables. Both are optional - errors will only be reported if the respective variable is set.
 - [New Relic](https://newrelic.com) is pre configured in `config/newrelic.yml`, but you need to comment in the environment variables for it work on Heroku (lines 10 and 17).
 - The app is preconfigured for Google Analytics, just add `GOOGLE_ANALYTICS_ID` to the environment.
 - We prefer to use vanilla Sidekiq for worker/queue management. If you prefer to use ActiveJob please see the configuration/options that were removed in [59cf38d](https://github.com/lockstep/rails_new/commit/59cf38d5872eb8bd9267a5c0ae95aa39396c7130).
@@ -70,8 +70,8 @@ As an alternative to running the script you can perform all of the following ste
 
 | Variable                     | Comment                                                                 |
 | ---------------------------- | ----------------------------------------------------------------------- |
-| AIRBRAKE_PROJECT_ID          | Used in `config/initializers/airbrake.rb`                               |
-| AIRBRAKE_API_KEY             | Used in `config/initializers/airbrake.rb`                               |
+| SENTRY_DSN_BACKEND           | Used to report backend errors to Sentry.                                |
+| SENTRY_DSN_FRONTEND          | Used to report frontend errors to Sentry.                               |
 | BLOCK_HTTP_TRACE             | Disables HTTP `TRACE` method if set to true/t/1                         |
 | BUNDLE_GEMFILE               | Useful when using a [Gemfile.dev](#gemfiledev---gemfiledevlock)         |
 | DATABASE_URL                 | Used for `production` env, automatically set by Heroku                  |
@@ -143,7 +143,7 @@ Rspec has been preconfigured for Rails 5.1+ system tests.
 
 ### Production
 
-- [airbrake](https://github.com/airbrake/airbrake)
+- [sentry-raven](https://github.com/getsentry/raven-ruby)
 - [heroku-deflater](https://github.com/romanbsd/heroku-deflater)
 - [lograge](https://github.com/roidrage/lograge)
 - [rails_12factor](https://github.com/heroku/rails_12factor)

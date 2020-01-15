@@ -12,6 +12,7 @@ class ApplicationController < ActionController::Base
   end
 
   before_action :authenticate_account!
+  before_action :set_raven_context
 
   private
 
@@ -34,5 +35,9 @@ class ApplicationController < ActionController::Base
 
   def current_user
     @current_user ||= current_account&.authenticatable
+  end
+
+  def set_raven_context
+    Raven.user_context(id: current_user&.id)
   end
 end

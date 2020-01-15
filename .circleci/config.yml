@@ -45,7 +45,7 @@ jobs:
 
       - run:
           name: Install bundle
-          command: bin/bundle install --path vendor/bundle
+          command: bin/bundle install
 
       - save_cache:
           key: bundle-{{ checksum "Gemfile.lock" }}
@@ -113,7 +113,6 @@ jobs:
       # Make screenshots of failed tests available under Artifacts tab
       - store_artifacts:
           path: tmp/screenshots
-
   # deploy-master:
   #   machine:
   #     image: circleci/classic:latest

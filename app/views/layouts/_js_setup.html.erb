@@ -1,3 +1,6 @@
 <script>
-  var SETTINGS = {};
+  var SETTINGS = {
+    // Errors are only reported to Sentry if the token is set.
+    SENTRY_DSN_FRONTEND: "<%= ENV['SENTRY_DSN_FRONTEND'] %>"
+  };
 </script>
