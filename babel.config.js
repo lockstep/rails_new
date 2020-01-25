@@ -26,11 +26,11 @@ module.exports = function(api) {
           targets: "defaults",
           exclude: ["transform-typeof-symbol"],
           forceAllTransforms: true,
-          modules: false
-        }
+          modules: false,
+        },
       ],
       "@babel/preset-react",
-      "@babel/preset-typescript"
+      "@babel/preset-typescript",
     ],
     plugins: [
       require("babel-plugin-macros"),
@@ -40,14 +40,14 @@ module.exports = function(api) {
       [
         require("@babel/plugin-proposal-class-properties").default,
         {
-          loose: true
-        }
+          loose: true,
+        },
       ],
       [
         require("@babel/plugin-proposal-object-rest-spread").default,
         {
-          useBuiltIns: true
-        }
+          useBuiltIns: true,
+        },
       ],
       [
         require("@babel/plugin-transform-runtime").default,
@@ -56,22 +56,23 @@ module.exports = function(api) {
           // depends on the old @babel/runtime
           // corejs: 3,
           helpers: false,
-          regenerator: true
-        }
+          regenerator: true,
+        },
       ],
       [
         require("@babel/plugin-transform-regenerator").default,
         {
-          async: false
-        }
+          async: false,
+        },
       ],
       isProductionEnv && [
         require("babel-plugin-transform-react-remove-prop-types").default,
         {
-          removeImport: true
-        }
+          removeImport: true,
+        },
       ],
-      "react-hot-loader/babel"
-    ].filter(Boolean)
+      "@babel/plugin-proposal-nullish-coalescing-operator",
+      "react-hot-loader/babel",
+    ].filter(Boolean),
   };
 };
