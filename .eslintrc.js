@@ -58,6 +58,11 @@ module.exports = {
     // "import/order": ["warn"],
     // "import/prefer-default-export": ["warn"],
     // "jsx-a11y/anchor-is-valid": ["warn"],
+    "lines-between-class-members": [
+      "error",
+      "always",
+      { exceptAfterSingleLine: true },
+    ],
     // "new-cap": ["warn"],
     // "no-new": ["warn"],
     // "no-param-reassign": ["warn"],
