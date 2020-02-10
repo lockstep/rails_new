@@ -57,6 +57,12 @@ module.exports = {
     // "import/no-unresolved": ["warn"],
     // "import/order": ["warn"],
     // "import/prefer-default-export": ["warn"],
+    // "import/extensions": ["error", "ignorePackages", {
+    //   js: 'never',
+    //   jsx: 'never',
+    //   ts: 'never',
+    //   tsx: 'never',
+    // }],
     // "jsx-a11y/anchor-is-valid": ["warn"],
     "lines-between-class-members": [
       "error",
