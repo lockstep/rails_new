@@ -102,6 +102,8 @@ group :development, :test do
 end
 
 group :development do
+  gem 'better_errors'
+  gem 'binding_of_caller'
   gem 'brakeman'
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'nullalign'
@@ -116,8 +118,6 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
   # Review emails in the browser on the fly
   gem 'letter_opener'
-  # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
-  gem 'web-console', '>= 3.3.0'
 end
 
 group :test do
