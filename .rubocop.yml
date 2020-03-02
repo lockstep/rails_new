@@ -463,6 +463,21 @@ Style/GuardClause:
   StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#no-nested-conditionals'
   Enabled: true
 
+Style/HashEachMethods:
+  Description: 'Use Hash#each_key and Hash#each_value.'
+  StyleGuide: 'https://github.com/rubocop-hq/ruby-style-guide#hash-each'
+  Enabled: true
+
+Style/HashTransformKeys:
+  Description: 'Prefer `transform_keys` over `each_with_object` and `map`.'
+  StyleGuide: 'https://github.com/rubocop-hq/ruby-style-guide#hashtransform_keys-and-hashtransform_values'
+  Enabled: true
+
+Style/HashTransformValues:
+  Description: 'Prefer `transform_values` over `each_with_object` and `map`.'
+  StyleGuide: 'https://github.com/rubocop-hq/ruby-style-guide#hashtransform_keys-and-hashtransform_values'
+  Enabled: true
+
 Style/IfUnlessModifier:
   Description: >-
     Favor modifier if/unless usage when you have a
