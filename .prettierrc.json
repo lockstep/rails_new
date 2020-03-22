@@ -1,7 +1,5 @@
 {
   "printWidth": 80,
-  "arrowParens": "avoid",
-  "trailingComma": "es5",
   "overrides": [
     {
       "files": "*.{jsx,tsx}",
