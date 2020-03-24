@@ -60,13 +60,17 @@ jobs:
             xargs bundle exec rubocop
 
       - run:
-          name: Lint Javascript
+          name: Lint JavaScript
           command: yarn lint-check
 
       # TODO: Uncomment if using TypeScript
       # - run:
       #     name: Compile TypeScript code
       #     command: yarn tsc
+
+      - run:
+          name: Run JavaScript tests
+          command: yarn test
 
       - run:
           name: Verify bundle security

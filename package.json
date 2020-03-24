@@ -11,7 +11,8 @@
   "scripts": {
     "lint-check": "eslint --format codeframe $npm_package_config_files && prettier --list-different $npm_package_config_files",
     "lint-write": "eslint --fix $npm_package_config_files && prettier --write $npm_package_config_files",
-    "types-watch": "tsc --watch"
+    "types-watch": "tsc --watch",
+    "test": "jest --passWithNoTests"
   },
   "dependencies": {
     "@babel/core": "^7.4.5",
@@ -38,6 +39,8 @@
     "webpack": "^4.35.0"
   },
   "devDependencies": {
+    "@testing-library/react-hooks": "^3.2.1",
+    "@types/jest": "^25.1.4",
     "@typescript-eslint/eslint-plugin": "^2.0.0",
     "@typescript-eslint/parser": "^2.0.0",
     "eslint": "^5.16.0",
@@ -52,7 +55,9 @@
     "eslint-plugin-react": "^7.0.1",
     "eslint-plugin-react-hooks": "^1.7.0",
     "eslint-plugin-standard": "^4.0.0",
+    "jest": "^25.1.0",
     "prettier": "^2.0.0",
+    "ts-jest": "^25.2.1",
     "webpack-cli": "^3.2.3",
     "webpack-dev-server": "^3.8.0"
   }

@@ -63,6 +63,15 @@ module.exports = {
     //   ts: "never",
     //   tsx: "never",
     // }],
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        devDependencies: [
+          "**/*.test.{js,ts}",
+          "app/javascript/test/**/*.{js,ts}",
+        ],
+      },
+    ],
     // "jsx-a11y/anchor-is-valid": ["warn"],
     "lines-between-class-members": [
       "error",

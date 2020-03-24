@@ -26,6 +26,7 @@ Get started on your new app within minutes instead of hours 🚗💨
     - [React](#react)
     - [TypeScript](#typescript)
     - [Hot Module Replacement (HMR)](#hot-module-replacement-hmr)
+    - [JavaScript/TypeScript Tests](#javascripttypescript-tests)
     - [Polyfills](#polyfills)
     - [Custom classes](#custom-classes)
     - [`Gemfile.dev` / `Gemfile.dev.lock`](#gemfiledev--gemfiledevlock)
@@ -92,8 +93,7 @@ All of the following have been installed and pre-configured:
 
 ### Base system
 
-- Rails 5.2.1
-- Ruby 2.5.1
+- Ruby on Rails
 - PostgreSQL >= 9.2
 - [pg](https://github.com/ged/ruby-pg) for `ActiveRecord`
 
@@ -178,7 +178,7 @@ heroku buildpacks:add heroku/ruby
 
 React support has been preconfigured together with `react-rails`.
 
-When creating a new component you want to mount in the view, place it under the `views` folder. `react-rails` will perform module lookup relative to that folder and automatically require it under the hood so it gets included in the `application` pack. For example, calling the following helper in your view file: 
+When creating a new component you want to mount in the view, place it under the `views` folder. `react-rails` will perform module lookup relative to that folder and automatically require it under the hood so it gets included in the `application` pack. For example, calling the following helper in your view file:
 
 ```ruby
 react_component("dashboard/properties_list")
@@ -214,6 +214,20 @@ export default hot(Welcome);
 ```
 
 This will allow you to continue working on your JS code without losing application state in the browser.
+
+### JavaScript/TypeScript Tests
+
+The repo comes pre-configured with `jest` and `ts-jest` so that you can start writing your tests in your language of choice.
+
+We're following the convention of placing tests next to the file they're testing. They will be run as long as they have `test`, (e.g. `MyComponent.test.ts`) in the name.
+
+You are encouraged to place your testing utility files under `app/javascript/test`.
+
+To run your tests, run:
+
+```
+yarn test
+```
 
 ### Polyfills
 
