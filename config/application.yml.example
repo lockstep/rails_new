@@ -1,3 +1,7 @@
+# NOTE: This sample file is **NOT** comprehensive. If there are well-defined
+# and necessary environment variables that are both universally relevant and
+# publicly accessible/shareable they can be included here, otherwise see the
+# README#environment-variables section.
 DATABASE_URL: 'postgres://localhost:5432/rails_new_development'
 HOST: 'http://localhost:3000'
 RAILS_MAX_THREADS: '5'
