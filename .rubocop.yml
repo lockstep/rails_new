@@ -145,11 +145,17 @@ Lint/ParenthesesAsGroupedExpression:
   StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#parens-no-spaces'
   Enabled: true
 
+Lint/RaiseException:
+  Enabled: true
+
 Lint/RequireParentheses:
   Description: >-
     Use parentheses in the method call to avoid confusion
     about precedence.
   Enabled: false
+
+Lint/StructNewOverride:
+  Enabled: true
 
 Lint/SuppressedException:
   Description: "Don't suppress exception."
