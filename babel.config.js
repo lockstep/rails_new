@@ -1,4 +1,4 @@
-module.exports = function(api) {
+module.exports = function (api) {
   var validEnv = ["development", "test", "production"];
   var currentEnv = api.env();
   var isProductionEnv = api.env("production");
@@ -33,24 +33,23 @@ module.exports = function(api) {
       "@babel/preset-typescript",
     ],
     plugins: [
-      require("babel-plugin-macros"),
-      require("@babel/plugin-syntax-dynamic-import").default,
-      isTestEnv && require("babel-plugin-dynamic-import-node"),
-      require("@babel/plugin-transform-destructuring").default,
+      "babel-plugin-macros",
+      "@babel/plugin-syntax-dynamic-import",
+      "@babel/plugin-transform-destructuring",
       [
-        require("@babel/plugin-proposal-class-properties").default,
+        "@babel/plugin-proposal-class-properties",
         {
           loose: true,
         },
       ],
       [
-        require("@babel/plugin-proposal-object-rest-spread").default,
+        "@babel/plugin-proposal-object-rest-spread",
         {
           useBuiltIns: true,
         },
       ],
       [
-        require("@babel/plugin-transform-runtime").default,
+        "@babel/plugin-transform-runtime",
         {
           // NOTE: Unable to specify this since react-google-maps
           // depends on the old @babel/runtime
@@ -60,17 +59,19 @@ module.exports = function(api) {
         },
       ],
       [
-        require("@babel/plugin-transform-regenerator").default,
+        "@babel/plugin-transform-regenerator",
         {
           async: false,
         },
       ],
       isProductionEnv && [
-        require("babel-plugin-transform-react-remove-prop-types").default,
+        "babel-plugin-transform-react-remove-prop-types",
         {
           removeImport: true,
         },
       ],
+      isTestEnv && "babel-plugin-dynamic-import-node",
+      isTestEnv && "@babel/plugin-transform-modules-commonjs",
       "@babel/plugin-proposal-nullish-coalescing-operator",
       "react-hot-loader/babel",
     ].filter(Boolean),

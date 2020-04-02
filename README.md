@@ -217,7 +217,7 @@ This will allow you to continue working on your JS code without losing applicati
 
 ### JavaScript/TypeScript Tests
 
-The repo comes pre-configured with `jest` and `ts-jest` so that you can start writing your tests in your language of choice.
+The repo comes pre-configured with `jest`. You can write your tests in JavaScript or TypeScript.
 
 We're following the convention of placing tests next to the file they're testing. They will be run as long as they have `test`, (e.g. `MyComponent.test.ts`) in the name.
 
