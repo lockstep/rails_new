@@ -53,7 +53,7 @@ describe ApplicationForm do
     it 'is valid if the form and resource are valid' do
       user = TestUser.new
       account = TestAccount.new(
-        email: 'test@example.com', password: 's3cr3t!', authenticatable: user
+        email: 'test@example.com', password: 's3cr3t!', authenticatable: user,
       )
       params =
         ActionController::Parameters.new(name: 'Test Account').permit(:name)

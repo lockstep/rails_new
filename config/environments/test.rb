@@ -18,7 +18,7 @@ Rails.application.configure do
   # Configure public file server for tests with Cache-Control for performance.
   config.public_file_server.enabled = true
   config.public_file_server.headers = {
-    'Cache-Control' => "public, max-age=#{1.hour.to_i}"
+    'Cache-Control' => "public, max-age=#{1.hour.to_i}",
   }
 
   # Show full error reports and disable caching.
@@ -45,7 +45,7 @@ Rails.application.configure do
   # Emails generated in the test suite that include urls need a host value.
   config.action_mailer.default_url_options = {
     host: 'localhost',
-    port: ENV.fetch('PORT') { 3000 }
+    port: ENV.fetch('PORT') { 3000 },
   }
 
   # Print deprecation notices to the stderr.

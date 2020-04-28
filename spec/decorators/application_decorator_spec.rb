@@ -26,7 +26,7 @@ describe ApplicationDecorator do
       first_name: 'Test',
       last_name: 'User',
       age: 42,
-      contact: OpenStruct.new(email: 'test@example.com')
+      contact: OpenStruct.new(email: 'test@example.com'),
     )
   end
 

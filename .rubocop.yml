@@ -68,6 +68,9 @@ Layout/ParameterAlignment:
   StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#no-double-indent'
   Enabled: true
 
+Layout/SpaceAroundMethodCallOperator:
+  Enabled: true
+
 #################### Lint ##################################
 
 Lint/FlipFlop:
@@ -446,6 +449,9 @@ Style/EvenOdd:
   StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#predicate-methods'
   Enabled: true
 
+Style/ExponentialNotation:
+  Enabled: true
+
 Style/FrozenStringLiteralComment:
   Description: >-
     Add the frozen_string_literal comment to the top of files
@@ -655,6 +661,15 @@ Style/Sample:
     `shuffle.last`, and `shuffle[Fixnum]`.
   Reference: 'https://github.com/JuanitoFatas/fast-ruby#arrayshufflefirst-vs-arraysample-code'
   Enabled: true
+
+Style/TrailingCommaInArguments:
+  EnforcedStyleForMultiline: 'comma'
+
+Style/TrailingCommaInArrayLiteral:
+  EnforcedStyleForMultiline: 'comma'
+
+Style/TrailingCommaInHashLiteral:
+  EnforcedStyleForMultiline: 'comma'
 
 #################### Testing ###########################
 

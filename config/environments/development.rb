@@ -22,7 +22,7 @@ Rails.application.configure do
 
     config.cache_store = :memory_store
     config.public_file_server.headers = {
-      'Cache-Control' => "public, max-age=#{2.days.to_i}"
+      'Cache-Control' => "public, max-age=#{2.days.to_i}",
     }
   else
     config.action_controller.perform_caching = false
@@ -36,7 +36,7 @@ Rails.application.configure do
   # In production, :host should be set to the actual host of your application.
   config.action_mailer.default_url_options = {
     host: 'localhost',
-    port: ENV.fetch('PORT') { 3000 }
+    port: ENV.fetch('PORT') { 3000 },
   }
 
   # Review emails in the browser instead of the logs
