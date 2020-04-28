@@ -8,7 +8,7 @@ class PresenterGenerator < Rails::Generators::NamedBase
   def create_presenter_file
     template(
       'presenter.rb.tt',
-      File.join('app', 'presenter', class_path, "#{file_name}_presenter.rb")
+      File.join('app', 'presenter', class_path, "#{file_name}_presenter.rb"),
     )
   end
 

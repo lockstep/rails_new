@@ -21,7 +21,7 @@ WebMock.disable_net_connect!(
   # now we only need the chromedriver:
   allow: 'chromedriver.storage.googleapis.com',
   # NOTE: System tests break if we don't allow localhost:
-  allow_localhost: true
+  allow_localhost: true,
 )
 
 # Requires supporting ruby files with custom matchers and macros, etc, in

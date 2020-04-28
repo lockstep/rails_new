@@ -8,7 +8,7 @@ class DecoratorGenerator < Rails::Generators::NamedBase
   def create_decorator_file
     template(
       'decorator.rb.tt',
-      File.join('app', 'decorators', class_path, "#{file_name}_decorator.rb")
+      File.join('app', 'decorators', class_path, "#{file_name}_decorator.rb"),
     )
   end
 

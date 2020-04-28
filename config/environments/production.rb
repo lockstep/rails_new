@@ -91,13 +91,13 @@ Rails.application.configure do
     exceptions = %w[controller action format id]
     {
       time: event.time,
-      params: event.payload[:params].except(*exceptions)
+      params: event.payload[:params].except(*exceptions),
     }
   end
   config.lograge.custom_payload do |controller|
     if controller.current_account
       {
-        account_id: controller.current_account.id
+        account_id: controller.current_account.id,
       }
     end
   end
