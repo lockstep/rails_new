@@ -127,7 +127,7 @@ group :test do
   # Easy installation and use of chromedriver (and others) to run system tests
   # with Chrome
   gem 'factory_bot_rails'
-  gem 'rspec-rails', '~> 3.7'
+  gem 'rspec-rails'
   # CircleCI test metadata collection
   gem 'rspec_junit_formatter'
   gem 'selenium-webdriver'
