@@ -25,7 +25,7 @@ gem 'pg', '~> 1.1.0'
 gem 'puma', '~> 4'
 
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 5.0.4'
+gem 'sass-rails'
 
 # Automatically add vendor prefixes to CSS rules
 gem 'autoprefixer-rails'
