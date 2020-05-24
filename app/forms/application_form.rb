@@ -20,6 +20,7 @@ class ApplicationForm
     def attributes(*attributes)
       @form_attributes = attributes.map do |attribute|
         attr_accessor attribute
+
         attribute.to_s
       end
     end

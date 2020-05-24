@@ -55,9 +55,9 @@ jobs:
       - run:
           name: Lint Ruby/Rails
           command: |
-            bundle exec rubocop -L | \
-            circleci tests split --split-by=timings --timings-type=filename | \
-            xargs bundle exec rubocop
+            bundle exec rubocop --list-target-files | \
+            circleci tests split | \
+            xargs bundle exec rubocop --parallel
 
       - run:
           name: Lint JavaScript
