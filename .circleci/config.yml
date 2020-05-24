@@ -85,10 +85,23 @@ jobs:
           name: Set up app environment
           command: cp config/application.yml.example config/application.yml
 
+      - restore_cache:
+          keys:
+            - assets-{{ .Branch }}
+            - assets-development
+
       # Assets precompilation requires ENV variables, so it must come after environment gets set up
       - run:
           name: Precompile assets and packs
           command: bundle exec rake assets:precompile
+
+      - save_cache:
+          key: assets-{{ .Branch }}-{{ epoch }}
+          paths:
+            - public/assets
+            - public/packs-test
+            - tmp/cache/assets/sprockets
+            - tmp/cache/webpacker
 
       # Database setup
       - run:
