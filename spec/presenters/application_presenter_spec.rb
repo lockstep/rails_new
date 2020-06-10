@@ -6,7 +6,7 @@ class TestUserPresenter < ApplicationPresenter
   forward :first_name, :last_name, :age
 
   def formatted_first_name
-    content_tag :strong, first_name
+    tag.strong first_name
   end
 end
 
