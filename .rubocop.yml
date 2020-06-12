@@ -107,6 +107,11 @@ Lint/DeprecatedClassMethods:
   Description: 'Check for deprecated class method calls.'
   Enabled: true
 
+Lint/DeprecatedOpenSSLConstant:
+  Description: 'Algorithmic constants for OpenSSL::Cipher and OpenSSL::Digest deprecated since OpenSSL version 2.2.0. Prefer passing a string instead.'
+  StyleGuide: 'https://docs.rubocop.org/rubocop/cops_lint.html#lintdeprecatedopensslconstant'
+  Enabled: true
+
 Lint/DuplicateHashKey:
   Description: 'Check for duplicate keys in hash literals.'
   Enabled: true
@@ -133,6 +138,11 @@ Lint/Loop:
     begin/end/while for post-loop tests.
   StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#loop-with-break'
   Enabled: false
+
+Lint/MixedRegexpCaptureTypes:
+  Description: "Do not mix named captures and numbered captures in a Regexp literal because numbered capture is ignored if they’re mixed. Replace numbered captures with non-capturing groupings or named captures."
+  StyleGuide: 'https://docs.rubocop.org/rubocop/cops_lint.html#lintmixedregexpcapturetypes'
+  Enabled: true
 
 Lint/NestedMethodDefinition:
   Description: 'Do not use nested method definitions.'
@@ -589,6 +599,16 @@ Style/Proc:
 Style/RaiseArgs:
   Description: 'Checks the arguments passed to raise/fail.'
   StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#exception-class-messages'
+  Enabled: true
+
+Style/RedundantRegexpCharacterClass:
+  Description: 'This cop checks for unnecessary single-element Regexp character classes.'
+  StyleGuide: 'https://docs.rubocop.org/rubocop/cops_style.html#styleredundantregexpcharacterclass'
+  Enabled: true
+
+Style/RedundantRegexpEscape:
+  Description: 'This cop checks for redundant escapes inside Regexp literals.'
+  StyleGuide: 'https://docs.rubocop.org/rubocop/cops_style.html#styleredundantregexpescape'
   Enabled: true
 
 Style/RegexpLiteral:
