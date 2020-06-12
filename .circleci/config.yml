@@ -21,7 +21,9 @@ jobs:
 
       # JS bundle
       - restore_cache:
-          key: yarn-{{ checksum "yarn.lock" }}
+          keys:
+            - yarn-{{ checksum "yarn.lock" }}
+            - yarn-
 
       - run:
           name: Install yarn dependencies
@@ -41,7 +43,9 @@ jobs:
             gem install bundler -v ${BUNDLER_VERSION}
 
       - restore_cache:
-          key: bundle-{{ checksum "Gemfile.lock" }}
+          keys:
+            - bundle-{{ checksum "Gemfile.lock" }}
+            - bundle-
 
       - run:
           name: Install bundle
