@@ -49,3 +49,6 @@ coverage/
 
 Gemfile.dev
 Gemfile.dev.lock
+
+# asdf-vm
+.tool-versions
