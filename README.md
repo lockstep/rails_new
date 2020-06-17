@@ -8,7 +8,7 @@ A thoughtfully designed template for building modern Rails apps 🔥
 
 Get started on your new app within minutes instead of hours 🚗💨
 
-- [rails_new](#railsnew)
+- [rails_new](#rails_new)
   - [Getting started](#getting-started)
   - [Optional configuration options](#optional-configuration-options)
   - [Environment variables](#environment-variables)
@@ -32,6 +32,7 @@ Get started on your new app within minutes instead of hours 🚗💨
     - [`Gemfile.dev` / `Gemfile.dev.lock`](#gemfiledev--gemfiledevlock)
     - [`Rack::RejectTrace` middleware](#rackrejecttrace-middleware)
     - [Favicons](#favicons)
+  - [Tools](#tools)
   - [Docker](#docker)
     - [Usage examples:](#usage-examples)
   - [TODO](#todo)
@@ -270,6 +271,12 @@ There's a custom middleware (`Rack::RejectTrace`) for completely disabling the H
 ### Favicons
 
 Favicons were generated with [Real Favicon Generator](https://realfavicongenerator.net/), consider using the same tool when replacing them for your project.
+
+## Tools
+
+Here's a list of tools we use and recommend:
+
+- [`asdf-vm`](https://asdf-vm.com) - Manage multiple runtime versions (Ruby, Node.js, etc.) with a single CLI tool.
 
 ## Docker
 
