@@ -93,9 +93,21 @@ All of the following have been installed and pre-configured:
 
 ### Base system
 
+- Ruby
 - Ruby on Rails
 - PostgreSQL >= 9.2
 - [pg](https://github.com/ged/ruby-pg) for `ActiveRecord`
+- NodeJS
+
+NOTE: We recommend that you install and manage these system dependencies using
+a combination of [Homebrew](https://brew.sh/) (Postgres),
+[asdf-vm](https://asdf-vm.com/#/) (Ruby, NodeJS) and
+[Bundler](https://bundler.io/) (Ruby on Rails). If you are starting fresh on
+a new system you may want to manage these package managers with a script
+like the [thoughtbot laptop script](https://github.com/thoughtbot/laptop) with
+the option to add your own opinionated extensions,
+e.g. [this](https://github.com/hiattp/dotfiles). Your code base should be under
+version control, why not your system toolkit and configuration as well?
 
 ### General
 
