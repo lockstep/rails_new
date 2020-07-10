@@ -140,7 +140,7 @@ Lint/Loop:
   Enabled: false
 
 Lint/MixedRegexpCaptureTypes:
-  Description: "Do not mix named captures and numbered captures in a Regexp literal because numbered capture is ignored if they’re mixed. Replace numbered captures with non-capturing groupings or named captures."
+  Description: 'Do not mix named captures and numbered captures in a Regexp literal because numbered capture is ignored if they’re mixed. Replace numbered captures with non-capturing groupings or named captures.'
   StyleGuide: 'https://docs.rubocop.org/rubocop/cops_lint.html#lintmixedregexpcapturetypes'
   Enabled: true
 
@@ -265,6 +265,16 @@ Naming/PredicateName:
 
 #################### Performance ###########################
 
+Performance/AncestorsInclude:
+  Description: 'This cop is used to identify usages of ancestors.include? and change them to use ⇐ instead.'
+  StyleGuide: 'https://docs.rubocop.org/rubocop-performance/cops_performance.html#performanceancestorsinclude'
+  Enabled: true
+
+Performance/BigDecimalWithNumericArgument:
+  Description: 'This cop identifies places where numeric argument to BigDecimal should be converted to string. Initializing from String is faster than from Numeric for BigDecimal.'
+  StyleGuide: 'https://docs.rubocop.org/rubocop-performance/cops_performance.html#performancebigdecimalwithnumericargument'
+  Enabled: true
+
 Performance/CaseWhenSplat:
   Description: >-
     Place `when` conditions that use splat at the end
@@ -299,9 +309,24 @@ Performance/RedundantMerge:
     by `Hash#[]=`.
   Enabled: true
 
+Performance/RedundantSortBlock:
+  Description: 'This cop identifies places where sort { |a, b| a <=> b } can be replaced with sort.'
+  StyleGuide: https://docs.rubocop.org/rubocop-performance/cops_performance.html#performanceredundantsortblock
+  Enabled: true
+
+Performance/RedundantStringChars:
+  Description: 'This cop checks for redundant String#chars.'
+  StyleGuide: https://docs.rubocop.org/rubocop-performance/cops_performance.html#performanceredundantstringchars
+  Enabled: true
+
 Performance/ReverseEach:
   Description: 'Use `reverse_each` instead of `reverse.each`.'
   Reference: 'https://github.com/JuanitoFatas/fast-ruby#enumerablereverseeach-vs-enumerablereverse_each-code'
+  Enabled: true
+
+Performance/ReverseFirst:
+  Description: 'This cop identifies places where reverse.first(n) and reverse.first can be replaced by last(n).reverse and last.'
+  StyleGuide: https://docs.rubocop.org/rubocop-performance/cops_performance.html#performancereversefirst
   Enabled: true
 
 Performance/Size:
@@ -309,6 +334,21 @@ Performance/Size:
     Use `size` instead of `count` for counting
     the number of elements in `Array` and `Hash`.
   Reference: 'https://github.com/JuanitoFatas/fast-ruby#arraycount-vs-arraysize-code'
+  Enabled: true
+
+Performance/SortReverse:
+  Description: 'This cop identifies places where sort { |a, b| b <⇒ a } can be replaced by a faster sort.reverse.'
+  StyleGuide: https://docs.rubocop.org/rubocop-performance/cops_performance.html#performancesortreverse
+  Enabled: true
+
+Performance/Squeeze:
+  Description: "This cop identifies places where gsub(/a+/, 'a') and gsub!(/a+/, 'a') can be replaced by squeeze('a') and squeeze!('a'). The squeeze('a') method is faster than gsub(/a+/, 'a')."
+  StyleGuide: https://docs.rubocop.org/rubocop-performance/cops_performance.html#performancesqueeze
+  Enabled: true
+
+Performance/StringInclude:
+  Description: 'This cop identifies unnecessary use of a regex where String#include? would suffice.'
+  StyleGuide: https://docs.rubocop.org/rubocop-performance/cops_performance.html#performancestringinclude
   Enabled: true
 
 Performance/StringReplacement:
@@ -373,6 +413,11 @@ Rails/Validation:
 
 #################### Style ###########################
 
+Style/AccessorGrouping:
+  Description: 'This cop checks for grouping of accessors in class and module bodies. By default it enforces accessors to be placed in grouped declarations, but it can be configured to enforce separating them in multiple declarations.'
+  StyleGuide: 'https://docs.rubocop.org/rubocop/cops_style.html#styleaccessorgrouping'
+  Enabled: true
+
 Style/ArrayJoin:
   Description: 'Use Array#join instead of Array#*.'
   StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#array-join'
@@ -387,6 +432,11 @@ Style/Attr:
   Description: 'Checks for uses of Module#attr.'
   StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#attr'
   Enabled: false
+
+Style/BisectedAttrAccessor:
+  Description: 'This cop checks for places where attr_reader and attr_writer for the same method can be combined into single attr_accessor.'
+  StyleGuide: 'https://docs.rubocop.org/rubocop/cops_style.html#stylebisectedattraccessor'
+  Enabled: true
 
 Style/CaseEquality:
   Description: 'Avoid explicit use of the case equality operator(===).'
@@ -599,6 +649,15 @@ Style/Proc:
 Style/RaiseArgs:
   Description: 'Checks the arguments passed to raise/fail.'
   StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#exception-class-messages'
+
+Style/RedundantAssignment:
+  Description: 'This cop checks for redundant assignment before returning.'
+  StyleGuide: 'https://docs.rubocop.org/rubocop/cops_style.html#styleredundantassignment'
+  Enabled: true
+
+Style/RedundantFetchBlock:
+  Description: 'This cop identifies places where fetch(key) { value } can be replaced by fetch(key, value).'
+  StyleGuide: 'https://docs.rubocop.org/rubocop/0.86/cops_style.html#styleredundantfetchblock'
   Enabled: true
 
 Style/RedundantRegexpCharacterClass:
