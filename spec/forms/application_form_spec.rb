@@ -24,6 +24,12 @@ describe ApplicationForm do
       it 'uses an explicitly specified model name' do
         expect(SignupForm.resource_class).to eq TestAccount
       end
+
+      it 'correctly returns all validators' do
+        # Validated automatically by Devise.
+        expect(SignupForm.validators_on(:email).size).to be > 0
+        expect(SignupForm.validators_on(:name).size).to be > 0
+      end
     end
 
     describe '.model_name' do
