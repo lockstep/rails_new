@@ -47,6 +47,12 @@ class ApplicationForm
         end
       end
     end
+
+    # Returns a full set of form object and resource validators.
+    # This is used by form libraries, such as simple_form.
+    def validators_on(*attributes)
+      super + resource_class.validators_on(*attributes)
+    end
   end
 
   # The underlying model wrapped by the form.
