@@ -41,6 +41,8 @@ class ApplicationForm
     #
     # @return [void]
     def inherited(child_class)
+      super
+
       child_class.instance_eval do
         def model_name
           ActiveModel::Name.new(self, nil, resource_class.name)
