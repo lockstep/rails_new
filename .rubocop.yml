@@ -33,6 +33,12 @@ Layout/DotPosition:
 Layout/EmptyLinesAroundAttributeAccessor:
   Enabled: true
 
+Layout/EndAlignment:
+  Description: "This cop checks whether the end keywords are aligned properly."
+  StyleGuide: https://docs.rubocop.org/rubocop/cops_layout.html#layoutendalignment
+  AutoCorrect: true
+  Enabled: true
+
 Layout/ExtraSpacing:
   Description: 'Do not use unnecessary spacing.'
   Enabled: true
@@ -76,11 +82,6 @@ Layout/SpaceAroundMethodCallOperator:
 
 #################### Lint ##################################
 
-Lint/FlipFlop:
-  Description: 'Checks for flip flops'
-  StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#no-flip-flops'
-  Enabled: true
-
 Lint/AmbiguousOperator:
   Description: >-
     Checks for ambiguous operators in the first argument of a
@@ -99,6 +100,11 @@ Lint/AssignmentInCondition:
   StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#safe-assignment-in-condition'
   Enabled: true
 
+Lint/BinaryOperatorWithIdenticalOperands:
+  Description: "This cop checks for places where binary operator has identical operands."
+  StyleGuide: https://docs.rubocop.org/rubocop/cops_lint.html#lintbinaryoperatorwithidenticaloperands
+  Enabled: true
+
 Lint/CircularArgumentReference:
   Description: "Don't refer to the keyword argument in the default value."
   Enabled: true
@@ -112,8 +118,18 @@ Lint/DeprecatedOpenSSLConstant:
   StyleGuide: 'https://docs.rubocop.org/rubocop/cops_lint.html#lintdeprecatedopensslconstant'
   Enabled: true
 
+Lint/DuplicateElsifCondition:
+  Description: "This cop checks that there are no repeated conditions used in if 'elsif'."
+  StyleGuide: https://docs.rubocop.org/rubocop/cops_lint.html#lintduplicateelsifcondition
+  Enabled: true
+
 Lint/DuplicateHashKey:
   Description: 'Check for duplicate keys in hash literals.'
+  Enabled: true
+
+Lint/DuplicateRescueException:
+  Description: "This cop checks that there are no repeated exceptions used in 'rescue' expressions."
+  StyleGuide: https://docs.rubocop.org/rubocop/cops_lint.html#lintduplicaterescueexception
   Enabled: true
 
 Lint/EachWithObjectArgument:
@@ -122,6 +138,21 @@ Lint/EachWithObjectArgument:
 
 Lint/ElseLayout:
   Description: 'Check for odd code arrangement in an else block.'
+  Enabled: true
+
+Lint/EmptyConditionalBody:
+  Description: "This cop checks for the presence of if, elsif and unless branches without a body."
+  StyleGuide: https://docs.rubocop.org/rubocop/cops_lint.html#lintemptyconditionalbody
+  Enabled: true
+
+Lint/FlipFlop:
+  Description: "Checks for flip flops"
+  StyleGuide: "https://github.com/bbatsov/ruby-style-guide#no-flip-flops"
+  Enabled: true
+
+Lint/FloatComparison:
+  Description: "This cop checks for the presence of precise comparison of floating point numbers."
+  StyleGuide: https://docs.rubocop.org/rubocop/cops_lint.html#lintfloatcomparison
   Enabled: true
 
 Lint/FormatParameterMismatch:
@@ -139,6 +170,11 @@ Lint/Loop:
   StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#loop-with-break'
   Enabled: false
 
+Lint/MissingSuper:
+  Description: "This cop checks for the presence of constructors and lifecycle callbacks without calls to super."
+  StyleGuide: https://docs.rubocop.org/rubocop/cops_lint.html#lintmissingsuper
+  Enabled: true
+
 Lint/MixedRegexpCaptureTypes:
   Description: 'Do not mix named captures and numbered captures in a Regexp literal because numbered capture is ignored if they’re mixed. Replace numbered captures with non-capturing groupings or named captures.'
   StyleGuide: 'https://docs.rubocop.org/rubocop/cops_lint.html#lintmixedregexpcapturetypes'
@@ -151,6 +187,11 @@ Lint/NestedMethodDefinition:
 
 Lint/NonLocalExitFromIterator:
   Description: 'Do not use return in iterator to cause non-local exit.'
+  Enabled: true
+
+Lint/OutOfRangeRegexpRef:
+  Description: "This cop looks for references of Regexp captures that are out of range and thus always returns nil."
+  StyleGuide: https://docs.rubocop.org/rubocop/cops_lint.html#lintoutofrangeregexpref
   Enabled: true
 
 Lint/ParenthesesAsGroupedExpression:
@@ -169,6 +210,11 @@ Lint/RequireParentheses:
     about precedence.
   Enabled: false
 
+Lint/SelfAssignment:
+  Description: "This cop checks for self-assignments."
+  StyleGuide: https://docs.rubocop.org/rubocop/cops_lint.html#lintselfassignment
+  Enabled: true
+
 Lint/StructNewOverride:
   Enabled: true
 
@@ -177,8 +223,18 @@ Lint/SuppressedException:
   StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#dont-hide-exceptions'
   Enabled: false
 
+Lint/TopLevelReturnWithArgument:
+  Description: "This cop checks for top level return with arguments. If there is a top-level return statement with an argument, then the argument is always ignored. This is detected automatically since Ruby 2.7."
+  StyleGuide: https://docs.rubocop.org/rubocop/cops_lint.html#linttoplevelreturnwithargument
+  Enabled: true
+
 Lint/UnderscorePrefixedVariableName:
   Description: 'Do not use prefix `_` for a variable that is used.'
+  Enabled: true
+
+Lint/UnreachableLoop:
+  Description: "This cop checks for loops that will have at most one iteration."
+  StyleGuide: https://docs.rubocop.org/rubocop/cops_lint.html#lintunreachableloop
   Enabled: true
 
 Lint/Void:
@@ -365,6 +421,11 @@ Rails/ActionFilter:
   Description: 'Enforces consistent use of action filter methods.'
   Enabled: true
 
+Rails/ActiveRecordCallbacksOrder:
+  Description: "This cop checks that Active Record callbacks are declared in the order in which they will be executed."
+  StyleGuide: https://docs.rubocop.org/rubocop-rails/2.7/cops_rails.html#railsactiverecordcallbacksorder
+  Enabled: true
+
 Rails/Date:
   Description: >-
     Checks the correct usage of date aware methods,
@@ -379,6 +440,11 @@ Rails/FindBy:
   Description: 'Prefer find_by over where.first.'
   Enabled: true
 
+Rails/FindById:
+  Description: "This cop enforces that ActiveRecord#find is used instead of where.take!, find_by!, and find_by_id! to retrieve a single record by primary key when you expect it to be found."
+  StyleGuide: https://docs.rubocop.org/rubocop-rails/2.7/cops_rails.html#railsfindbyid
+  Enabled: true
+
 Rails/FindEach:
   Description: 'Prefer all.find_each over all.find.'
   Enabled: true
@@ -387,8 +453,38 @@ Rails/HasAndBelongsToMany:
   Description: 'Prefer has_many :through to has_and_belongs_to_many.'
   Enabled: false
 
+Rails/Inquiry:
+  Description: "This cop checks that Active Support’s inquiry method is not used."
+  StyleGuide: https://docs.rubocop.org/rubocop-rails/2.7/cops_rails.html#railsinquiry
+  Enabled: true
+
+Rails/MailerName:
+  Description: "This cop enforces that mailer names end with Mailer suffix."
+  StyleGuide: https://docs.rubocop.org/rubocop-rails/2.7/cops_rails.html#railsmailername
+  Enabled: true
+
+Rails/MatchRoute:
+  Description: "This cop identifies places where defining routes with match can be replaced with a specific HTTP method."
+  StyleGuide: https://docs.rubocop.org/rubocop-rails/2.7/cops_rails.html#railsmatchroute
+  Enabled: true
+
+Rails/NegateInclude:
+  Description: "This cop enforces the use of collection.exclude?(obj) over !collection.include?(obj)."
+  StyleGuide: https://docs.rubocop.org/rubocop-rails/2.7/cops_rails.html#railsnegateinclude
+  Enabled: true
+
 Rails/Output:
   Description: 'Checks for calls to puts, print, etc.'
+  Enabled: true
+
+Rails/Pluck:
+  Description: "This cop enforces the use of pluck over map."
+  StyleGuide: https://docs.rubocop.org/rubocop-rails/2.7/cops_rails.html#railspluck
+  Enabled: true
+
+Rails/PluckInWhere:
+  Description: "This cop identifies places where pluck is used in where query methods and can be replaced with select."
+  StyleGuide: https://docs.rubocop.org/rubocop-rails/2.7/cops_rails.html#railspluckinwhere
   Enabled: true
 
 Rails/ReadWriteAttribute:
@@ -397,8 +493,23 @@ Rails/ReadWriteAttribute:
     write_attribute(:attr, val).
   Enabled: false
 
+Rails/RenderInline:
+  Description: "This cop looks for inline rendering within controller actions."
+  StyleGuide: https://docs.rubocop.org/rubocop-rails/2.7/cops_rails.html#railsrenderinline
+  Enabled: true
+
+Rails/RenderPlainText:
+  Description: "This cop identifies places where render text: can be replaced with render plain:."
+  StyleGuide: https://docs.rubocop.org/rubocop-rails/2.7/cops_rails.html#railsrenderplaintext
+  Enabled: true
+
 Rails/ScopeArgs:
   Description: 'Checks the arguments of ActiveRecord scopes.'
+  Enabled: true
+
+Rails/ShortI18n:
+  Description: "This cop enforces that short forms of I18n methods are used: t instead of translate and l instead of localize."
+  StyleGuide: https://docs.rubocop.org/rubocop-rails/2.7/cops_rails.html#railsshorti18n
   Enabled: true
 
 Rails/TimeZone:
@@ -411,11 +522,21 @@ Rails/Validation:
   Description: 'Use validates :attribute, hash of validations.'
   Enabled: true
 
+Rails/WhereExists:
+  Description: "This cop enforces the use of exists?(...) over where(...).exists?."
+  StyleGuide: https://docs.rubocop.org/rubocop-rails/2.7/cops_rails.html#railswhereexists
+  Enabled: true
+
 #################### Style ###########################
 
 Style/AccessorGrouping:
   Description: 'This cop checks for grouping of accessors in class and module bodies. By default it enforces accessors to be placed in grouped declarations, but it can be configured to enforce separating them in multiple declarations.'
   StyleGuide: 'https://docs.rubocop.org/rubocop/cops_style.html#styleaccessorgrouping'
+  Enabled: true
+
+Style/ArrayCoercion:
+  Description: "This cop enforces the use of Array() instead of explicit Array check or [*var]."
+  StyleGuide: https://docs.rubocop.org/rubocop/cops_style.html#stylearraycoercion
   Enabled: true
 
 Style/ArrayJoin:
@@ -442,6 +563,11 @@ Style/CaseEquality:
   Description: 'Avoid explicit use of the case equality operator(===).'
   StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#no-case-equality'
   Enabled: false
+
+Style/CaseLikeIf:
+  Description: "This cop identifies places where if-elsif constructions can be replaced with case-when."
+  StyleGuide: https://docs.rubocop.org/rubocop/cops_style.html#stylecaselikeif
+  Enabled: true
 
 Style/CharacterLiteral:
   Description: 'Checks for uses of character literals.'
@@ -512,6 +638,11 @@ Style/EvenOdd:
   StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#predicate-methods'
   Enabled: true
 
+Style/ExplicitBlockArgument:
+  Description: "This cop enforces the use of explicit block argument to avoid writing block literal that just passes its arguments to another block."
+  StyleGuide: https://docs.rubocop.org/rubocop/cops_style.html#styleexplicitblockargument
+  Enabled: true
+
 Style/ExponentialNotation:
   Enabled: true
 
@@ -526,6 +657,11 @@ Style/FormatString:
   StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#sprintf'
   Enabled: false
 
+Style/GlobalStdStream:
+  Description: "This cop enforces the use of $stdout/$stderr/$stdin instead of STDOUT/STDERR/STDIN."
+  StyleGuide: https://docs.rubocop.org/rubocop/cops_style.html#styleglobalstdstream
+  Enabled: true
+
 Style/GlobalVars:
   Description: 'Do not introduce global variables.'
   StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#instance-vars'
@@ -537,9 +673,19 @@ Style/GuardClause:
   StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#no-nested-conditionals'
   Enabled: true
 
+Style/HashAsLastArrayItem:
+  Description: "Checks for presence or absence of braces around hash literal as a last array item depending on configuration."
+  StyleGuide: https://docs.rubocop.org/rubocop/cops_style.html#stylehashaslastarrayitem
+  Enabled: true
+
 Style/HashEachMethods:
   Description: 'Use Hash#each_key and Hash#each_value.'
   StyleGuide: 'https://github.com/rubocop-hq/ruby-style-guide#hash-each'
+  Enabled: true
+
+Style/HashLikeCase:
+  Description: "This cop checks for places where case-when represents a simple 1:1 mapping and can be replaced with a hash lookup."
+  StyleGuide: https://docs.rubocop.org/rubocop/cops_style.html#stylehashlikecase
   Enabled: true
 
 Style/HashTransformKeys:
@@ -630,6 +776,11 @@ Style/OneLineConditional:
   StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#ternary-operator'
   Enabled: true
 
+Style/OptionalBooleanParameter:
+  Description: "This cop checks for places where keyword arguments can be used instead of boolean arguments when defining methods."
+  StyleGuide: https://docs.rubocop.org/rubocop/cops_style.html#styleoptionalbooleanparameter
+  Enabled: true
+
 Style/PercentLiteralDelimiters:
   Description: 'Use `%`-literal delimiters consistently'
   StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#percent-literal-braces'
@@ -660,6 +811,11 @@ Style/RedundantFetchBlock:
   StyleGuide: 'https://docs.rubocop.org/rubocop/0.86/cops_style.html#styleredundantfetchblock'
   Enabled: true
 
+Style/RedundantFileExtensionInRequire:
+  Description: "This cop checks for the presence of superfluous .rb extension in the filename provided to require and require_relative."
+  StyleGuide: https://docs.rubocop.org/rubocop/cops_style.html#styleredundantfileextensioninrequire
+  Enabled: true
+
 Style/RedundantRegexpCharacterClass:
   Description: 'This cop checks for unnecessary single-element Regexp character classes.'
   StyleGuide: 'https://docs.rubocop.org/rubocop/cops_style.html#styleredundantregexpcharacterclass'
@@ -680,6 +836,11 @@ Style/SelfAssignment:
     Checks for places where self-assignment shorthand should have
     been used.
   StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#self-assignment'
+  Enabled: true
+
+Style/SingleArgumentDig:
+  Description: "Sometimes using dig method ends up with just a single argument. In such cases, dig should be replaced with []."
+  StyleGuide: https://docs.rubocop.org/rubocop/cops_style.html#stylesingleargumentdig
   Enabled: true
 
 Style/SingleLineBlockParams:
@@ -704,6 +865,11 @@ Style/SpecialGlobalVars:
   Description: 'Avoid Perl-style global variables.'
   StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#no-cryptic-perlisms'
   Enabled: false
+
+Style/StringConcatenation:
+  Description: "This cop checks for places where string concatenation can be replaced with string interpolation."
+  StyleGuide: https://docs.rubocop.org/rubocop/cops_style.html#stylestringconcatenation
+  Enabled: true
 
 Style/StringLiterals:
   Description: 'Checks if uses of quotes match the configured preference.'
