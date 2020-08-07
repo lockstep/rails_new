@@ -44,7 +44,7 @@ gem 'pundit'
 gem 'devise', '~> 4.7.0'
 
 # API serialization
-gem 'fast_jsonapi'
+gem 'jsonapi-serializer'
 
 # App configuration
 gem 'figaro'
