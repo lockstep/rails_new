@@ -64,6 +64,10 @@ jobs:
             xargs bundle exec rubocop --parallel
 
       - run:
+          name: Run Brakeman
+          command: bundle exec brakeman --rails6
+
+      - run:
           name: Lint JavaScript
           command: yarn lint-check
 

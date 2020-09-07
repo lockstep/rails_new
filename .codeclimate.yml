@@ -1,7 +1,5 @@
 version: "2"
 plugins:
-  brakeman:
-    enabled: true
   duplication:
     enabled: true
     config:
