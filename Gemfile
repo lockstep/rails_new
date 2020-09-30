@@ -22,7 +22,7 @@ gem 'webpacker'
 gem 'pg', '~> 1.1.0'
 
 # Use Puma as the app server
-gem 'puma', '~> 4'
+gem 'puma'
 
 # Use SCSS for stylesheets
 gem 'sass-rails'
