@@ -26,6 +26,12 @@ Rails:
 
 #################### Layout ###########################
 
+Layout/BeginEndAlignment:
+  Description: This cop checks whether the end keyword of begin is aligned properly.
+  StyleGuide: https://docs.rubocop.org/rubocop/cops_layout.html#layoutbeginendalignment
+  EnforcedStyleAlignWith: begin
+  Enabled: true
+
 Layout/DotPosition:
   Description: 'Checks the position of the dot in multi-line method calls.'
   StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#consistent-multi-line-chains'
