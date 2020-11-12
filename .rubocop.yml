@@ -12,15 +12,7 @@ AllCops:
     - 'config/puma.rb'
     - 'node_modules/**/*'
     - 'vendor/bundle/**/*'
-  RSpec:
-    Patterns:
-      - _spec.rb
-      - '(?:^|/)spec/'
-    RSpec/FactoryBot:
-      Patterns:
-        - spec/factories.rb
-        - spec/factories/**/*.rb
-        - features/support/factories/**/*.rb
+
 Rails:
   Enabled: true
 
@@ -1014,7 +1006,6 @@ RSpec/IteratedExpectation:
 RSpec/EmptyExampleGroup:
   Description: Checks if an example group does not include any tests.
   Enabled: true
-  CustomIncludeMethods: []
   StyleGuide: http://www.rubydoc.info/gems/rubocop-rspec/RuboCop/Cop/RSpec/EmptyExampleGroup
 
 RSpec/EmptyLineAfterExampleGroup:
@@ -1147,11 +1138,6 @@ RSpec/InstanceVariable:
   AssignmentOnly: false
   Enabled: false
   StyleGuide: http://www.rubydoc.info/gems/rubocop-rspec/RuboCop/Cop/RSpec/InstanceVariable
-
-RSpec/InvalidPredicateMatcher:
-  Description: Checks invalid usage for predicate matcher.
-  Enabled: true
-  StyleGuide: http://www.rubydoc.info/gems/rubocop-rspec/RuboCop/Cop/RSpec/InvalidPredicateMatcher
 
 RSpec/ItBehavesLike:
   Description: Checks that only one `it_behaves_like` style is used.
@@ -1331,23 +1317,23 @@ RSpec/VoidExpect:
   Enabled: true
   StyleGuide: http://www.rubydoc.info/gems/rubocop-rspec/RuboCop/Cop/RSpec/VoidExpect
 
-Capybara/CurrentPathExpectation:
+RSpec/Capybara/CurrentPathExpectation:
   Description: Checks that no expectations are set on Capybara's `current_path`.
   Enabled: true
   StyleGuide: http://www.rubydoc.info/gems/rubocop-rspec/RuboCop/Cop/RSpec/Capybara/CurrentPathExpectation
 
-Capybara/FeatureMethods:
+RSpec/Capybara/FeatureMethods:
   Description: Checks for consistent method usage in feature specs.
   Enabled: true
   EnabledMethods: ['scenario']
   StyleGuide: http://www.rubydoc.info/gems/rubocop-rspec/RuboCop/Cop/RSpec/Capybara/FeatureMethods
 
-FactoryBot/AttributeDefinedStatically:
+RSpec/FactoryBot/AttributeDefinedStatically:
   Description: Always declare attribute values as blocks.
   Enabled: true
   StyleGuide: http://www.rubydoc.info/gems/rubocop-rspec/RuboCop/Cop/RSpec/FactoryBot/AttributeDefinedStatically
 
-FactoryBot/CreateList:
+RSpec/FactoryBot/CreateList:
   Description: Checks for create_list usage.
   Enabled: true
   EnforcedStyle: create_list
