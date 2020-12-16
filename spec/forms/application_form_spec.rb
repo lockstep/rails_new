@@ -2,6 +2,7 @@
 
 # Test form classes used below
 class TestAccount < Account; end
+
 class TestUser < User; end
 
 class TestAccountForm < ApplicationForm; end

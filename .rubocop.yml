@@ -249,7 +249,7 @@ Metrics/AbcSize:
   Enabled: false
 
 Metrics/BlockLength:
-  ExcludedMethods: ['describe', 'context', 'shared_examples']
+  IgnoredMethods: ['describe', 'context', 'shared_examples']
   Exclude:
     - config/environments/**
 

@@ -68,7 +68,7 @@ Rails.application.configure do
 
   # Bullet, https://github.com/flyerhzm/bullet#configuration
   config.after_initialize do
-    Bullet.enable = true
+    Bullet.enable = false
     Bullet.rails_logger = true
     Bullet.add_footer = true
   end

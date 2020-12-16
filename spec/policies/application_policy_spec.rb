@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class TestUser < User; end
+
 class TestUserPresenter < ApplicationPresenter; end
 
 describe ApplicationPolicy do

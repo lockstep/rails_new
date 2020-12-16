@@ -22,7 +22,7 @@ Rails.application.configure do
   }
 
   # Show full error reports and disable caching.
-  config.consider_all_requests_local       = true
+  config.consider_all_requests_local = true
   config.action_controller.perform_caching = false
   config.cache_store = :null_store
 
@@ -56,7 +56,8 @@ Rails.application.configure do
 
   # See: https://github.com/flyerhzm/bullet#run-in-tests
   config.after_initialize do
-    Bullet.enable = true
+    Bullet.enable = false
+
     # Raises error if n+1 query occurs.
     Bullet.raise = true
   end
