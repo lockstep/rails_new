@@ -50,7 +50,8 @@ gem 'jsonapi-serializer'
 gem 'figaro'
 
 # Exception tracking
-gem 'sentry-raven'
+gem 'sentry-rails'
+gem 'sentry-sidekiq'
 
 # Job queue
 gem 'sidekiq'

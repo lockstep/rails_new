@@ -155,7 +155,7 @@ Rspec has been preconfigured for Rails 5.1+ system tests.
 
 ### Production
 
-- [sentry-raven](https://github.com/getsentry/raven-ruby)
+- [sentry-ruby](https://github.com/getsentry/sentry-ruby)
 - [heroku-deflater](https://github.com/romanbsd/heroku-deflater)
 - [lograge](https://github.com/roidrage/lograge)
 - [rails_12factor](https://github.com/heroku/rails_12factor)

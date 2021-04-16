@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
   end
 
   before_action :authenticate_account!
-  before_action :set_raven_context
+  before_action :set_sentry_user
 
   private
 
@@ -37,7 +37,7 @@ class ApplicationController < ActionController::Base
     @current_user ||= current_account&.authenticatable
   end
 
-  def set_raven_context
-    Raven.user_context(id: current_user&.id)
+  def set_sentry_user
+    Sentry.set_user(id: current_user&.id)
   end
 end
