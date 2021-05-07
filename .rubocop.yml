@@ -435,6 +435,11 @@ Rails/Delegate:
   Description: 'Prefer delegate method for delegations.'
   Enabled: false
 
+Rails/EnvironmentVariableAccess:
+  Description: 'This cop looks for direct access to environment variables through the ENV variable within the application code.'
+  AllowReads: true
+  Enabled: true
+
 Rails/FindBy:
   Description: 'Prefer find_by over where.first.'
   Enabled: true
