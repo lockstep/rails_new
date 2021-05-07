@@ -27,6 +27,7 @@ module.exports = function (api) {
           exclude: ["transform-typeof-symbol"],
           forceAllTransforms: true,
           modules: false,
+          loose: true,
         },
       ],
       "@babel/preset-react",
