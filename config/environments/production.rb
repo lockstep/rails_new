@@ -133,4 +133,5 @@ Rails.application.configure do
   # config.action_controller.default_url_options = {
   #   host: Constants::HOST_URI.host
   # }
+  # config.hosts << ENV.fetch('HOST')
 end
