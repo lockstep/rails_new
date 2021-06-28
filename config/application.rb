@@ -58,5 +58,10 @@ module RailsNew
     # Warn if we inadvertently attempt to pull more records into memory
     # than the default `find_each` batch size of 1000:
     config.active_record.warn_on_records_fetched_greater_than = 1001
+
+    # Opt out of Google's FLoC.
+    # See https://andycroll.com/ruby/opt-out-of-google-floc-tracking-in-rails/
+    config.action_dispatch.default_headers['Permissions-Policy'] =
+      'interest-cohort=()'
   end
 end
