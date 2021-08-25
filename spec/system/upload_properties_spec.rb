@@ -2,12 +2,12 @@
 
 require 'rails_helper'
 
-RSpec.describe 'UploadProperties', type: :system do
+RSpec.describe 'Property Uploader', type: :system do
   before do
     driven_by(:rack_test)
   end
 
-  it 'upload prperty csv' do
-    get '/'
+  it 'uploads csv' do
+    visit '/'
   end
 end
