@@ -1,2 +1,4 @@
-<h1>Dashboard#index</h1>
-<p>Find me in app/views/dashboard/index.html.erb</p>
+<%= form_with url: csv_upload_properties_path do |f| %>
+  <%= f.file_field "property-csv-file" %>
+  <%= f.submit "Upload", id: "upload-property-csv"%>
+<% end %>
