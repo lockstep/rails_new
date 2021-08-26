@@ -16,6 +16,6 @@ module CsvSanitizer
   def sanitize_date(string_date)
     month, day, year = string_date.split('/').map(&:to_i)
 
-    Date.new(year, day, month)
+    Date.new(year, month, day)
   end
 end
