@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_26_123753) do
+ActiveRecord::Schema.define(version: 2021_08_26_151900) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -48,6 +48,21 @@ ActiveRecord::Schema.define(version: 2021_08_26_123753) do
     t.datetime "created_at", precision: 6, default: -> { "CURRENT_TIMESTAMP" }, null: false
     t.datetime "updated_at", precision: 6, default: -> { "CURRENT_TIMESTAMP" }, null: false
     t.index ["external_id"], name: "index_properties_on_external_id", unique: true
+  end
+
+  create_table "tenants", force: :cascade do |t|
+    t.string "name"
+    t.string "external_id"
+    t.string "property_id"
+    t.string "tenant_type"
+    t.string "floor"
+    t.integer "leasable_area"
+    t.datetime "lease_commenced_on"
+    t.integer "base_rent"
+    t.datetime "created_at", precision: 6, default: -> { "CURRENT_TIMESTAMP" }, null: false
+    t.datetime "updated_at", precision: 6, default: -> { "CURRENT_TIMESTAMP" }, null: false
+    t.index ["external_id"], name: "index_tenants_on_external_id", unique: true
+    t.index ["property_id"], name: "index_tenants_on_property_id"
   end
 
   create_table "users", force: :cascade do |t|
