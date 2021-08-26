@@ -9,7 +9,7 @@
   <tbody>
     <% @properties.each do |property| %>
       <tr class="property-item">
-        <td><%= property.name %></td>
+        <td><%= link_to property.name, property_path(property) %></td>
         <td><%= property.country %></td>
         <td><%= property.monthly_rent %></td>
       </tr>

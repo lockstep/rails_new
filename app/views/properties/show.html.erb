@@ -1,0 +1,18 @@
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Floor</th>
+      <th>Base Rent</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @tenants.each do |tenant| %>
+      <tr class="tenant-item">
+        <td><%= tenant.name %></td>
+        <td><%= tenant.floor %></td>
+        <td><%= tenant.base_rent %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
