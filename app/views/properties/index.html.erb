@@ -1,2 +1,18 @@
-<h1>Properties#index</h1>
-<p>Find me in app/views/properties/index.html.erb</p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Country</th>
+      <th>Monthly Rent</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @properties.each do |property| %>
+      <tr class="property-item">
+        <td><%= property.name %></td>
+        <td><%= property.country %></td>
+        <td><%= property.monthly_rent %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
