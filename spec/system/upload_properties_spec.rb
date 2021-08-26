@@ -11,7 +11,7 @@ RSpec.describe 'Property Uploader', type: :system do
     driven_by(:rack_test)
   end
 
-  it 'uploads csv and redirects to property index page' do
+  it 'uploads csv and display data correctly' do
     visit '/'
 
     attach_file 'property-csv-file', property_csv_file
