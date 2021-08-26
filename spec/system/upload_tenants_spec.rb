@@ -9,6 +9,7 @@ RSpec.describe 'Tenant Uploader', type: :system do
 
   before do
     driven_by(:rack_test)
+    create(:property)
   end
 
   it 'uploads csv and display data correctly' do
@@ -22,6 +23,6 @@ RSpec.describe 'Tenant Uploader', type: :system do
     click_on 'Properties'
     click_on 'Weber-Denesik'
 
-    expect(page).to have_selector('.tenant-item', count: 6)
+    expect(page).to have_selector('.tenant-item', count: 7)
   end
 end
