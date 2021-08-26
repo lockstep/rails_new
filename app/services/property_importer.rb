@@ -7,7 +7,7 @@ class PropertyImporter < ApplicationService
     @file = file
   end
 
-  def call
+  def call # rubocop:disable Metrics/MethodLength
     options = {
       converters: [
         proc { |value, row|
@@ -21,11 +21,11 @@ class PropertyImporter < ApplicationService
           else
             value
           end
-        }
-      ]
+        },
+      ],
     }
     data = CsvParser.(@file, options)
 
-    Property.upsert_all(data, unique_by: :external_id)  # rubocop:disable Rails/SkipsModelValidations    
+    Property.upsert_all(data, unique_by: :external_id)  # rubocop:disable Rails/SkipsModelValidations
   end
 end
