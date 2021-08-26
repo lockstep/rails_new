@@ -9,7 +9,7 @@ module Properties
       property_array = parsed_csv.map(&:to_h)
       Property.upsert_all(property_array, unique_by: :external_id)
 
-      redirect_to properties_path
+      redirect_to root_path, flash: { notice: "Property CSV has been uploaded" }
     end
   end
 end

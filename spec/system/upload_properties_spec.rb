@@ -17,7 +17,10 @@ RSpec.describe 'Property Uploader', type: :system do
     attach_file 'property-csv-file', property_csv_file
     find('#upload-property-csv').click
 
-    expect(page).to have_current_path('/properties')
+    expect(page).to have_content('Property CSV has been uploaded')
+
+    click_on 'Properties'
+
     expect(page).to have_selector('.property-item', count: 3)
   end
 end
