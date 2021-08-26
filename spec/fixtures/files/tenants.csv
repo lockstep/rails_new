@@ -1,0 +1,43 @@
+Name,External ID,Property ID,Tenant Type,Floor,Leasable Area,Lease Commenced On,Base Rent
+"Bogisich, Gibson and Block",TEN_1,PROP_1,Office,1,1980,12/31/2020,45540
+Lockman-Hintz,TEN_2,PROP_1,Office,G,1464,12/21/2019,35136
+"Hammes, Streich and Howe",TEN_3,PROP_1,Office,3,2818,11/11/2008,78904
+Upton-Nolan,TEN_4,PROP_1,Office,4,2114,5/4/2012,57078
+Ondricka-Walter,TEN_5,PROP_1,Retail,5,3316,1/3/2007,92848
+Rempel-Adams,TEN_6,PROP_1,Retail,7,1887,8/8/2018,39627
+Glover Inc,TEN_7,PROP_1,Office,12,3203,10/1/2005,92887
+Durgan-Harris,TEN_8,PROP_2,Retail,G,1966,10/20/2013,45218
+Hansen and Sons,TEN_9,PROP_2,Retail,10,1646,10/05/2011,46088
+"Lesch, Mosciski and Kirlin",TEN_10,PROP_2,Retail,5,1614,07/11/2018,38736
+Kuhn-Steuber,TEN_11,PROP_2,Retail,7,2781,08/07/2018,69525
+Fritsch Inc,TEN_12,PROP_2,Retail,15,2227,05/07/2018,64583
+Morissette and Sons,TEN_13,PROP_2,Retail,18,2975,10/14/2015,77350
+Turcotte-Spinka,TEN_14,PROP_2,Retail,5,3043,11/17/2013,88247
+Gleichner and Sons,TEN_15,PROP_2,Retail,4,3263,05/04/2018,71786
+Beer Group,TEN_16,PROP_2,Retail,25,2541,11/22/2013,63525
+"Gutkowski, Mohr and Frami",TEN_17,PROP_2,Retail,14,2053,09/21/2019,57484
+Murazik,TEN_18,PROP_2,Retail,10,3090,09/06/2017,67980
+Weissnat and Hirthe,TEN_19,PROP_2,Retail,7,1168,06/23/2012,28032
+Kshlerin Group,TEN_20,PROP_2,Retail,24,3011,01/29/2011,87319
+Feest Group,TEN_21,PROP_2,Retail,25,2630,11/01/2019,65750
+Crist and Sons,TEN_22,PROP_2,Retail,17,2542,04/13/2015,73718
+Rolfson Group,TEN_23,PROP_2,Retail,10,3371,11/21/2018,74162
+Kilback,TEN_24,PROP_3,Office,LG,3201,08/27/2013,76824
+Von and Predovic,TEN_25,PROP_3,Office,23,908,12/19/2011,23608
+Goodwin-Hayes,TEN_26,PROP_3,Office,4,1028,08/05/2020,26728
+Block,TEN_27,PROP_3,Office,9,2476,11/22/2019,59424
+Moen and Pouros,TEN_28,PROP_3,Office,3,2627,03/28/2011,57794
+Labadie-Zboncak,TEN_29,PROP_3,Office,9,2347,10/14/2015,53981
+Howe-Cartwright,TEN_30,PROP_3,Office,5,1937,11/17/2013,40677
+Huels-Boyer,TEN_31,PROP_3,Office,18,3176,05/04/2018,79400
+Barrows-Frami,TEN_32,PROP_3,Office,5,1433,11/22/2013,41557
+Fadel-Turcotte,TEN_33,PROP_3,Office,19,978,09/21/2019,27384
+O'Kon and Sons,TEN_34,PROP_3,Office,18,3223,09/06/2017,80575
+Bogan Group,TEN_35,PROP_3,Office,6,2868,06/23/2012,71700
+Collins LLC,TEN_36,PROP_3,Office,11,917,10/14/2015,22008
+Weissnat,TEN_37,PROP_3,Office,14,2581,11/17/2013,54201
+Ruecker and Schmitt,TEN_38,PROP_3,Office,20,1072,05/04/2018,26800
+Stehr Group,TEN_39,PROP_3,Office,16,1265,11/22/2013,32890
+Veum Group,TEN_40,PROP_3,Office,11,2616,09/21/2019,54936
+Daniel and Sons,TEN_41,PROP_3,Office,20,2530,09/06/2017,60720
+Howell-Franecki,TEN_42,PROP_3,Office,12,2715,06/23/2012,76020
