@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_03_072918) do
+ActiveRecord::Schema.define(version: 2021_08_26_123753) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,6 +33,21 @@ ActiveRecord::Schema.define(version: 2018_10_03_072918) do
     t.index ["authenticatable_type", "authenticatable_id"], name: "index_accounts_on_authenticatable_type_and_authenticatable_id"
     t.index ["email"], name: "index_accounts_on_email", unique: true
     t.index ["reset_password_token"], name: "index_accounts_on_reset_password_token", unique: true
+  end
+
+  create_table "properties", force: :cascade do |t|
+    t.string "name"
+    t.string "external_id"
+    t.string "property_type"
+    t.string "city"
+    t.string "country"
+    t.integer "acquisition_price"
+    t.integer "leasable_area"
+    t.datetime "acquired_on"
+    t.integer "monthly_rent", default: 0
+    t.datetime "created_at", precision: 6, default: -> { "CURRENT_TIMESTAMP" }, null: false
+    t.datetime "updated_at", precision: 6, default: -> { "CURRENT_TIMESTAMP" }, null: false
+    t.index ["external_id"], name: "index_properties_on_external_id", unique: true
   end
 
   create_table "users", force: :cascade do |t|
