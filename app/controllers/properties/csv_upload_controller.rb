@@ -3,9 +3,7 @@
 module Properties
   class CsvUploadController < ApplicationController
     def create
-      data = CsvParser.(params['property-csv-file'])
-
-      Property.upsert_all(data, unique_by: :external_id)  # rubocop:disable Rails/SkipsModelValidations
+      PropertyImporter.call(params['property-csv-file'])
 
       redirect_to root_path, flash: { notice: 'Property CSV has been uploaded' }
     end
