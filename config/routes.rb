@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   namespace :tenants do
     get 'csv_upload/create'
   end
-  resources :properties, only: [:index, :show] do
+  resources :properties, only: %i[index show] do
     collection do
       post 'csv_upload', to: 'properties/csv_upload#create'
     end
