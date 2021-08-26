@@ -19,6 +19,15 @@
 
   <body>
     <%= render partial: 'layouts/flash' %>
-    <%= yield %>
+    <div class="container py-3">
+      <div class="row">
+        <div class="col-3">
+          <%= render partial: 'layouts/nav' %>
+        </div>
+        <div class="col-9">
+          <%= yield %>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
