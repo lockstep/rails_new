@@ -1,10 +1,17 @@
 <div>
-  <h1>Data upload</h1>
-  <div class="py-4">
+  <h1 class="mb-4">Data upload</h1>
+  <div class="py-2">
     <%= form_with url: csv_upload_properties_path do |f| %>
       <%=f.label "property-csv-file", "Properties" %>
       <%= f.file_field "property-csv-file" %>
       <%= f.submit "Upload", id: "upload-property-csv"%>
+    <% end %>
+  </div>
+  <div class="py-2">
+    <%= form_with url: csv_upload_tenants_path do |f| %>
+      <%=f.label "tenant-csv-file", "Tenants" %>
+      <%= f.file_field "tenant-csv-file" %>
+      <%= f.submit "Upload", id: "upload-tenant-csv"%>
     <% end %>
   </div>
 </div>
