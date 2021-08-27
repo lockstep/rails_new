@@ -2,7 +2,9 @@
 
 class PropertiesController < ApplicationController
   def index
-    @property_presenters = PropertyPresenter.present_collection(Property.all)
+    @property_presenters = PropertyPresenter.present_collection(
+      Property.all.order('monthly_rent DESC'),
+    )
   end
 
   def show
