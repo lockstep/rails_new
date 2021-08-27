@@ -3,9 +3,22 @@
 class PropertyPresenter < ApplicationPresenter
   include ValueFormatter
 
-  BASIC_INFO = ['name', 'external_id', 'property_type', 'city', 'country',
-                'acquisition_price', 'leasable_area', 'acquired_on'].freeze
-  STATS_INFO = ['leased_area', 'occupancy_rate', 'total_monthly_rent'].freeze
+  BASIC_INFO = {
+    'Name' => 'name',
+    'External id' => 'external_id',
+    'Property type' => 'property_type',
+    'City' => 'city',
+    'Country' => 'country',
+    'Acquisition price' => 'acquisition_price',
+    'Leasable area' => 'leasable_area',
+    'Acquired on' => 'acquired_on',
+  }.freeze
+
+  STATS_INFO = {
+    'Leased area' => 'leased_area',
+    'Occupancy rate' => 'occupancy_rate',
+    'Total monthly rent' => 'total_monthly_rent',
+  }.freeze
 
   forward :name, :external_id, :property_type, :city, :country
 

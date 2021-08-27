@@ -1,11 +1,11 @@
 <h1 class="mb-4"><%= @tenant_presenter.name %></h1>
 
 <div class="mb-3">
-  <% TenantPresenter::BASIC_INFO.each do |name| %>
+  <% TenantPresenter::BASIC_INFO.each do |key, value| %>
     <div>
-      <span><b><%= name.humanize %></b></span>: <span><%= @tenant_presenter.send(name) %></span>
+      <span><b><%= key %></b></span>: <span><%= @tenant_presenter.send(value) %></span>
     </div>
   <% end %>
 </div>
 
-<%= link_to "Back to #{@tenant_presenter.property_name.humanize}", property_path(@tenant_presenter.property_internal_id) %>
+<%= link_to "Back to #{@tenant_presenter.property_name}", property_path(@tenant_presenter.property_internal_id) %>

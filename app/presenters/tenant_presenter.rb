@@ -3,10 +3,18 @@
 class TenantPresenter < ApplicationPresenter
   include ValueFormatter
 
-  BASIC_INFO = ["name", "external_id", "property_id", "tenant_type", "floor", "leasable_area", "lease_commenced_on", "base_rent"].freeze
+  BASIC_INFO = {
+    'Name' => 'name',
+    'External id' => 'external_id',
+    'Property id' => 'property_id',
+    'Tenant type' => 'tenant_type',
+    'Floor' => 'floor',
+    'Leasable area' => 'leasable_area',
+    'Lease commenced on' => 'lease_commenced_on',
+    'Base rent' => 'base_rent',
+  }.freeze
 
-
-  forward :name, :external_id, :property_id, :tenant_type, :floor, :property_id, :property_name
+  forward :name, :external_id, :property_id, :tenant_type, :floor
 
   def leasable_area
     formatted_area(wrapped.leasable_area)

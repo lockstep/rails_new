@@ -1,17 +1,17 @@
 <h1 class="mb-4"><%= @property_presenter.name %></h1>
 
 <div class="mb-3">
-  <% PropertyPresenter::BASIC_INFO.each do |name| %>
+  <% PropertyPresenter::BASIC_INFO.each do |key, value| %>
     <div>
-      <span><b><%= name.humanize %></b></span>: <span><%= @property_presenter.send(name) %></span>
+      <span><b><%= key %></b></span>: <span><%= @property_presenter.send(value) %></span>
     </div>
   <% end %>
 </div>
 
 <div class="mb-3">
-  <% PropertyPresenter::STATS_INFO.each do |name| %>
+  <% PropertyPresenter::STATS_INFO.each do |key, value| %>
     <div>
-      <span><b><%= name.humanize %></b></span>: <span><%= @property_presenter.send(name) %></span>
+      <span><b><%= key %></b></span>: <span><%= @property_presenter.send(value) %></span>
     </div>
   <% end %>
 </div>
