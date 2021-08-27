@@ -12,7 +12,7 @@ RSpec.describe 'Tenant Uploader', type: :system do
     create(:property)
   end
 
-  it 'uploads csv and display data correctly' do
+  it 'uploads csv and display data correctly' do # rubocop:disable RSpec/MultipleExpectations
     visit '/'
 
     attach_file 'tenant-csv-file', tenant_csv_file
@@ -21,8 +21,14 @@ RSpec.describe 'Tenant Uploader', type: :system do
     expect(page).to have_content('Tenant CSV has been uploaded')
 
     click_on 'Properties'
+
+    expect(page).to have_content('$442,020')
+
     click_on 'Weber-Denesik'
 
     expect(page).to have_selector('.tenant-item', count: 7)
+    expect(page).to have_content('$442,020')
+    expect(page).to have_content('16,782 m2')
+    expect(page).to have_content('67.13%')
   end
 end

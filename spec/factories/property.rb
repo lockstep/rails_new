@@ -8,7 +8,7 @@ FactoryBot.define do
     city { 'Los Angeles' }
     country { 'USA' }
     acquisition_price { 49_000_000 }
-    leasable_area { 25_000.45 }
+    leasable_area { 25_000_45 }
     acquired_on { Date.new(2016, 1, 3) }
   end
 end

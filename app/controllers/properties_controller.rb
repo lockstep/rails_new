@@ -2,11 +2,12 @@
 
 class PropertiesController < ApplicationController
   def index
-    @properties = Property.all
+    @properties = PropertyPresenter.decorate_collection(Property.all)
   end
 
   def show
-    @property = Property.find(params[:id])
-    @tenants = @property.tenants
+    property = Property.find(params[:id])
+    @property = PropertyPresenter.new(property)
+    @tenants = property.tenants
   end
 end

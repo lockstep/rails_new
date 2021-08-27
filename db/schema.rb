@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_26_183559) do
+ActiveRecord::Schema.define(version: 2021_08_26_205121) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -47,6 +47,8 @@ ActiveRecord::Schema.define(version: 2021_08_26_183559) do
     t.bigint "monthly_rent", default: 0
     t.datetime "created_at", precision: 6, default: -> { "CURRENT_TIMESTAMP" }, null: false
     t.datetime "updated_at", precision: 6, default: -> { "CURRENT_TIMESTAMP" }, null: false
+    t.bigint "leased_area", default: 0
+    t.decimal "occupancy_rate", precision: 10, scale: 2, default: "0.0"
     t.index ["external_id"], name: "index_properties_on_external_id", unique: true
   end
 
