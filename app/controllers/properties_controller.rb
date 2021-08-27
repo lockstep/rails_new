@@ -7,7 +7,8 @@ class PropertiesController < ApplicationController
 
   def show
     property = Property.find(params[:id])
+
     @property_presenter = PropertyPresenter.new(property)
-    @tenants = property.tenants
+    @tenant_presenters = TenantPresenter.present_collection(property.tenants)
   end
 end

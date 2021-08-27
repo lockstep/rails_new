@@ -25,11 +25,11 @@
     </tr>
   </thead>
   <tbody>
-    <% @tenants.each do |tenant| %>
+    <% @tenant_presenters.each do |tenant_presenter| %>
       <tr class="tenant-item">
-        <td><%= tenant.name %></td>
-        <td><%= tenant.floor %></td>
-        <td><%= tenant.base_rent %></td>
+        <td><%= link_to tenant_presenter.name, tenant_path(tenant_presenter) %></td>
+        <td><%= tenant_presenter.floor %></td>
+        <td><%= tenant_presenter.base_rent %></td>
       </tr>
     <% end %>
   </tbody>
