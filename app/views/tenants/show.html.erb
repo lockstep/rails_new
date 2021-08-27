@@ -1,0 +1,11 @@
+<h1 class="mb-4"><%= @tenant_presenter.name %></h1>
+
+<div class="mb-3">
+  <% TenantPresenter::BASIC_INFO.each do |name| %>
+    <div>
+      <span><b><%= name.humanize %></b></span>: <span><%= @tenant_presenter.send(name) %></span>
+    </div>
+  <% end %>
+</div>
+
+<%= link_to "Back to #{@tenant_presenter.property_name.humanize}", property_path(@tenant_presenter.property_internal_id) %>

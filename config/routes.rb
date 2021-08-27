@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  namespace :tenants do
+  resources :tenants, only: [:show] do
     get 'csv_upload/create'
   end
   resources :properties, only: %i[index show] do
