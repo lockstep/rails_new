@@ -1,29 +1,35 @@
 # frozen_string_literal: true
 
 class PropertyPresenter < ApplicationPresenter
-  include ActionView::Helpers::NumberHelper
+  include ValueFormatter
 
-  forward :name, :country
+  BASIC_INFO = ['name', 'external_id', 'property_type', 'city', 'country',
+                'acquisition_price', 'leasable_area', 'acquired_on'].freeze
+  STATS_INFO = ['leased_area', 'occupancy_rate', 'total_monthly_rent'].freeze
 
-  def monthly_rent
-    number_to_currency(
-      wrapped.monthly_rent / 100.00,
-      strip_insignificant_zeros: true,
-    )
+  forward :name, :external_id, :property_type, :city, :country
+
+  def acquisition_price
+    formatted_money(wrapped.acquisition_price)
+  end
+
+  def leasable_area
+    formatted_area(wrapped.leasable_area)
+  end
+
+  def total_monthly_rent
+    formatted_money(wrapped.monthly_rent)
+  end
+
+  def acquired_on
+    formatted_date(wrapped.acquired_on)
   end
 
   def leased_area
-    number = number_with_precision(
-      wrapped.leased_area / 100.00, precision: 2,
-                                    delimiter: ',', strip_insignificant_zeros: true # rubocop:disable Layout/LineLength
-    )
-    "#{number} m2"
+    formatted_area(wrapped.leased_area)
   end
 
   def occupancy_rate
-    number_to_percentage(
-      wrapped.occupancy_rate, precision: 2,
-                              strip_insignificant_zeros: true
-    )
+    formatted_percentage(wrapped.occupancy_rate)
   end
 end
