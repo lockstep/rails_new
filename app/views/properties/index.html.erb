@@ -1,9 +1,10 @@
+<h1 class="mb-4">Properties</h1>
 <table class="table table-bordered">
   <thead>
     <tr>
       <th>Name</th>
       <th>Country</th>
-      <th>Monthly Rent</th>
+      <th>Total Monthly Rent</th>
     </tr>
   </thead>
   <tbody>
@@ -11,7 +12,7 @@
       <tr class="property-item">
         <td><%= link_to property.name, property_path(property) %></td>
         <td><%= property.country %></td>
-        <td><%= property.monthly_rent %></td>
+        <td><%= property.total_monthly_rent %></td>
       </tr>
     <% end %>
   </tbody>
