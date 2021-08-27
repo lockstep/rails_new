@@ -8,11 +8,11 @@
     </tr>
   </thead>
   <tbody>
-    <% @properties.each do |property| %>
+    <% @property_presenters.each do |property_presenter| %>
       <tr class="property-item">
-        <td><%= link_to property.name, property_path(property) %></td>
-        <td><%= property.country %></td>
-        <td><%= property.total_monthly_rent %></td>
+        <td><%= link_to property_presenter.name, property_path(property_presenter) %></td>
+        <td><%= property_presenter.country %></td>
+        <td><%= property_presenter.total_monthly_rent %></td>
       </tr>
     <% end %>
   </tbody>

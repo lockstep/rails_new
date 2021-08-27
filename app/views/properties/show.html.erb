@@ -1,9 +1,9 @@
-<h1 class="mb-4"><%= @property.name %></h1>
+<h1 class="mb-4"><%= @property_presenter.name %></h1>
 
 <div class="mb-3">
   <% PropertyPresenter::BASIC_INFO.each do |name| %>
     <div>
-      <span><b><%= name.humanize %></b></span>: <span><%= @property.send(name) %></span>
+      <span><b><%= name.humanize %></b></span>: <span><%= @property_presenter.send(name) %></span>
     </div>
   <% end %>
 </div>
@@ -11,7 +11,7 @@
 <div class="mb-3">
   <% PropertyPresenter::STATS_INFO.each do |name| %>
     <div>
-      <span><b><%= name.humanize %></b></span>: <span><%= @property.send(name) %></span>
+      <span><b><%= name.humanize %></b></span>: <span><%= @property_presenter.send(name) %></span>
     </div>
   <% end %>
 </div>
