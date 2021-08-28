@@ -1,0 +1,85 @@
+name: CICD
+on:
+  push:
+    branches:
+      - master
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    container:
+      image: ruby:3.0.2
+
+    services:
+      postgres:
+        image: postgres:10.8
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: ""
+          POSTGRES_DB: postgres
+        ports:
+        - 5432:5432
+        # needed because the postgres container does not provide a healthcheck
+        options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '14.15.5'
+          registry-url: 'https://registry.npmjs.org'
+      - name: Gem cache
+        id: cache-bundle
+        uses: actions/cache@v1
+        with:
+          path: vendor/bundle
+          key: bundle-${{ hashFiles('**/Gemfile.lock') }}
+      - name: Bundle install
+        env:
+          RAILS_ENV: test
+        run: |
+          gem install bundler
+          bundle install --jobs 4 --retry 3 --path vendor/bundle
+      - name: Install yarn
+        run: npm install -g yarn
+      # NOTE: Yarn cache doesn't seem to be working quite yet
+      - name: Get yarn cache dir
+        id: yarn-cache-dir
+        run: echo "::set-output name=dir::$(yarn cache dir)"
+      - name: Yarn cache
+        id: cache-yarn
+        uses: actions/cache@v1
+        with:
+          path: ${{ steps.yarn-cache-dir.outputs.dir }}
+          key: yarn-${{ hashFiles('**/yarn.lock') }}
+      - name: Yarn install
+        run: yarn install
+      - name: Setup DB, Run tests
+        env:
+          PGHOST: postgres
+          PGUSER: postgres
+          PGPORT: ${{ job.services.postgres.ports[5432] }}
+          RAILS_ENV: test
+        run: |
+          bin/rails db:create db:schema:load
+          bundle exec rspec
+  deploy:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - name: Heroku login credentials
+        run: |
+          cat > ~/.netrc <<EOF
+            machine api.heroku.com
+              login ${{ secrets.HEROKU_EMAIL }}
+              password ${{ secrets.HEROKU_API_KEY }}
+            machine git.heroku.com
+              login ${{ secrets.HEROKU_EMAIL }}
+              password ${{ secrets.HEROKU_API_KEY }}
+          EOF
+      - name: Add Heroku remote
+        run: heroku git:remote --app ${{ secrets.HEROKU_APP_NAME }}
+      - name: Push to Heroku
+        run: git push heroku master -f
