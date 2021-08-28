@@ -27,5 +27,10 @@ class PropertyImporter < ApplicationService
     data = CsvParser.(@file, options)
 
     Property.upsert_all(data, unique_by: :external_id)  # rubocop:disable Rails/SkipsModelValidations
+
+    property_ids = data.filter_map { |e| e['external_id'] }.uniq
+    Property.where(external_id: property_ids).each do |property|
+      PropertyReconciliator.call(property)
+    end
   end
 end
