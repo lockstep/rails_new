@@ -73,7 +73,8 @@ gem 'barnes'
 
 group :production do
   # Remove this if the app is not hosted on Heroku
-  gem 'heroku-deflater'
+  # TLDR: https://github.com/romanbsd/heroku-deflater/issues/54
+  # gem 'heroku-deflater'
   gem 'lograge'
   gem 'nakayoshi_fork'
   gem 'rack-timeout'
