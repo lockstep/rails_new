@@ -3,7 +3,7 @@
 FactoryBot.define do
   factory :property do
     name { 'Weber-Denesik' }
-    external_id { 'PROP_1' }
+    sequence(:external_id) { |n| "PROP_#{n}" }
     property_type { 'Office' }
     city { 'Los Angeles' }
     country { 'USA' }
