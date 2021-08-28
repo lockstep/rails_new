@@ -11,6 +11,6 @@ class PropertiesController < ApplicationController
     property = Property.find(params[:id])
 
     @property_presenter = PropertyPresenter.new(property)
-    @tenant_presenters = TenantPresenter.present_collection(property.tenants)
+    @tenant_presenters = TenantPresenter.present_collection(property.tenants.order('base_rent DESC'))
   end
 end
