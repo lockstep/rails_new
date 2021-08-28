@@ -9,7 +9,7 @@ RSpec.describe 'Tenant Uploader', type: :system do
 
   before do
     driven_by(:rack_test)
-    create(:property, external_id: "PROP_1")
+    create(:property, external_id: 'PROP_1')
   end
 
   it 'uploads csv and display data correctly' do # rubocop:disable RSpec/MultipleExpectations
