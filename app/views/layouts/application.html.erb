@@ -1,24 +1,18 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset='UTF-8'>
-    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-
-    <title><%= yield(:page_title).presence || t('app.default_title') %></title>
-
-    <%= render partial: 'layouts/js_setup' %>
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= render partial: 'layouts/google_analytics' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_packs_with_chunks_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <title>React verumex</title>
 
     <%= csrf_meta_tags %>
-    <%= render partial: 'layouts/favicon' %>
-    <link rel='manifest' href='/manifest.json'>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <%= javascript_pack_tag 'Index' %>
   </head>
 
   <body>
-    <%= render partial: 'layouts/flash' %>
     <%= yield %>
   </body>
 </html>
