@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import Form from "react-bootstrap/Form"
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min';
 
 class Uploader extends Component {
 
