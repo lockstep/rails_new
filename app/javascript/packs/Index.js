@@ -1,13 +1,22 @@
 import React from "react";
 import { render } from "react-dom";
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap/dist/js/bootstrap.bundle.min';
 
 import App from "../components/App";
-import {BrowserRouter as Router, Route} from 'react-router-dom'
+
+
+import Button from 'react-bootstrap/Button';
+
+
+
+
 document.addEventListener("DOMContentLoaded", () => {
   render(
-    <App></App>,
+    <div>
+      <Button>Hello</Button>
+      <App>
+
+      </App>
+    </div>,
     document.body.appendChild(document.createElement("div"))
   );
 });

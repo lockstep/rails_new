@@ -22,7 +22,7 @@ const columns = [{
 console.log("hello")
 
 
-class PropertiesPage extends Component {
+class Properties extends Component {
   render() {
     return (
       <BootstrapTable keyField='name' data={ products } columns={ columns } />
@@ -30,4 +30,4 @@ class PropertiesPage extends Component {
   }
 }
 
-export default PropertiesPage;
+export default Properties;

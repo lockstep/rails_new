@@ -1,16 +1,21 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import HomePage from "../pages/home/HomePage";
-import PropertiesPage from "../pages/properties/PropertiesPage";
+import Home from "../pages/home/Home";
+import Properties from "../pages/properties/Properties";
+import {Navbar} from 'react-bootstrap'
+
+import Button from 'react-bootstrap/Button';
 
 export default (
-  <div>
-  <h1>Router</h1>
-  <PropertiesPage/>
-  {/* <Switch>
-    <Route path="/" exact component={HomePage} />
-    <Route path="/properties" exact component={PropertiesPage} />
-  </Switch> */}
-  </div>
+  <Router>
+  <Button>Hello</Button>
+  <Navbar bg="light" expand="lg">
+  <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
 
+  </Navbar>
+    <Switch>
+      <Route path="/" component={Home} />
+      <Route path="/properties" exact component={Properties} />
+    </Switch>
+  </Router>
 );

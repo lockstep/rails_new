@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import Uploader from '../../shared/uploader';
-import 'bootstrap/dist/css/bootstrap.min.css';
 
-class HomePage extends Component {
+class Home extends Component {
     render() {
       return (
         <div>
@@ -13,4 +12,4 @@ class HomePage extends Component {
     }
   }
   
-export default HomePage;
+export default Home;

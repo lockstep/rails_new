@@ -10,7 +10,7 @@
     "moduleResolution": "node",
     "sourceMap": true,
     "target": "es5",
-    "jsx": "react"
+    "jsx": "react-jsx"
   },
   "exclude": ["node_modules", "vendor", "public"],
   "compileOnSave": false

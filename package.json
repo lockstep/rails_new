@@ -15,11 +15,12 @@
     "test": "jest --passWithNoTests"
   },
   "dependencies": {
-    "@babel/core": "^7.4.5",
+    "@babel/core": "^7.15.5",
     "@babel/plugin-proposal-nullish-coalescing-operator": "^7.8.3",
-    "@babel/preset-react": "^7.0.0",
+    "@babel/preset-env": "^7.15.4",
+    "@babel/preset-react": "^7.14.5",
     "@babel/preset-typescript": "^7.3.3",
-    "@rails/webpacker": "^4.0.7",
+    "@rails/webpacker": "5.4.0",
     "@sentry/browser": "^5.11.0",
     "@testing-library/react-hooks": "^3.2.1",
     "@types/react": "^16.8.17",
@@ -62,7 +63,7 @@
     "jest": "^25.1.0",
     "prettier": "^2.0.0",
     "react-test-renderer": "^16.13.1",
-    "webpack-cli": "^3.2.3",
-    "webpack-dev-server": "^3.8.0"
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^4.1.0"
   }
 }
