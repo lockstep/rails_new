@@ -2,13 +2,14 @@
   "name": "rails_new",
   "private": true,
   "engines": {
-    "node": "^14.15.0",
+    "node": "^16.13.0",
     "yarn": ">=1.9.0"
   },
   "config": {
     "files": "app/javascript/**/*.{js,jsx,ts,tsx} app/assets/javascripts/**/*.{js,jsx,ts,tsx}"
   },
   "scripts": {
+    "dev": "./bin/webpack-dev-server",
     "lint-check": "eslint --format codeframe $npm_package_config_files && prettier --list-different $npm_package_config_files",
     "lint-write": "eslint --fix $npm_package_config_files && prettier --write $npm_package_config_files",
     "types-watch": "tsc --watch",
@@ -61,5 +62,8 @@
     "react-test-renderer": "^16.13.1",
     "webpack-cli": "^3.2.3",
     "webpack-dev-server": "^3.8.0"
+  },
+  "resolutions": {
+    "node-sass": "^6.0.1"
   }
 }
