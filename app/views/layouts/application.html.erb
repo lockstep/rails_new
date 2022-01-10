@@ -7,13 +7,15 @@
     <title><%= yield(:page_title).presence || t('app.default_title') %></title>
 
     <%= render partial: 'layouts/js_setup' %>
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= render partial: 'layouts/google_analytics' %>
 
     <%= csrf_meta_tags %>
     <%= render partial: 'layouts/favicon' %>
     <link rel='manifest' href='/manifest.json'>
-    <%= javascript_include_tag "application", "data-turbolinks-track": "reload", defer: true %>
+
+    <%= stylesheet_link_tag 'vendor', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'vendor', 'data-turbolinks-track': 'reload', defer: true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
   </head>
 
   <body>
