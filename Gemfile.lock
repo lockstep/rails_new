@@ -74,7 +74,7 @@ GEM
       statsd-ruby (~> 1.1)
     bcrypt (3.1.16)
     bindex (0.8.1)
-    bootsnap (1.9.1)
+    bootsnap (1.9.3)
       msgpack (~> 1.0)
     brakeman (5.1.2)
     builder (3.2.4)
@@ -146,6 +146,8 @@ GEM
       rack (>= 1.4.5)
     i18n (1.8.11)
       concurrent-ruby (~> 1.0)
+    jsbundling-rails (1.0.0)
+      railties (>= 6.0.0)
     jsonapi-serializer (2.2.0)
       activesupport (>= 4.2)
     launchy (2.5.0)
@@ -207,8 +209,6 @@ GEM
     rack (2.2.3)
     rack-mini-profiler (2.3.3)
       rack (>= 1.2.0)
-    rack-proxy (0.7.0)
-      rack
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
     rack-timeout (0.6.0)
@@ -315,7 +315,6 @@ GEM
       childprocess (>= 0.5, < 5.0)
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2)
-    semantic_range (3.0.0)
     sentry-rails (4.7.3)
       railties (>= 5.0)
       sentry-ruby-core (~> 4.7.0)
@@ -375,11 +374,6 @@ GEM
       addressable (>= 2.8.0)
       crack (>= 0.3.2)
       hashdiff (>= 0.4.0, < 2.0.0)
-    webpacker (5.4.3)
-      activesupport (>= 5.2)
-      rack-proxy (>= 0.6.1)
-      railties (>= 5.2)
-      semantic_range (>= 2.3.0)
     websocket-driver (0.7.5)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
@@ -405,6 +399,7 @@ DEPENDENCIES
   figaro
   foreman
   heroku-deflater
+  jsbundling-rails
   jsonapi-serializer
   letter_opener
   listen (>= 3.0.5, < 3.2)
@@ -445,11 +440,10 @@ DEPENDENCIES
   web-console (>= 3.3.0)
   webdrivers
   webmock
-  webpacker
   yard
 
 RUBY VERSION
-   ruby 3.0.2p107
+   ruby 3.0.3p157
 
 BUNDLED WITH
-   2.2.22
+   2.2.32

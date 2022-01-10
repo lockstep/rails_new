@@ -9,7 +9,7 @@
     "module": "es6",
     "moduleResolution": "node",
     "sourceMap": true,
-    "target": "es5",
+    "target": "ES2020",
     "jsx": "react"
   },
   "exclude": ["node_modules", "vendor", "public"],

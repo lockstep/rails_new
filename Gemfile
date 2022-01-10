@@ -16,7 +16,7 @@ gem 'rails', '~> 6'
 
 gem 'react-rails'
 
-gem 'webpacker'
+gem 'jsbundling-rails'
 
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 1.1.0'

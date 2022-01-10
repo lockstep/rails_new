@@ -9,18 +9,17 @@
     "files": "app/javascript/**/*.{js,jsx,ts,tsx} app/assets/javascripts/**/*.{js,jsx,ts,tsx}"
   },
   "scripts": {
-    "dev": "./bin/webpack-dev-server",
     "lint-check": "eslint --format codeframe $npm_package_config_files && prettier --list-different $npm_package_config_files",
     "lint-write": "eslint --fix $npm_package_config_files && prettier --write $npm_package_config_files",
     "types-watch": "tsc --watch",
-    "test": "jest --passWithNoTests"
+    "test": "jest --passWithNoTests",
+    "build": "esbuild app/javascript/*.* --bundle --sourcemap --outdir=app/assets/builds"
   },
   "dependencies": {
     "@babel/core": "^7.4.5",
     "@babel/plugin-proposal-nullish-coalescing-operator": "^7.8.3",
     "@babel/preset-react": "^7.0.0",
     "@babel/preset-typescript": "^7.3.3",
-    "@rails/webpacker": "^4.0.7",
     "@sentry/browser": "^5.11.0",
     "@testing-library/react-hooks": "^3.2.1",
     "@types/react": "^16.8.17",
@@ -29,6 +28,7 @@
     "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
     "bootstrap": "^4.3.1",
     "core-js": "^3.0.1",
+    "esbuild": "^0.14.11",
     "jquery": "^3.2.1",
     "jquery-ujs": "^1.2.2",
     "popper.js": "^1.12.9",
@@ -37,8 +37,7 @@
     "react-dom": "npm:@hot-loader/react-dom",
     "react-hot-loader": "^4.8.4",
     "react_ujs": "^2.5.0",
-    "typescript": "^3.7.0",
-    "webpack": "^4.35.0"
+    "typescript": "^3.7.0"
   },
   "devDependencies": {
     "@prettier/plugin-ruby": "^1.0.1",
@@ -59,9 +58,7 @@
     "eslint-plugin-standard": "^4.0.0",
     "jest": "^25.1.0",
     "prettier": "^2.0.0",
-    "react-test-renderer": "^16.13.1",
-    "webpack-cli": "^3.2.3",
-    "webpack-dev-server": "^3.8.0"
+    "react-test-renderer": "^16.13.1"
   },
   "resolutions": {
     "node-sass": "^6.0.1"

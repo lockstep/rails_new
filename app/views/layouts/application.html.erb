@@ -9,12 +9,11 @@
     <%= render partial: 'layouts/js_setup' %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= render partial: 'layouts/google_analytics' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_packs_with_chunks_tag 'application', 'data-turbolinks-track': 'reload' %>
 
     <%= csrf_meta_tags %>
     <%= render partial: 'layouts/favicon' %>
     <link rel='manifest' href='/manifest.json'>
+    <%= javascript_include_tag "application", "data-turbolinks-track": "reload", defer: true %>
   </head>
 
   <body>

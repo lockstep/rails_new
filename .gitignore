@@ -52,3 +52,6 @@ Gemfile.dev.lock
 
 # asdf-vm
 .tool-versions
+
+/app/assets/builds/*
+!/app/assets/builds/.keep
