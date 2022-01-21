@@ -12,7 +12,7 @@ version_file = File.join(File.dirname(__FILE__), '.ruby-version')
 ruby File.read(version_file).strip
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 6'
+gem 'rails', '~> 7'
 
 gem 'react-rails'
 
@@ -41,7 +41,7 @@ gem 'newrelic_rpm'
 gem 'pundit'
 
 # Authentication
-gem 'devise', '~> 4.7.0'
+gem 'devise', '~> 4.8.0'
 
 # API serialization
 gem 'jsonapi-serializer'
