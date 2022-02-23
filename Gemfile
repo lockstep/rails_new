@@ -103,19 +103,13 @@ end
 
 group :development do
   gem 'brakeman'
-  gem 'listen', '>= 3.0.5', '< 3.2'
+  # Review emails in the browser on the fly
+  gem 'letter_opener'
   gem 'nullalign'
   gem 'rubocop', require: false
   gem 'rubocop-performance', require: false
   gem 'rubocop-rails', require: false
   gem 'rubocop-rspec', require: false
-  # Spring speeds up development by keeping your application running in the background.
-  # Read more: https://github.com/rails/spring
-  gem 'spring'
-  gem 'spring-commands-rspec'
-  gem 'spring-watcher-listen', '~> 2.0.0'
-  # Review emails in the browser on the fly
-  gem 'letter_opener'
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'web-console', '>= 3.3.0'
 end

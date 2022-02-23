@@ -150,7 +150,6 @@ Rspec has been preconfigured for Rails 5.1+ system tests.
 - [capybara](https://github.com/teamcapybara/capybara)
 - [factory_bot_rails](https://github.com/thoughtbot/factory_bot_rails)
 - [shoulda-matchers](https://github.com/thoughtbot/shoulda-matchers)
-- [spring-commands-rspec](https://github.com/jonleighton/spring-commands-rspec)
 - [webmock](https://github.com/bblimke/webmock)
 
 ### Production
