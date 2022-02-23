@@ -19,7 +19,7 @@ gem 'react-rails'
 gem 'webpacker'
 
 # Use postgresql as the database for Active Record
-gem 'pg', '~> 1.1.0'
+gem 'pg', '~> 1.3.0'
 
 # Use Puma as the app server
 gem 'puma'
@@ -80,8 +80,8 @@ group :production do
 end
 
 group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug'
+  # Call 'binding.break' anywhere in the code to stop execution and get a debugger console
+  gem 'debug'
 
   gem 'foreman'
 
@@ -94,7 +94,6 @@ group :development, :test do
   gem 'ruby-prof'
 
   # Use Pry instead of IRB
-  gem 'pry-byebug'
   gem 'pry-doc'
   gem 'pry-rails'
 

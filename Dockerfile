@@ -1,4 +1,4 @@
-FROM ruby:2-alpine
+FROM ruby:3.1-alpine
 
 RUN apk update && apk add --update --no-cache \
   # C compiler etc

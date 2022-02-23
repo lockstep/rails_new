@@ -7,7 +7,7 @@ jobs:
     parallelism: 1
     working_directory: ~/src
     docker:
-      - image: cimg/ruby:3.0.3-browsers
+      - image: cimg/ruby:3.1.1-browsers
         environment:
           BUNDLE_JOBS: 1
           BUNDLE_RETRY: 1
@@ -75,9 +75,12 @@ jobs:
             circleci tests split | \
             xargs bundle exec rubocop --parallel
 
-      - run:
-          name: Run Brakeman
-          command: bundle exec brakeman --rails6
+      # Brakeman is not yet compatible with Ruby 3.1 - restore this once
+      # https://github.com/presidentbeef/brakeman/issues/1664 has
+      # been resolved
+      # - run:
+      #     name: Run Brakeman
+      #     command: bundle exec brakeman --rails7
 
       - run:
           name: Lint JavaScript
