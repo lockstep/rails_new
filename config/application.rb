@@ -16,7 +16,7 @@ module RailsNew
     ENV_TRUTHY = %w[enabled true t 1].freeze
 
     # Initialize configuration defaults for originally generated Rails version.
-    config.load_defaults 6.0
+    config.load_defaults 7.0
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers
@@ -63,5 +63,7 @@ module RailsNew
     # See https://andycroll.com/ruby/opt-out-of-google-floc-tracking-in-rails/
     config.action_dispatch.default_headers['Permissions-Policy'] =
       'interest-cohort=()'
+
+    config.action_mailer.deliver_later_queue_name = :mailers
   end
 end
