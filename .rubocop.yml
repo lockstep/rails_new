@@ -692,6 +692,11 @@ Style/HashLikeCase:
   StyleGuide: https://docs.rubocop.org/rubocop/cops_style.html#stylehashlikecase
   Enabled: true
 
+Style/HashSyntax:
+  Description: 'This cop checks hash literal syntax'
+  StyleGuide: https://docs.rubocop.org/rubocop/cops_style.html#stylehashsyntax
+  EnforcedShorthandSyntax: either
+
 Style/HashTransformKeys:
   Description: 'Prefer `transform_keys` over `each_with_object` and `map`.'
   StyleGuide: 'https://github.com/rubocop-hq/ruby-style-guide#hashtransform_keys-and-hashtransform_values'
