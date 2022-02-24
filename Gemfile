@@ -105,6 +105,7 @@ group :development do
   gem 'brakeman'
   # Review emails in the browser on the fly
   gem 'letter_opener'
+  gem 'listen'
   gem 'nullalign'
   gem 'rubocop', require: false
   gem 'rubocop-performance', require: false
