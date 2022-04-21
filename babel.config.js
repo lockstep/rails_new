@@ -15,6 +15,8 @@ module.exports = function (api) {
   }
 
   return {
+    // Correctly import CommonJS modules
+    sourceType: "unambiguous",
     presets: [
       [
         "@babel/preset-env",
@@ -37,18 +39,8 @@ module.exports = function (api) {
       "babel-plugin-macros",
       "@babel/plugin-syntax-dynamic-import",
       "@babel/plugin-transform-destructuring",
-      [
-        "@babel/plugin-proposal-class-properties",
-        {
-          loose: true,
-        },
-      ],
-      [
-        "@babel/plugin-proposal-object-rest-spread",
-        {
-          useBuiltIns: true,
-        },
-      ],
+      ["@babel/plugin-proposal-class-properties", { loose: true }],
+      ["@babel/plugin-proposal-object-rest-spread", { useBuiltIns: true }],
       [
         "@babel/plugin-transform-runtime",
         {
@@ -59,18 +51,13 @@ module.exports = function (api) {
           regenerator: true,
         },
       ],
-      [
-        "@babel/plugin-transform-regenerator",
-        {
-          async: false,
-        },
-      ],
+      ["@babel/plugin-transform-regenerator", { async: false }],
       isProductionEnv && [
         "babel-plugin-transform-react-remove-prop-types",
-        {
-          removeImport: true,
-        },
+        { removeImport: true },
       ],
+      ["@babel/plugin-proposal-private-methods", { loose: true }],
+      ["@babel/plugin-proposal-private-property-in-object", { loose: true }],
       isTestEnv && "babel-plugin-dynamic-import-node",
       isTestEnv && "@babel/plugin-transform-modules-commonjs",
       "@babel/plugin-proposal-nullish-coalescing-operator",
