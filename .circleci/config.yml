@@ -1,10 +1,13 @@
-version: 2
+version: 2.1
+
+orbs:
+  browser-tools: circleci/browser-tools@1.2.3
 jobs:
   test:
     parallelism: 1
     working_directory: ~/src
     docker:
-      - image: circleci/ruby:3.0-node-browsers
+      - image: cimg/ruby:3.1.1-browsers
         environment:
           BUNDLE_JOBS: 1
           BUNDLE_RETRY: 1
@@ -18,6 +21,15 @@ jobs:
           POSTGRES_USER: lockstep
     steps:
       - checkout
+
+      # Install chrome / chromedriver
+      - browser-tools/install-chrome
+      - browser-tools/install-chromedriver
+      - run:
+          command: |
+            google-chrome --version
+            chromedriver --version
+          name: Check install
 
       # JS bundle
       - restore_cache:
@@ -63,9 +75,12 @@ jobs:
             circleci tests split | \
             xargs bundle exec rubocop --parallel
 
-      - run:
-          name: Run Brakeman
-          command: bundle exec brakeman --rails6
+      # Brakeman is not yet compatible with Ruby 3.1 - restore this once
+      # https://github.com/presidentbeef/brakeman/issues/1664 has
+      # been resolved
+      # - run:
+      #     name: Run Brakeman
+      #     command: bundle exec brakeman --rails7
 
       - run:
           name: Lint JavaScript

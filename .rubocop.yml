@@ -4,7 +4,7 @@ require:
   - rubocop-rspec
 
 AllCops:
-  TargetRailsVersion: 6.0
+  TargetRailsVersion: 7.0
   NewCops: enable
   Exclude:
     - 'db/**/*'
@@ -691,6 +691,11 @@ Style/HashLikeCase:
   Description: "This cop checks for places where case-when represents a simple 1:1 mapping and can be replaced with a hash lookup."
   StyleGuide: https://docs.rubocop.org/rubocop/cops_style.html#stylehashlikecase
   Enabled: true
+
+Style/HashSyntax:
+  Description: 'This cop checks hash literal syntax'
+  StyleGuide: https://docs.rubocop.org/rubocop/cops_style.html#stylehashsyntax
+  EnforcedShorthandSyntax: either
 
 Style/HashTransformKeys:
   Description: 'Prefer `transform_keys` over `each_with_object` and `map`.'

@@ -12,14 +12,14 @@ version_file = File.join(File.dirname(__FILE__), '.ruby-version')
 ruby File.read(version_file).strip
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 6'
+gem 'rails', '~> 7'
 
 gem 'react-rails'
 
 gem 'webpacker'
 
 # Use postgresql as the database for Active Record
-gem 'pg', '~> 1.1.0'
+gem 'pg', '~> 1.3.0'
 
 # Use Puma as the app server
 gem 'puma'
@@ -40,7 +40,7 @@ gem 'newrelic_rpm'
 gem 'pundit'
 
 # Authentication
-gem 'devise', '~> 4.7.0'
+gem 'devise', '~> 4.8.0'
 
 # API serialization
 gem 'jsonapi-serializer'
@@ -79,8 +79,8 @@ group :production do
 end
 
 group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug'
+  # Call 'binding.break' anywhere in the code to stop execution and get a debugger console
+  gem 'debug'
 
   gem 'foreman'
 
@@ -93,7 +93,6 @@ group :development, :test do
   gem 'ruby-prof'
 
   # Use Pry instead of IRB
-  gem 'pry-byebug'
   gem 'pry-doc'
   gem 'pry-rails'
 
@@ -103,19 +102,14 @@ end
 
 group :development do
   gem 'brakeman'
-  gem 'listen', '>= 3.0.5', '< 3.2'
+  # Review emails in the browser on the fly
+  gem 'letter_opener'
+  gem 'listen'
   gem 'nullalign'
   gem 'rubocop', require: false
   gem 'rubocop-performance', require: false
   gem 'rubocop-rails', require: false
   gem 'rubocop-rspec', require: false
-  # Spring speeds up development by keeping your application running in the background.
-  # Read more: https://github.com/rails/spring
-  gem 'spring'
-  gem 'spring-commands-rspec'
-  gem 'spring-watcher-listen', '~> 2.0.0'
-  # Review emails in the browser on the fly
-  gem 'letter_opener'
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'web-console', '>= 3.3.0'
 end

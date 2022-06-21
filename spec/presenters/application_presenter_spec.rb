@@ -11,7 +11,7 @@ class TestUserPresenter < ApplicationPresenter
 end
 
 describe ApplicationPresenter do
-  let(:user) { OpenStruct.new(first_name: 'Test', last_name: 'User', age: 42) }
+  let(:user) { QuickStruct.new(first_name: 'Test', last_name: 'User', age: 42) }
 
   describe '.call' do
     context 'without a block' do

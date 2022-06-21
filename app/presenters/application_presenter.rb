@@ -35,7 +35,7 @@ class ApplicationPresenter < ApplicationDecorator
   #       forward :meaning_of_life
   #     end
   #
-  #     object = OpenStruct.new(meaning_of_life: 42)
+  #     object = QuickStruct.new(meaning_of_life: 42)
   #     TestPresenter.(object) do |presenter|
   #       puts presenter.meaning_of_life
   #     end
@@ -49,7 +49,7 @@ class ApplicationPresenter < ApplicationDecorator
   #
   # @param models [Array<Object>] the objects to be wrapped by the presenter
   # @return [Array<self>] an array of presenter instances
-  def self.present_collection(models, &block)
-    models.map { |model| call(model, &block) }
+  def self.present_collection(models, &)
+    models.map { |model| call(model, &) }
   end
 end
