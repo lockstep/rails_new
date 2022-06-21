@@ -30,9 +30,8 @@ gem 'sass-rails'
 # Automatically add vendor prefixes to CSS rules
 gem 'autoprefixer-rails'
 
-# Turbolinks makes navigating your web application faster.
-# Read more: https://github.com/turbolinks/turbolinks
-gem 'turbolinks', '~> 5'
+# Improves app performance by using Hotwire
+gem 'turbo-rails', '~> 1.1.1'
 
 # Application monitoring
 gem 'newrelic_rpm'
@@ -137,3 +136,6 @@ group :test do
   gem 'webdrivers'
   gem 'webmock'
 end
+
+# Use Redis for Action Cable
+gem 'redis', '~> 4.0'

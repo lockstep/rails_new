@@ -20,7 +20,7 @@ module.exports = {
     google: "writable",
     gtag: "writable",
     SETTINGS: "writable",
-    Turbolinks: "writable",
+    Turbo: "writable",
   },
   parser: "@typescript-eslint/parser",
   parserOptions: {

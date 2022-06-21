@@ -353,9 +353,10 @@ GEM
     statsd-ruby (1.5.0)
     thor (1.1.0)
     tilt (2.0.10)
-    turbolinks (5.2.1)
-      turbolinks-source (~> 5.2)
-    turbolinks-source (5.2.0)
+    turbo-rails (1.1.1)
+      actionpack (>= 6.0.0)
+      activejob (>= 6.0.0)
+      railties (>= 6.0.0)
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
     unicode-display_width (2.1.0)
@@ -423,6 +424,7 @@ DEPENDENCIES
   rack-timeout
   rails (~> 6)
   react-rails
+  redis (~> 4.0)
   rspec-rails
   rspec_junit_formatter
   rubocop
@@ -441,7 +443,7 @@ DEPENDENCIES
   spring
   spring-commands-rspec
   spring-watcher-listen (~> 2.0.0)
-  turbolinks (~> 5)
+  turbo-rails (~> 1.1.1)
   web-console (>= 3.3.0)
   webdrivers
   webmock
