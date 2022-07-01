@@ -1,4 +1,4 @@
-$(document).on("turbolinks:load", () => {
+$(document).on("turbo:load", () => {
   if (
     typeof gtag === "function" &&
     typeof SETTINGS.google_analytics_id !== "undefined"
