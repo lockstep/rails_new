@@ -21,5 +21,5 @@ web_dynos = 1
 client_size = puma_workers * effective_threads * web_dynos
 
 Sidekiq.configure_client do |config|
-  config.redis = { size: client_size, url: ENV['REDIS_URL'] }
+  config.redis = { size: client_size, url: ENV.fetch('REDIS_URL', nil) }
 end
