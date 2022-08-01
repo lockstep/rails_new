@@ -1247,6 +1247,11 @@ RSpec/Pending:
   Description: Checks for any pending or skipped examples.
   StyleGuide: http://www.rubydoc.info/gems/rubocop-rspec/RuboCop/Cop/RSpec/Pending
 
+RSpec/Rails/HaveHttpStatus:
+  Enabled: false
+  Description: Checks that tests use have_http_status instead of equality matchers.
+  StyleGuide: https://docs.rubocop.org/rubocop-rspec/cops_rspec_rails.html#rspecrailshavehttpstatus
+
 RSpec/ReceiveCounts:
   Enabled: true
   Description: Check for `once` and `twice` receive counts matchers usage.
