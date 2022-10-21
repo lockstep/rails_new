@@ -185,7 +185,7 @@ GEM
       timeout
     newrelic_rpm (8.9.0)
     nio4r (2.5.8)
-    nokogiri (1.13.8)
+    nokogiri (1.13.9)
       mini_portile2 (~> 2.8.0)
       racc (~> 1.4)
     nullalign (0.0.4)
